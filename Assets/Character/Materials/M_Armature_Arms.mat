@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Armature_Arms
-  m_Shader: {fileID: -6465566751694194690, guid: fcd014103a8955f4aa78620027e3bd3a,
+  m_Shader: {fileID: -6465566751694194690, guid: 394b8c8286fecfb4d8cc7b86232e23a9,
     type: 3}
   m_ShaderKeywords: _METALLICSPECGLOSSMAP _NORMALMAP
   m_LightmapFlags: 4
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_99d5c1b59fab4faabf3321f97004df06:
-        m_Texture: {fileID: 2800000, guid: c6dc62700fa06274b9608a9fce8ed21b, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -83,10 +83,10 @@ Material:
     m_Floats:
     - Vector1_05e7d536eb194404a08c58fec940c5a6: 0
     - Vector1_14d3a332812a4cc18fa00ed28acc1c59: 0.41
-    - Vector1_373122acb8734b8db9471eb84d841a1c: 0.02
+    - Vector1_373122acb8734b8db9471eb84d841a1c: 0
     - Vector1_8fd715ddb24f4905b065ac31d866e06b: 0
     - Vector1_a1d46c7fa57743589a9c88e25f72881c: 2
-    - Vector1_e5f10e887da34831baaed751548d0a3a: 1
+    - Vector1_e5f10e887da34831baaed751548d0a3a: 1.01
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -117,9 +117,10 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_5869de7f6c83496bb908d55a654639cc: {r: 1, g: 1, b: 1, a: 0}
-    - Color_5c76eea2c02249d3b64a94a0bf1e66b5: {r: 0.1161446, g: 0.2745954, b: 0.2830189,
+    - Color_5c76eea2c02249d3b64a94a0bf1e66b5: {r: 0.2015563, g: 0.37626222, b: 0.38642952,
         a: 0}
-    - Color_ce8d24d75c674e2e8501bb3e3f4e7bdc: {r: 0, g: 0, b: 0, a: 0}
+    - Color_ce8d24d75c674e2e8501bb3e3f4e7bdc: {r: 0.4, g: 0.4, b: 0.4, a: 0}
+    - Color_ff071779401f4fc9848af3027e183504: {r: 0.4, g: 0.4, b: 0.4, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
