@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - Event
+  - GameMaster
   layers:
   - Default
   - TransparentFX

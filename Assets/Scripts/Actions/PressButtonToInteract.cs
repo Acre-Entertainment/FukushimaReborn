@@ -38,7 +38,6 @@ public class PressButtonToInteract : MonoBehaviour
     {
         if(other.gameObject.tag == "Event")
         {
-            Debug.Log("AAAAAAAAAAAAA");
             interactingGO = other.gameObject;
             pbo = interactingGO.GetComponent<PressButtonToInteract_Object>();
             hasEvent = true;
