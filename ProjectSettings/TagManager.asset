@@ -7,11 +7,13 @@ TagManager:
   - CinemachineTarget
   - Event
   - GameMaster
+  - Anchor
+  - InteractArea
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ignore Character
   - Water
   - UI
   - 

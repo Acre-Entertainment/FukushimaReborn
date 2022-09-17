@@ -37,23 +37,24 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Actions\PressButtonToInteract_Object.cs" />
+     <Compile Include="Assets\Scripts\Spotlight\SpotlightScript.cs" />
      <Compile Include="Assets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
      <Compile Include="Assets\InputSystem\StarterAssetsInputs.cs" />
+     <Compile Include="Assets\Scripts\Hiding\Hide_Opener.cs" />
      <Compile Include="Assets\Scripts\WaterBoxes\WterBox.cs" />
      <Compile Include="Assets\Scripts\DebugFunction.cs" />
      <Compile Include="Assets\Scripts\Actions\PressButtonToInteract.cs" />
      <Compile Include="Assets\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
+     <Compile Include="Assets\Scripts\Hiding\Hide_Object.cs" />
      <Compile Include="Assets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
      <Compile Include="Assets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
      <Compile Include="Assets\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
      <Compile Include="Assets\Scripts\BasicRigidBodyPush.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\Scripts\GameOver\GameOver.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonController.cs" />
      <Compile Include="Assets\Scripts\Hiding\Hide_Character.cs" />
-     <Compile Include="Assets\Scripts\Hiding\Hide_Object.cs" />
-     <Compile Include="Assets\Scripts\Hiding\Hide_Opener.cs" />
-     <Compile Include="Assets\Scripts\Spotlight\SpotlightScript.cs" />
-     <Compile Include="Assets\Scripts\GameOver\GameOver.cs" />
+     <Compile Include="Assets\Scripts\LeBoxes\PushableBox.cs" />
      <None Include="Assets\_Fukushima\Shaders\Lighting.hlsl" />
      <None Include="Assets\license.txt" />
     <Reference Include="UnityEngine">
