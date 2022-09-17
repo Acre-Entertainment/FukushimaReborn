@@ -10,6 +10,7 @@ TagManager:
   - Anchor
   - InteractArea
   - CarryPoint
+  - PuzzleObject
   layers:
   - Default
   - TransparentFX

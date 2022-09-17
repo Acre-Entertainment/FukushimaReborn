@@ -57,6 +57,9 @@
      <Compile Include="Assets\Scripts\LeBoxes\PushableBox.cs" />
      <Compile Include="Assets\Scripts\_Basics\CallEvenUponCollisionWithTag.cs" />
      <Compile Include="Assets\Scripts\LeBoxes\CarriableBox.cs" />
+     <Compile Include="Assets\Scripts\_Basics\CallEventUponTriggerEntry.cs" />
+     <Compile Include="Assets\Scripts\_Basics\EventsAtStart.cs" />
+     <Compile Include="Assets\Scripts\_Basics\CallEventUponTriggerExit.cs" />
      <None Include="Assets\_Fukushima\Shaders\Lighting.hlsl" />
      <None Include="Assets\license.txt" />
     <Reference Include="UnityEngine">
