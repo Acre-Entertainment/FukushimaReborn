@@ -7616,7 +7616,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!4 &236175427 stripped
 Transform:
@@ -43619,7 +43619,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-127694
+  m_Name: pb_Mesh20712
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -45391,7 +45391,7 @@ PrefabInstance:
     - target: {fileID: 2696291644242024702, guid: 48e958bf4a0ff1f4dbedc2684be9a2d1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.17944
+      value: 19.075783
       objectReference: {fileID: 0}
     - target: {fileID: 2696291644242024702, guid: 48e958bf4a0ff1f4dbedc2684be9a2d1,
         type: 3}
@@ -45401,7 +45401,7 @@ PrefabInstance:
     - target: {fileID: 2696291644242024702, guid: 48e958bf4a0ff1f4dbedc2684be9a2d1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.8818865
+      value: 16.878967
       objectReference: {fileID: 0}
     - target: {fileID: 2696291644242024702, guid: 48e958bf4a0ff1f4dbedc2684be9a2d1,
         type: 3}
