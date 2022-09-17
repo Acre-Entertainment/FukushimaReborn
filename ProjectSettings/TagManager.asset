@@ -9,6 +9,7 @@ TagManager:
   - GameMaster
   - Anchor
   - InteractArea
+  - CarryPoint
   layers:
   - Default
   - TransparentFX

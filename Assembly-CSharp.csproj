@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Hiding\Hide_Character.cs" />
      <Compile Include="Assets\Scripts\LeBoxes\PushableBox.cs" />
      <Compile Include="Assets\Scripts\_Basics\CallEvenUponCollisionWithTag.cs" />
+     <Compile Include="Assets\Scripts\LeBoxes\CarriableBox.cs" />
      <None Include="Assets\_Fukushima\Shaders\Lighting.hlsl" />
      <None Include="Assets\license.txt" />
     <Reference Include="UnityEngine">
