@@ -38,6 +38,7 @@ public class CarriableBox : MonoBehaviour
         pbti.enabled = false;
         //mc.enabled = false;
         rb.useGravity = false;
+        gameObject.tag = "Carried";
     }
     void setOff()
     {
@@ -45,5 +46,6 @@ public class CarriableBox : MonoBehaviour
         pbti.enabled = true;
         //mc.enabled = true;
         rb.useGravity = true;
+        gameObject.tag = "Event";
     }
 }

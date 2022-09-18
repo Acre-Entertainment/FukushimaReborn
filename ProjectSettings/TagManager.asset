@@ -12,6 +12,7 @@ TagManager:
   - CarryPoint
   - PuzzleObject
   - TriggerCollision
+  - Carried
   layers:
   - Default
   - TransparentFX
