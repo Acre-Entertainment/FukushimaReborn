@@ -6,9 +6,9 @@ using UnityEngine.Events;
 public class PressButtonToInteract : MonoBehaviour
 {
     PressButtonToInteract_Object pbo;
-    bool hasPressed;
-    bool hasEvent;
-    GameObject interactingGO;
+    public bool hasPressed;
+    public bool hasEvent;
+    public GameObject interactingGO;
 
     void Update()
     {

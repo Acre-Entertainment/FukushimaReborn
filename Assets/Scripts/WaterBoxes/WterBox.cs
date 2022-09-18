@@ -46,21 +46,25 @@ public class WterBox : MonoBehaviour
     IEnumerator goDown()
     {
         yield return new WaitForSeconds(timeToSink);
+        rb.constraints = RigidbodyConstraints.None;
         rb.velocity = new Vector3(0, -sinkSpeed, 0);
         yield return new WaitForSeconds(timeSinking);
         rb.velocity = new Vector3(0, 0, 0);
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
     IEnumerator goUp()
     {
         yield return new WaitForSeconds(timeToSink);
+        rb.constraints = RigidbodyConstraints.None;
         rb.velocity = new Vector3(0, sinkSpeed, 0);
         yield return new WaitForSeconds(timeSinking);
         rb.velocity = new Vector3(0, 0, 0);
+        rb.constraints = RigidbodyConstraints.FreezeAll;
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == tagName && canInteract == true)
+        if(other.gameObject.tag == tagName && canInteract == true)
         {
             StartCoroutine(activated());
         }

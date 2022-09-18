@@ -11,6 +11,7 @@ TagManager:
   - InteractArea
   - CarryPoint
   - PuzzleObject
+  - TriggerCollision
   layers:
   - Default
   - TransparentFX

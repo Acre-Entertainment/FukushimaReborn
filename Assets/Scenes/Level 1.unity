@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85536
+  m_Name: pb_Mesh21208
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -299,10 +299,10 @@ GameObject:
   - component: {fileID: 32134261}
   - component: {fileID: 32134260}
   - component: {fileID: 32134259}
-  - component: {fileID: 32134258}
   - component: {fileID: 32134263}
   - component: {fileID: 32134262}
-  m_Layer: 11
+  - component: {fileID: 32134258}
+  m_Layer: 0
   m_Name: Cube (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,8 +323,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &32134258
-MeshCollider:
+--- !u!65 &32134258
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -333,10 +333,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1241612733}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6, z: 1}
+  m_Center: {x: 0.5, y: 3, z: -0.5}
 --- !u!33 &32134259
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -614,7 +613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -635,7 +634,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &32242816
 GameObject:
@@ -3915,7 +3914,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh84882
+  m_Name: pb_Mesh20464
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4398,10 +4397,10 @@ GameObject:
   - component: {fileID: 92724852}
   - component: {fileID: 92724851}
   - component: {fileID: 92724850}
-  - component: {fileID: 92724849}
   - component: {fileID: 92724854}
   - component: {fileID: 92724853}
-  m_Layer: 11
+  - component: {fileID: 92724849}
+  m_Layer: 0
   m_Name: Cube (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4422,8 +4421,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &92724849
-MeshCollider:
+--- !u!65 &92724849
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4432,10 +4431,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2002099227}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6, z: 1}
+  m_Center: {x: 0.5, y: 3, z: -0.5}
 --- !u!33 &92724850
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -4713,7 +4711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -4734,7 +4732,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &113444071
 GameObject:
@@ -4961,6 +4959,7 @@ GameObject:
   - component: {fileID: 144190729}
   - component: {fileID: 144190734}
   - component: {fileID: 144190735}
+  - component: {fileID: 144190736}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Event
@@ -4979,7 +4978,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1540273092}
 --- !u!33 &144190730
@@ -5300,6 +5299,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!54 &144190736
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144190728}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &209645066
 GameObject:
   m_ObjectHideFlags: 0
@@ -5683,6 +5698,51 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &227341069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 227341070}
+  - component: {fileID: 227341071}
+  m_Layer: 2
+  m_Name: CollisionArea
+  m_TagString: TriggerCollision
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &227341070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227341069}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 236175429}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &227341071
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227341069}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.93, z: 0}
 --- !u!1001 &236175423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7602,22 +7662,6 @@ CapsuleCollider:
   m_Height: 1.6
   m_Direction: 1
   m_Center: {x: 0, y: 0.93, z: 0}
---- !u!54 &236175426
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236175424}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!4 &236175427 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4781145361501668014, guid: 2e00ec59d6f12744db506a60183e31a6,
@@ -7643,6 +7687,23 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 236175423}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &236175430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236175424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b98a226db96e4441a6935c20cad8397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliderCrouchHeight: 0.8
+  colliderCrouchAltitude: 0.465
+  controllerCrouchHeight: 0.9
+  controllerCrouchAltitude: 0.465
+  isCrouched: 0
 --- !u!1 &237627136
 GameObject:
   m_ObjectHideFlags: 0
@@ -7701,6 +7762,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287df581453658c4eb3609676b6a79bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasPressed: 0
+  hasEvent: 0
+  interactingGO: {fileID: 0}
 --- !u!43 &254379653
 Mesh:
   m_ObjectHideFlags: 0
@@ -7893,7 +7957,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 236175429}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &265743357
 Mesh:
@@ -7901,7 +7965,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh84868
+  m_Name: pb_Mesh20442
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8756,10 +8820,10 @@ GameObject:
   - component: {fileID: 303130516}
   - component: {fileID: 303130515}
   - component: {fileID: 303130514}
-  - component: {fileID: 303130513}
   - component: {fileID: 303130518}
   - component: {fileID: 303130517}
-  m_Layer: 11
+  - component: {fileID: 303130513}
+  m_Layer: 0
   m_Name: Cube (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8780,8 +8844,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &303130513
-MeshCollider:
+--- !u!65 &303130513
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -8790,10 +8854,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1149650394}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6, z: 1}
+  m_Center: {x: 0.5, y: 3, z: -0.5}
 --- !u!33 &303130514
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -9071,7 +9134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -9092,7 +9155,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &311428489
 GameObject:
@@ -16795,7 +16858,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85092
+  m_Name: pb_Mesh20696
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16959,7 +17022,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85470
+  m_Name: pb_Mesh21136
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17835,10 +17898,10 @@ GameObject:
   - component: {fileID: 475686424}
   - component: {fileID: 475686423}
   - component: {fileID: 475686422}
-  - component: {fileID: 475686421}
   - component: {fileID: 475686426}
   - component: {fileID: 475686425}
-  m_Layer: 11
+  - component: {fileID: 475686421}
+  m_Layer: 0
   m_Name: Cube (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17859,8 +17922,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &475686421
-MeshCollider:
+--- !u!65 &475686421
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -17869,10 +17932,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2015271380}
+  serializedVersion: 2
+  m_Size: {x: 5, y: 6, z: 1}
+  m_Center: {x: 2.5, y: 3, z: -0.5}
 --- !u!33 &475686422
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -18150,7 +18212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -18171,7 +18233,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1001 &496890517
 PrefabInstance:
@@ -18419,7 +18481,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85170
+  m_Name: pb_Mesh20784
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18970,7 +19032,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-153770
+  m_Name: pb_Mesh21332
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19143,6 +19205,7 @@ GameObject:
   - component: {fileID: 618246331}
   - component: {fileID: 618246337}
   - component: {fileID: 618246336}
+  - component: {fileID: 618246338}
   m_Layer: 0
   m_Name: Interactible object
   m_TagString: Event
@@ -19161,7 +19224,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1010291071}
 --- !u!33 &618246332
@@ -19501,13 +19564,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!54 &618246338
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618246330}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!43 &658136331
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85130
+  m_Name: pb_Mesh20744
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20329,7 +20408,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85592
+  m_Name: pb_Mesh21264
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20866,7 +20945,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795087907}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 79, y: 10.863333, z: 36}
+  m_LocalPosition: {x: 79, y: 8.377164, z: 36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 211002779}
@@ -21163,10 +21242,10 @@ GameObject:
   - component: {fileID: 802989691}
   - component: {fileID: 802989690}
   - component: {fileID: 802989689}
-  - component: {fileID: 802989688}
   - component: {fileID: 802989693}
   - component: {fileID: 802989692}
-  m_Layer: 11
+  - component: {fileID: 802989688}
+  m_Layer: 0
   m_Name: Cube (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21187,8 +21266,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &802989688
-MeshCollider:
+--- !u!65 &802989688
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -21197,10 +21276,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1711743265}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6, z: 1}
+  m_Center: {x: 0.5, y: 3, z: -0.5}
 --- !u!33 &802989689
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -21478,7 +21556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -21499,7 +21577,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!43 &809098095
 Mesh:
@@ -21507,7 +21585,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-206260
+  m_Name: pb_Mesh20962
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21677,10 +21755,10 @@ GameObject:
   - component: {fileID: 871192438}
   - component: {fileID: 871192437}
   - component: {fileID: 871192436}
-  - component: {fileID: 871192435}
   - component: {fileID: 871192440}
   - component: {fileID: 871192439}
-  m_Layer: 11
+  - component: {fileID: 871192435}
+  m_Layer: 0
   m_Name: Cube (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21701,8 +21779,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &871192435
-MeshCollider:
+--- !u!65 &871192435
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -21711,10 +21789,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1741087665}
+  serializedVersion: 2
+  m_Size: {x: 5, y: 6, z: 1}
+  m_Center: {x: 2.5, y: 3, z: -0.5}
 --- !u!33 &871192436
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -21992,7 +22069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -22013,7 +22090,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!43 &911077982
 Mesh:
@@ -22335,6 +22412,7 @@ GameObject:
   - component: {fileID: 1003981983}
   - component: {fileID: 1003981982}
   - component: {fileID: 1003981981}
+  - component: {fileID: 1003981985}
   m_Layer: 12
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -22350,7 +22428,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003981979}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 70.04937, y: -11.545347, z: 62.444168}
+  m_LocalPosition: {x: 70.04937, y: -7.0358233, z: 62.444168}
   m_LocalScale: {x: 72.2997, y: 1, z: 64.50404}
   m_Children: []
   m_Father: {fileID: 384517935}
@@ -22365,10 +22443,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1003981979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da536a3ca3c122e40b0031c3ee1e623d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6601690a32c82dc4d8fdd00a957a872e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tag: Player
+  tag: TriggerCollision
   unityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -22392,7 +22470,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003981979}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -22446,6 +22524,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003981979}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1003981985
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003981979}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1006725362
 GameObject:
   m_ObjectHideFlags: 0
@@ -22482,7 +22576,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85112
+  m_Name: pb_Mesh20722
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22816,10 +22910,10 @@ GameObject:
   - component: {fileID: 1066110930}
   - component: {fileID: 1066110929}
   - component: {fileID: 1066110928}
-  - component: {fileID: 1066110927}
   - component: {fileID: 1066110932}
   - component: {fileID: 1066110931}
-  m_Layer: 11
+  - component: {fileID: 1066110927}
+  m_Layer: 0
   m_Name: Cube (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22840,8 +22934,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1066110927
-MeshCollider:
+--- !u!65 &1066110927
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -22850,10 +22944,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1489444317}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6, z: 1}
+  m_Center: {x: 0.5, y: 3, z: -0.5}
 --- !u!33 &1066110928
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -23131,7 +23224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -23152,7 +23245,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!43 &1066937286
 Mesh:
@@ -23160,7 +23253,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh84942
+  m_Name: pb_Mesh20524
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -24707,10 +24800,10 @@ GameObject:
   - component: {fileID: 1226515310}
   - component: {fileID: 1226515309}
   - component: {fileID: 1226515308}
-  - component: {fileID: 1226515307}
   - component: {fileID: 1226515312}
   - component: {fileID: 1226515311}
-  m_Layer: 11
+  - component: {fileID: 1226515307}
+  m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24731,8 +24824,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1226515307
-MeshCollider:
+--- !u!65 &1226515307
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -24741,10 +24834,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1034714417}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6, z: 1}
+  m_Center: {x: 0.5, y: 3, z: -0.5}
 --- !u!33 &1226515308
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -25022,7 +25114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -25043,7 +25135,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!43 &1230072243
 Mesh:
@@ -25051,7 +25143,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85238
+  m_Name: pb_Mesh20882
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25221,10 +25313,10 @@ GameObject:
   - component: {fileID: 1241073709}
   - component: {fileID: 1241073708}
   - component: {fileID: 1241073707}
-  - component: {fileID: 1241073706}
   - component: {fileID: 1241073711}
   - component: {fileID: 1241073710}
-  m_Layer: 11
+  - component: {fileID: 1241073706}
+  m_Layer: 0
   m_Name: Cube (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25245,8 +25337,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1241073706
-MeshCollider:
+--- !u!65 &1241073706
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -25255,10 +25347,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1465366993}
+  serializedVersion: 2
+  m_Size: {x: 2, y: 6, z: 1}
+  m_Center: {x: 1, y: 3, z: -0.5}
 --- !u!33 &1241073707
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -25536,7 +25627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -25557,7 +25648,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!43 &1241612733
 Mesh:
@@ -25729,7 +25820,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85394
+  m_Name: pb_Mesh21060
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26213,6 +26304,7 @@ GameObject:
   - component: {fileID: 1311802548}
   - component: {fileID: 1311802547}
   - component: {fileID: 1311802546}
+  - component: {fileID: 1311802550}
   m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
@@ -26243,10 +26335,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1311802544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da536a3ca3c122e40b0031c3ee1e623d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6601690a32c82dc4d8fdd00a957a872e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tag: Player
+  tag: TriggerCollision
   unityEvent:
     m_PersistentCalls:
       m_Calls:
@@ -26270,7 +26362,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311802544}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -26324,6 +26416,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311802544}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1311802550
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311802544}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!43 &1313639523
 Mesh:
   m_ObjectHideFlags: 0
@@ -26544,10 +26652,10 @@ GameObject:
   - component: {fileID: 1361884825}
   - component: {fileID: 1361884824}
   - component: {fileID: 1361884823}
-  - component: {fileID: 1361884822}
   - component: {fileID: 1361884827}
   - component: {fileID: 1361884826}
-  m_Layer: 11
+  - component: {fileID: 1361884822}
+  m_Layer: 0
   m_Name: Cube (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26568,8 +26676,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1361884822
-MeshCollider:
+--- !u!65 &1361884822
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -26578,10 +26686,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 735372588}
+  serializedVersion: 2
+  m_Size: {x: 2, y: 6, z: 3}
+  m_Center: {x: 1, y: 3, z: -0.5}
 --- !u!33 &1361884823
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -26859,7 +26966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -26880,7 +26987,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!43 &1362835559
 Mesh:
@@ -27058,10 +27165,10 @@ GameObject:
   - component: {fileID: 1363688860}
   - component: {fileID: 1363688859}
   - component: {fileID: 1363688858}
-  - component: {fileID: 1363688857}
   - component: {fileID: 1363688862}
   - component: {fileID: 1363688861}
-  m_Layer: 11
+  - component: {fileID: 1363688857}
+  m_Layer: 0
   m_Name: Cube (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27082,8 +27189,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1363688857
-MeshCollider:
+--- !u!65 &1363688857
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -27092,10 +27199,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1380317174}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6, z: 1}
+  m_Center: {x: 0.5, y: 3, z: -0.5}
 --- !u!33 &1363688858
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -27373,7 +27479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -27394,7 +27500,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!43 &1378301714
 Mesh:
@@ -27402,7 +27508,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85024
+  m_Name: pb_Mesh20612
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32380,10 +32486,10 @@ GameObject:
   - component: {fileID: 1441627864}
   - component: {fileID: 1441627863}
   - component: {fileID: 1441627862}
-  - component: {fileID: 1441627861}
   - component: {fileID: 1441627866}
   - component: {fileID: 1441627865}
-  m_Layer: 11
+  - component: {fileID: 1441627861}
+  m_Layer: 0
   m_Name: Cube (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32404,8 +32510,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1441627861
-MeshCollider:
+--- !u!65 &1441627861
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -32414,10 +32520,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 254379653}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6, z: 1}
+  m_Center: {x: 0.5, y: 3, z: -0.5}
 --- !u!33 &1441627862
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -32695,7 +32800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -32716,7 +32821,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!43 &1449099807
 Mesh:
@@ -32724,7 +32829,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85044
+  m_Name: pb_Mesh20632
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33052,7 +33157,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85382
+  m_Name: pb_Mesh21048
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33222,10 +33327,10 @@ GameObject:
   - component: {fileID: 1484383531}
   - component: {fileID: 1484383530}
   - component: {fileID: 1484383529}
-  - component: {fileID: 1484383528}
   - component: {fileID: 1484383533}
   - component: {fileID: 1484383532}
-  m_Layer: 11
+  - component: {fileID: 1484383528}
+  m_Layer: 0
   m_Name: Cube (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33246,8 +33351,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1484383528
-MeshCollider:
+--- !u!65 &1484383528
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -33256,10 +33361,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1083256005}
+  serializedVersion: 2
+  m_Size: {x: 2, y: 6, z: 1}
+  m_Center: {x: 1, y: 3, z: -2.5}
 --- !u!33 &1484383529
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -33537,7 +33641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -33558,7 +33662,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!43 &1489444317
 Mesh:
@@ -33813,7 +33917,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh84918
+  m_Name: pb_Mesh20500
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33977,7 +34081,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85056
+  m_Name: pb_Mesh20644
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -34520,7 +34624,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85572
+  m_Name: pb_Mesh21244
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -34690,10 +34794,10 @@ GameObject:
   - component: {fileID: 1621828773}
   - component: {fileID: 1621828772}
   - component: {fileID: 1621828771}
-  - component: {fileID: 1621828770}
   - component: {fileID: 1621828775}
   - component: {fileID: 1621828774}
-  m_Layer: 11
+  - component: {fileID: 1621828770}
+  m_Layer: 0
   m_Name: Cube (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34714,8 +34818,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1621828770
-MeshCollider:
+--- !u!65 &1621828770
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -34724,10 +34828,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2043399554}
+  serializedVersion: 2
+  m_Size: {x: 3, y: 6, z: 3}
+  m_Center: {x: 1.5, y: 3, z: -1.5}
 --- !u!33 &1621828771
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -35005,7 +35108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -35026,7 +35129,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1624649353
 GameObject:
@@ -35040,10 +35143,10 @@ GameObject:
   - component: {fileID: 1624649358}
   - component: {fileID: 1624649357}
   - component: {fileID: 1624649356}
-  - component: {fileID: 1624649355}
   - component: {fileID: 1624649360}
   - component: {fileID: 1624649359}
-  m_Layer: 11
+  - component: {fileID: 1624649355}
+  m_Layer: 0
   m_Name: Cube (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35064,8 +35167,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1624649355
-MeshCollider:
+--- !u!65 &1624649355
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -35074,10 +35177,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2121356733}
+  serializedVersion: 2
+  m_Size: {x: 5, y: 6, z: 1}
+  m_Center: {x: 2.5, y: 3, z: -0.5}
 --- !u!33 &1624649356
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -35355,7 +35457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -35376,7 +35478,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1658003323
 GameObject:
@@ -35428,10 +35530,10 @@ GameObject:
   - component: {fileID: 1689299436}
   - component: {fileID: 1689299435}
   - component: {fileID: 1689299434}
-  - component: {fileID: 1689299433}
   - component: {fileID: 1689299438}
   - component: {fileID: 1689299437}
-  m_Layer: 11
+  - component: {fileID: 1689299433}
+  m_Layer: 0
   m_Name: Cube (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35452,8 +35554,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1689299433
-MeshCollider:
+--- !u!65 &1689299433
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -35462,10 +35564,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1911407344}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6, z: 1}
+  m_Center: {x: 0.5, y: 3, z: -0.5}
 --- !u!33 &1689299434
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -35743,7 +35844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -35764,7 +35865,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1709318651
 GameObject:
@@ -36249,7 +36350,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh84996
+  m_Name: pb_Mesh20584
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -36413,7 +36514,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85608
+  m_Name: pb_Mesh21280
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -36749,6 +36850,7 @@ GameObject:
   - component: {fileID: 1792298014}
   - component: {fileID: 1792298013}
   - component: {fileID: 1792298018}
+  - component: {fileID: 1792298019}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Event
@@ -36767,7 +36869,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1969518833}
 --- !u!33 &1792298014
@@ -37076,13 +37178,29 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!54 &1792298019
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792298012}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!43 &1832762628
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85370
+  m_Name: pb_Mesh21036
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -37255,6 +37373,7 @@ GameObject:
   - component: {fileID: 1873418682}
   - component: {fileID: 1873418687}
   - component: {fileID: 1873418688}
+  - component: {fileID: 1873418689}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Event
@@ -37273,7 +37392,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1615828429}
 --- !u!33 &1873418683
@@ -37594,13 +37713,29 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!54 &1873418689
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873418681}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!43 &1890233582
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85258
+  m_Name: pb_Mesh20912
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -42433,10 +42568,10 @@ GameObject:
   - component: {fileID: 1953691047}
   - component: {fileID: 1953691046}
   - component: {fileID: 1953691045}
-  - component: {fileID: 1953691044}
   - component: {fileID: 1953691049}
   - component: {fileID: 1953691048}
-  m_Layer: 11
+  - component: {fileID: 1953691044}
+  m_Layer: 0
   m_Name: Cube (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42457,8 +42592,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1953691044
-MeshCollider:
+--- !u!65 &1953691044
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -42467,10 +42602,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1313639523}
+  serializedVersion: 2
+  m_Size: {x: 3, y: 6, z: 3}
+  m_Center: {x: 1.5, y: 3, z: -1.5}
 --- !u!33 &1953691045
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -42748,7 +42882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -42769,7 +42903,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!43 &1969518833
 Mesh:
@@ -42777,7 +42911,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh85556
+  m_Name: pb_Mesh21228
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -42947,10 +43081,10 @@ GameObject:
   - component: {fileID: 1976145369}
   - component: {fileID: 1976145368}
   - component: {fileID: 1976145367}
-  - component: {fileID: 1976145366}
   - component: {fileID: 1976145371}
   - component: {fileID: 1976145370}
-  m_Layer: 11
+  - component: {fileID: 1976145366}
+  m_Layer: 0
   m_Name: Cube (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42971,8 +43105,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1976145366
-MeshCollider:
+--- !u!65 &1976145366
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -42981,10 +43115,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1098500643}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6, z: 1}
+  m_Center: {x: 0.5, y: 3, z: -0.5}
 --- !u!33 &1976145367
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -43262,7 +43395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -43283,7 +43416,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!43 &1988434662
 Mesh:
@@ -43291,7 +43424,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh84980
+  m_Name: pb_Mesh20566
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -44310,10 +44443,10 @@ GameObject:
   - component: {fileID: 2037595710}
   - component: {fileID: 2037595709}
   - component: {fileID: 2037595708}
-  - component: {fileID: 2037595707}
   - component: {fileID: 2037595712}
   - component: {fileID: 2037595711}
-  m_Layer: 11
+  - component: {fileID: 2037595707}
+  m_Layer: 0
   m_Name: Cube (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44334,8 +44467,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2037595707
-MeshCollider:
+--- !u!65 &2037595707
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -44344,10 +44477,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 911077982}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6, z: 1}
+  m_Center: {x: 0.5, y: 3, z: -0.5}
 --- !u!33 &2037595708
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -44625,7 +44757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -44646,7 +44778,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!43 &2043399554
 Mesh:
@@ -44824,10 +44956,10 @@ GameObject:
   - component: {fileID: 2058372135}
   - component: {fileID: 2058372134}
   - component: {fileID: 2058372133}
-  - component: {fileID: 2058372132}
   - component: {fileID: 2058372137}
   - component: {fileID: 2058372136}
-  m_Layer: 11
+  - component: {fileID: 2058372132}
+  m_Layer: 0
   m_Name: Cube (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44848,8 +44980,8 @@ Transform:
   m_Father: {fileID: 1525347281}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2058372132
-MeshCollider:
+--- !u!65 &2058372132
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -44858,10 +44990,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 143220926}
+  serializedVersion: 2
+  m_Size: {x: 2, y: 6, z: 3}
+  m_Center: {x: 1, y: 3, z: -0.5}
 --- !u!33 &2058372133
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -45139,7 +45270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02199fbe5725b83499f543e00c8873f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Player
+  tagName: TriggerCollision
   canReturn: 1
   automaticShift: 0
   timeToSink: 1
@@ -45160,7 +45291,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!43 &2121356733
 Mesh:
