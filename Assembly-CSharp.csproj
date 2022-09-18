@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\_Basics\EventUponNamedObjectTriggerExit.cs" />
      <Compile Include="Assets\Scripts\_Basics\EventUponNamedObjectTriggerEnter.cs" />
      <Compile Include="Assets\Scripts\LeBoxes\CarriableBox Location.cs" />
+     <Compile Include="Assets\Scripts\LeBoxes\CarriableBoxGM.cs" />
      <None Include="Assets\_Fukushima\Shaders\Lighting.hlsl" />
      <None Include="Assets\license.txt" />
     <Reference Include="UnityEngine">
