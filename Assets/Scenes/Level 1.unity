@@ -6504,6 +6504,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 237627139, guid: 2e00ec59d6f12744db506a60183e31a6, type: 3}
+      propertyPath: selectedText
+      value: 
+      objectReference: {fileID: 238070865}
     - target: {fileID: 1457220580315044675, guid: 2e00ec59d6f12744db506a60183e31a6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6747,6 +6751,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12901d05051cbcc4cb05fc4273fa65ae, type: 3}
+--- !u!114 &238070865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 110862071, guid: 12901d05051cbcc4cb05fc4273fa65ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 238070864}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528294980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &254379653
 Mesh:
   m_ObjectHideFlags: 0

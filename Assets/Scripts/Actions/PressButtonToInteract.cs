@@ -9,6 +9,7 @@ public class PressButtonToInteract : MonoBehaviour
     public bool hasPressed;
     public bool hasEvent;
     public GameObject interactingGO;
+    [SerializeField] TMPro.TextMeshProUGUI selectedText;
 
     void Update()
     {
@@ -41,6 +42,19 @@ public class PressButtonToInteract : MonoBehaviour
             interactingGO = other.gameObject;
             pbo = interactingGO.GetComponent<PressButtonToInteract_Object>();
             hasEvent = true;
+
+            if(other.GetComponent<InteractText>() != null)
+            {
+                selectedText.SetText(other.GetComponent<InteractText>().text);
+            }
+            else
+            {
+                selectedText.SetText("[F]");
+            }
+        }
+        else
+        {
+            selectedText.SetText("");
         }
     }
     void OnTriggerStay(Collider other)
@@ -53,6 +67,15 @@ public class PressButtonToInteract : MonoBehaviour
                 pbo = interactingGO.GetComponent<PressButtonToInteract_Object>();
                 hasEvent = true;
             }
+
+            if (other.GetComponent<InteractText>() != null)
+            {
+                selectedText.SetText(other.GetComponent<InteractText>().text);
+            }
+            else
+            {
+                selectedText.SetText("[F]");
+            }
         }
     }
     void OnTriggerExit(Collider other)
@@ -60,6 +83,7 @@ public class PressButtonToInteract : MonoBehaviour
         if(other.gameObject.tag == "Event")
         {
             hasEvent = false;
+            selectedText.SetText("");
         }
     }
 }
