@@ -72,27 +72,28 @@
     <Compile Include="Assets\Scripts\Hiding\Hide_Object.cs" />
     <Compile Include="Assets\Scripts\_Basics\CallEvenUponCollisionWithTag.cs" />
     <Compile Include="Assets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
+    <Compile Include="Assets\Scripts\UI\Volume.cs" />
     <Compile Include="Assets\Scripts\_Basics\CallEventUponTriggerEntry.cs" />
+    <Compile Include="Assets\Scripts\UI\IsEnabled.cs" />
+    <Compile Include="Assets\Scripts\UI\GameOverMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\_Basics\CallEventUponTriggerExit.cs" />
     <Compile Include="Assets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
     <Compile Include="Assets\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
     <Compile Include="Assets\Scripts\LeBoxes\CarriableBox.cs" />
     <Compile Include="Assets\Scripts\BasicRigidBodyPush.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\UI\AtivarDesativar.cs" />
+    <Compile Include="Assets\Scripts\UI\CursorScript.cs" />
     <Compile Include="Assets\Scripts\LeBoxes\PushableBox.cs" />
     <Compile Include="Assets\Scripts\_Basics\EventUponNamedObjectTriggerEnter.cs" />
+    <Compile Include="Assets\Scripts\UI\NoMouseUI.cs" />
     <Compile Include="Assets\Scripts\GameOver\GameOver.cs" />
     <Compile Include="Assets\Scripts\ThirdPersonController.cs" />
     <Compile Include="Assets\Scripts\Hiding\Hide_Character.cs" />
     <Compile Include="Assets\Scripts\_Basics\EventsAtStart.cs" />
     <Compile Include="Assets\Scripts\Player\Crouch.cs" />
-    <Compile Include="Assets\Scripts\UI\NoMouseUI.cs" />
-    <Compile Include="Assets\Scripts\UI\CursorScript.cs" />
-    <Compile Include="Assets\Scripts\UI\AtivarDesativar.cs" />
-    <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\UI\Volume.cs" />
-    <Compile Include="Assets\Scripts\UI\IsEnabled.cs" />
-    <Compile Include="Assets\Scripts\UI\GameOverMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\PlayButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
