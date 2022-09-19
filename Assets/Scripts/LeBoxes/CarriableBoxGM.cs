@@ -13,7 +13,7 @@ public class CarriableBoxGM : MonoBehaviour
             box.SetActive(true);
         }
     }
-    public void dactivate()
+    public void deactivate()
     {
         foreach (GameObject box in boxLocations)
         {

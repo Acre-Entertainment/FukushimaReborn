@@ -9,6 +9,9 @@ public class CarriableBox : MonoBehaviour
     //MeshCollider mc;
     Rigidbody rb;
     public bool beingCarried;
+    CarriableBoxGM cbgm;
+    public bool inPosition;
+    public GameObject potencial;
 
     void Start()
     {
@@ -16,6 +19,7 @@ public class CarriableBox : MonoBehaviour
         pbti = GameObject.FindGameObjectWithTag("InteractArea").GetComponent<PressButtonToInteract>();
         //mc = gameObject.GetComponent<MeshCollider>();
         rb = gameObject.GetComponent<Rigidbody>();
+        cbgm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<CarriableBoxGM>();
     }
     void Update()
     {
@@ -39,6 +43,7 @@ public class CarriableBox : MonoBehaviour
         //mc.enabled = false;
         rb.useGravity = false;
         gameObject.tag = "Carried";
+        cbgm.activate();
     }
     void setOff()
     {
@@ -47,5 +52,12 @@ public class CarriableBox : MonoBehaviour
         //mc.enabled = true;
         rb.useGravity = true;
         gameObject.tag = "Event";
+        cbgm.deactivate();
+        if(inPosition == true)
+        {
+            gameObject.transform.position = potencial.transform.position;
+            Destroy(potencial);
+            this.enabled = false;
+        }
     }
 }
