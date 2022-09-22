@@ -30,8 +30,9 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         _controller = GetComponent<CharacterController>();
+
+        StartCoroutine(BugController());
     }
 
     // Update is called once per frame
@@ -114,5 +115,12 @@ public class PlayerMovement : MonoBehaviour
         {
             _velocity.y = Mathf.Sqrt(_jump * -3.0f * _gravity);
         }
+    }
+
+    IEnumerator BugController()
+    {
+        _controller.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        _controller.enabled = true;
     }
 }

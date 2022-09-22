@@ -90,6 +90,9 @@
     <Compile Include="Assets\Scripts\Player\InputManager.cs" />
     <Compile Include="Assets\Scripts\Player\Crouch.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\CheckPoint\CheckpointLevel1.cs" />
+    <Compile Include="Assets\Scripts\CheckPoint\CheckPoints.cs" />
+    <Compile Include="Assets\Scripts\DutosDeÁgua\DutoDeAgua.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\_Fukushima\Shaders\Lighting.hlsl" />
