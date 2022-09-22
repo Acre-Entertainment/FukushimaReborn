@@ -60,4 +60,8 @@ public class CarriableBox : MonoBehaviour
             this.enabled = false;
         }
     }
+    void OnCollisionEnter(Collision other)
+    {
+        setOff();
+    }
 }
