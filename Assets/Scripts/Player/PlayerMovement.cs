@@ -123,4 +123,20 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         _controller.enabled = true;
     }
+
+    public void ImpactX(float forceX)
+    {
+        Vector3 impact = Vector3.zero;
+        impact.y = 0;
+        impact.x = forceX;
+        _controller.Move(transform.TransformDirection(impact) * Time.deltaTime);
+    }
+
+    public void ImpactZ(float forceZ)
+    {
+        Vector3 impact = Vector3.zero;
+        impact.y = 0;
+        impact.z = forceZ;
+        _controller.Move(transform.TransformDirection(impact) * Time.deltaTime);
+    }
 }
