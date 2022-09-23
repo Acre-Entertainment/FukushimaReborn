@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Actions\PressButtonToInteract_Object.cs" />
+     <Compile Include="Assets\Scripts\CheckPoint\CheckpointLevel1.cs" />
      <Compile Include="Assets\Scripts\Spotlight\SpotlightScript.cs" />
      <Compile Include="Assets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
      <Compile Include="Assets\InputSystem\StarterAssetsInputs.cs" />
@@ -54,6 +55,7 @@
      <Compile Include="Assets\Scripts\_Basics\CallEvenUponCollisionWithTag.cs" />
      <Compile Include="Assets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
      <Compile Include="Assets\Scripts\_Basics\CallEventUponTriggerEntry.cs" />
+     <Compile Include="Assets\Scripts\DutosDeÁgua\DutoDeAgua.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerLook.cs" />
      <Compile Include="Assets\Scripts\_Basics\CallEventUponTriggerExit.cs" />
      <Compile Include="Assets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
@@ -61,6 +63,7 @@
      <Compile Include="Assets\Scripts\LeBoxes\CarriableBox.cs" />
      <Compile Include="Assets\Scripts\BasicRigidBodyPush.cs" />
      <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+     <Compile Include="Assets\Scripts\CheckPoint\CheckPoints.cs" />
      <Compile Include="Assets\Scripts\LeBoxes\PushableBox.cs" />
      <Compile Include="Assets\Scripts\_Basics\EventUponNamedObjectTriggerEnter.cs" />
      <Compile Include="Assets\Scripts\GameOver\GameOver.cs" />
@@ -70,9 +73,7 @@
      <Compile Include="Assets\Scripts\Player\InputManager.cs" />
      <Compile Include="Assets\Scripts\Player\Crouch.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\CheckPoint\CheckPoints.cs" />
-     <Compile Include="Assets\Scripts\DutosDeÁgua\DutoDeAgua.cs" />
-     <Compile Include="Assets\Scripts\CheckPoint\CheckpointLevel1.cs" />
+     <Compile Include="Assets\Scripts\Spotlight\SpotlightMovement.cs" />
      <None Include="Assets\_Fukushima\Shaders\Lighting.hlsl" />
      <None Include="Assets\license.txt" />
     <Reference Include="UnityEngine">
