@@ -124,19 +124,11 @@ public class PlayerMovement : MonoBehaviour
         _controller.enabled = true;
     }
 
-    public void ImpactX(float forceX)
+    public void Impact(float force)
     {
         Vector3 impact = Vector3.zero;
         impact.y = 0;
-        impact.x = forceX;
-        _controller.Move(transform.TransformDirection(impact) * Time.deltaTime);
-    }
-
-    public void ImpactZ(float forceZ)
-    {
-        Vector3 impact = Vector3.zero;
-        impact.y = 0;
-        impact.z = forceZ;
+        impact.x = force;
         _controller.Move(transform.TransformDirection(impact) * Time.deltaTime);
     }
 }
