@@ -15,7 +15,7 @@ public class TriggerText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //_floatingTextScript = GetComponent<FloatingText>();
+        
     }
 
     // Update is called once per frame

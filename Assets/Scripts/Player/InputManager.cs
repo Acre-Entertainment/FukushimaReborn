@@ -8,7 +8,7 @@ public class InputManager : MonoBehaviour
     private PlayerInput _playerInput; 
     private PlayerInput.OnGroundActions _onGround; 
     private PlayerMovement _movement;
-    private PlayerLook _vision;
+    //private PlayerLook _vision;
 
     private void Awake()
     {
@@ -17,7 +17,7 @@ public class InputManager : MonoBehaviour
         _onGround = _playerInput.OnGround;
 
         _movement = GetComponent<PlayerMovement>();
-        _vision = GetComponent<PlayerLook>();
+        //_vision = GetComponent<PlayerLook>();
 
         _onGround.Pulo.performed += ctx => _movement.Jump();
         _onGround.Correr.performed += ctx => _movement.Sprint();
@@ -40,10 +40,10 @@ public class InputManager : MonoBehaviour
         _movement.Movement(_onGround.Movimento.ReadValue<Vector2>());
     }
 
-    private void LateUpdate()
-    {
-        _vision.Vision(_onGround.Visão.ReadValue<Vector2>());
-    }
+    //private void LateUpdate()
+    //{
+       // _vision.Vision(_onGround.Visão.ReadValue<Vector2>());
+    //}
 
     private void OnEnable()
     {

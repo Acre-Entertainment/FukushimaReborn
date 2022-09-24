@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float _gravity = -9.81f;
 
+    [Header("Camera")]
+    [SerializeField]
+    private Transform _camera;
+
     private CharacterController _controller;
     private float _speed;
     private Vector3 _velocity;
@@ -26,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     private bool _lerpCrouch;
     private bool _crouching;
     private float _crouchTimer;
+    private float _turnSmoothTime = 0.1f;
+    private float _turnSmoothVelocity;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +39,9 @@ public class PlayerMovement : MonoBehaviour
         _controller = GetComponent<CharacterController>();
 
         StartCoroutine(BugController());
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -78,15 +87,27 @@ public class PlayerMovement : MonoBehaviour
 
     public void Movement(Vector2 input)
     {
-        Vector3 movementDirection = Vector3.zero;
+        Vector3 movementDirection = new Vector3(input.x, 0, input.y).normalized;
         movementDirection.x = input.x;
         movementDirection.z = input.y;
-        _controller.Move(transform.TransformDirection(movementDirection) * _speed * Time.deltaTime);
+
+        if(movementDirection.magnitude >= 0.1f)
+        {
+            float targetAngle = Mathf.Atan2(movementDirection.x, movementDirection.z) * Mathf.Rad2Deg + _camera.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, _turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0, angle, 0);
+            Vector3 direction = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
+
+            _controller.Move(direction.normalized * _speed * Time.deltaTime);
+        }
+
         _velocity.y += _gravity * Time.deltaTime;
+
         if (_isGrounded && _velocity.y < 0)
         {
             _velocity.y = -2f;
         }
+
         _controller.Move(_velocity * Time.deltaTime);
     }
 
@@ -129,6 +150,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 impact = Vector3.zero;
         impact.y = 0;
         impact.x = force;
-        _controller.Move(transform.TransformDirection(impact) * Time.deltaTime);
+        _controller.Move(impact * Time.deltaTime);
     }
 }
