@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         _controller = GetComponent<CharacterController>();
+        _camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
 
         StartCoroutine(BugController());
 
