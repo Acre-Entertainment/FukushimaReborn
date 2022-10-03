@@ -13,12 +13,17 @@ public class PushableBox : MonoBehaviour
     float constantX, constantZ;
     int playerFixedRotation;
     Vector3 lastPlayerLocation, currentPlayerLocation, movement, newPosition;
+    bool hasParent, ignoreFrame;
     void Start()
     {
         playerObject = GameObject.FindGameObjectWithTag("Player");
         pbti = GameObject.FindGameObjectWithTag("InteractArea").GetComponent<PressButtonToInteract>();
         //ms = gameObject.GetComponent<MeshCollider>();
-        parentObject = gameObject.transform.parent.gameObject;
+        if(gameObject.transform.parent != null)
+        {
+            parentObject = gameObject.transform.parent.gameObject;
+            hasParent = true;
+        }
     }
     void FixedUpdate()
     {
@@ -34,13 +39,17 @@ public class PushableBox : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
-            {
-                setOff();
-            }
+        if(Input.GetKeyDown(KeyCode.F) && ignoreFrame == false)
+        {
+            setOff();
+            Debug.Log("Stopped moving box: keypress");
+        }
+        ignoreFrame = false;
     }
     public void setPush()
     {
+        Debug.Log("Started pushing box.");
+        ignoreFrame = true;
         if(noXMovement == false && noZmovement == false)
         {
             float distanceX = Vector3.Distance(playerObject.transform.position, anchorX.transform.position);
@@ -87,7 +96,14 @@ public class PushableBox : MonoBehaviour
     }
     void setOff()
     {
-        gameObject.transform.parent = parentObject.transform;
+        if(hasParent == true)
+        {
+            gameObject.transform.parent = parentObject.transform;
+        }
+        else
+        {
+            gameObject.transform.parent = null;
+        }
         beingPushedByX = false; beingPushedByZ = false;
         pbti.enabled = true;
         gameObject.layer = LayerMask.NameToLayer("Default");
@@ -98,6 +114,12 @@ public class PushableBox : MonoBehaviour
         if(other.tag == "InteractArea")
         {
             setOff();
+            Debug.Log("Stopped moving box: trigger");
         }
+    }
+    void OnCollisionEnter(Collision other)
+    {
+        setOff();
+        Debug.Log("Stopped moving box: collision");
     }
 }

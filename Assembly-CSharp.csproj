@@ -57,26 +57,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Actions\PressButtonToInteract_Object.cs" />
+    <Compile Include="Assets\Scripts\CheckPoint\CheckpointLevel1.cs" />
     <Compile Include="Assets\Scripts\Spotlight\SpotlightScript.cs" />
     <Compile Include="Assets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
     <Compile Include="Assets\InputSystem\StarterAssetsInputs.cs" />
     <Compile Include="Assets\Scripts\Hiding\Hide_Opener.cs" />
     <Compile Include="Assets\Scripts\WaterBoxes\WterBox.cs" />
     <Compile Include="Assets\Scripts\LeBoxes\CarriableBoxGM.cs" />
+    <Compile Include="Assets\Scripts\Spotlight\SpotlightMovement.cs" />
     <Compile Include="Assets\Scripts\DebugFunction.cs" />
+    <Compile Include="Assets\InputSystem\Player\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\LeBoxes\PushableBoxDiagonal.cs" />
     <Compile Include="Assets\Scripts\_Basics\EventUponNamedObjectTriggerExit.cs" />
     <Compile Include="Assets\Scripts\Actions\PressButtonToInteract.cs" />
     <Compile Include="Assets\Scripts\LeBoxes\CarriableBoxLocation.cs" />
     <Compile Include="Assets\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
+    <Compile Include="Assets\Scripts\FloatingText\TriggerText.cs" />
     <Compile Include="Assets\Scripts\Hiding\Hide_Object.cs" />
     <Compile Include="Assets\Scripts\_Basics\CallEvenUponCollisionWithTag.cs" />
     <Compile Include="Assets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
     <Compile Include="Assets\Scripts\UI\Volume.cs" />
+    <Compile Include="Assets\Scripts\DutosDeÁgua\AguaDoDuto.cs" />
+    <Compile Include="Assets\Scripts\FloatingText\FloatingText.cs" />
     <Compile Include="Assets\Scripts\_Basics\CallEventUponTriggerEntry.cs" />
     <Compile Include="Assets\Scripts\UI\IsEnabled.cs" />
     <Compile Include="Assets\Scripts\UI\GameOverMenu.cs" />
     <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
+    <Compile Include="Assets\Scripts\DutosDeÁgua\DutoDeAgua.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerLook.cs" />
     <Compile Include="Assets\Scripts\_Basics\CallEventUponTriggerExit.cs" />
     <Compile Include="Assets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
     <Compile Include="Assets\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
@@ -84,6 +92,7 @@
     <Compile Include="Assets\Scripts\UI\InteractText.cs" />
     <Compile Include="Assets\Scripts\BasicRigidBodyPush.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\CheckPoint\CheckPoints.cs" />
     <Compile Include="Assets\Scripts\UI\AtivarDesativar.cs" />
     <Compile Include="Assets\Scripts\UI\CursorScript.cs" />
     <Compile Include="Assets\Scripts\LeBoxes\PushableBox.cs" />
@@ -91,10 +100,13 @@
     <Compile Include="Assets\Scripts\UI\NoMouseUI.cs" />
     <Compile Include="Assets\Scripts\GameOver\GameOver.cs" />
     <Compile Include="Assets\Scripts\UI\PlayButton.cs" />
+    <Compile Include="Assets\Scripts\DutosDeÁgua\WaterForce.cs" />
     <Compile Include="Assets\Scripts\ThirdPersonController.cs" />
     <Compile Include="Assets\Scripts\Hiding\Hide_Character.cs" />
     <Compile Include="Assets\Scripts\_Basics\EventsAtStart.cs" />
+    <Compile Include="Assets\Scripts\Player\InputManager.cs" />
     <Compile Include="Assets\Scripts\Player\Crouch.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
