@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private float _jump;
     [SerializeField]
     private float _gravity = -9.81f;
+    [SerializeField]
+    private float _groundedTimer;
 
     [Header("Camera")]
     [SerializeField]
@@ -25,13 +27,14 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController _controller;
     private float _speed;
     private Vector3 _velocity;
-    private bool _isGrounded;
+    private bool _controllerGrounded;
     private bool _sprinting;
     private bool _lerpCrouch;
     private bool _crouching;
     private float _crouchTimer;
     private float _turnSmoothTime = 0.1f;
     private float _turnSmoothVelocity;
+    private float _groundedCurrentTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +51,16 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _isGrounded = _controller.isGrounded;
+        _controllerGrounded = _controller.isGrounded;
+
+        if(_controllerGrounded)
+        {
+            _groundedCurrentTimer = _groundedTimer;
+        }
+        else
+        {
+            _groundedCurrentTimer -= Time.deltaTime;
+        }
 
         if (_sprinting && !_crouching)
         {
@@ -104,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
 
         _velocity.y += _gravity * Time.deltaTime;
 
-        if (_isGrounded && _velocity.y < 0)
+        if (_groundedCurrentTimer >= 0 && _velocity.y < 0)
         {
             _velocity.y = -2f;
         }
@@ -133,7 +145,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if (_isGrounded)
+        if (_groundedCurrentTimer >= 0)
         {
             _velocity.y = Mathf.Sqrt(_jump * -3.0f * _gravity);
         }
