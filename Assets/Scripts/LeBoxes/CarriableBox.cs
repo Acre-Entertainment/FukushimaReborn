@@ -8,7 +8,7 @@ public class CarriableBox : MonoBehaviour
     PressButtonToInteract pbti;
     //MeshCollider mc;
     Rigidbody rb;
-    public bool beingCarried;
+    public bool beingCarried, frameBuffer;
     CarriableBoxGM cbgm;
     public bool inPosition;
     public GameObject potencial;
@@ -23,10 +23,12 @@ public class CarriableBox : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(KeyCode.F) && beingCarried == true)
         {
             setOff();
+            Debug.Log("setOff");
         }
+        frameBuffer = false;
     }
     void FixedUpdate()
     {
@@ -38,26 +40,37 @@ public class CarriableBox : MonoBehaviour
     }
     public void setOn()
     {
-        beingCarried = true;
-        pbti.enabled = false;
-        //mc.enabled = false;
-        rb.useGravity = false;
-        gameObject.tag = "Carried";
-        cbgm.activate();
+        if(frameBuffer == false && beingCarried == false)
+        {
+            beingCarried = true;
+            pbti.isBusy = true;
+            pbti.hasEvent = false;
+            rb.useGravity = false;
+            gameObject.tag = "Carried";
+            cbgm.activate();
+
+            frameBuffer = true;
+            Debug.Log("on");
+        }
     }
     void setOff()
     {
-        beingCarried = false;
-        pbti.enabled = true;
-        //mc.enabled = true;
-        rb.useGravity = true;
-        gameObject.tag = "Event";
-        cbgm.deactivate();
-        if(inPosition == true)
+        if(frameBuffer == false && beingCarried == true)
         {
-            gameObject.transform.position = potencial.transform.position;
-            Destroy(potencial);
-            this.enabled = false;
+            beingCarried = false;
+            pbti.isBusy = false;
+            rb.useGravity = true;
+            gameObject.tag = "Event";
+            cbgm.deactivate();
+            if(inPosition == true)
+            {
+                gameObject.transform.position = potencial.transform.position;
+                Destroy(potencial);
+                this.enabled = false;
+            }
+
+            frameBuffer = true;
+            Debug.Log("off");
         }
     }
     void OnCollisionEnter(Collision other)

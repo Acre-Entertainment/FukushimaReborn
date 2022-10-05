@@ -8,13 +8,14 @@ public class PressButtonToInteract : MonoBehaviour
     PressButtonToInteract_Object pbo;
     public bool hasPressed;
     public bool hasEvent;
+    public bool isBusy;
     public GameObject interactingGO;
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.F))
         {
-            if(hasPressed == false && hasEvent == true)
+            if(hasPressed == false && hasEvent == true && isBusy == false)
             {
                 pbo.Event.Invoke();
             }
