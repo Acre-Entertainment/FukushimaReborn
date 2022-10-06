@@ -8,14 +8,14 @@ public class PressButtonToInteract : MonoBehaviour
     PressButtonToInteract_Object pbo;
     public bool hasPressed;
     public bool hasEvent;
+    public bool isBusy;
     public GameObject interactingGO;
-    [SerializeField] TMPro.TextMeshProUGUI selectedText;
 
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.F))
         {
-            if(hasPressed == false && hasEvent == true)
+            if(hasPressed == false && hasEvent == true && isBusy == false)
             {
                 pbo.Event.Invoke();
             }
@@ -42,19 +42,6 @@ public class PressButtonToInteract : MonoBehaviour
             interactingGO = other.gameObject;
             pbo = interactingGO.GetComponent<PressButtonToInteract_Object>();
             hasEvent = true;
-
-            if(other.GetComponent<InteractText>() != null)
-            {
-                selectedText.SetText(other.GetComponent<InteractText>().text);
-            }
-            else
-            {
-                selectedText.SetText("[F]");
-            }
-        }
-        else
-        {
-            selectedText.SetText("");
         }
     }
     void OnTriggerStay(Collider other)
@@ -67,15 +54,6 @@ public class PressButtonToInteract : MonoBehaviour
                 pbo = interactingGO.GetComponent<PressButtonToInteract_Object>();
                 hasEvent = true;
             }
-
-            if (other.GetComponent<InteractText>() != null)
-            {
-                selectedText.SetText(other.GetComponent<InteractText>().text);
-            }
-            else
-            {
-                selectedText.SetText("[F]");
-            }
         }
     }
     void OnTriggerExit(Collider other)
@@ -83,7 +61,6 @@ public class PressButtonToInteract : MonoBehaviour
         if(other.gameObject.tag == "Event")
         {
             hasEvent = false;
-            selectedText.SetText("");
         }
     }
 }
