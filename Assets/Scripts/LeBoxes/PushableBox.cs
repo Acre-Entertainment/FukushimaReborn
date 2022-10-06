@@ -42,13 +42,13 @@ public class PushableBox : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F) && ignoreFrame == false)
         {
             setOff();
-            Debug.Log("Stopped moving box: keypress");
+            //Debug.Log("Stopped moving box: keypress");
         }
         ignoreFrame = false;
     }
     public void setPush()
     {
-        Debug.Log("Started pushing box.");
+        //Debug.Log("Started pushing box.");
         ignoreFrame = true;
         if(noXMovement == false && noZmovement == false)
         {
@@ -114,12 +114,12 @@ public class PushableBox : MonoBehaviour
         if(other.tag == "InteractArea")
         {
             setOff();
-            Debug.Log("Stopped moving box: trigger");
+            //Debug.Log("Stopped moving box: trigger");
         }
     }
     void OnCollisionEnter(Collision other)
     {
         setOff();
-        Debug.Log("Stopped moving box: collision");
+        //Debug.Log("Stopped moving box: collision");
     }
 }

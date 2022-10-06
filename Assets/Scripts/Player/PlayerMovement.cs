@@ -36,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
     private float _turnSmoothVelocity;
     private float _groundedCurrentTimer;
 
+    public static bool custscene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        custscene = false;
     }
 
     // Update is called once per frame
@@ -62,17 +66,21 @@ public class PlayerMovement : MonoBehaviour
             _groundedCurrentTimer -= Time.deltaTime;
         }
 
-        if (_sprinting && !_crouching)
+        if (_sprinting && !_crouching && !custscene)
         {
             _speed = _runSpeed;
         }
-        else if (!_sprinting && !_crouching)
+        else if (!_sprinting && !_crouching && !custscene)
         {
             _speed = _walkSpeed;
         }
-        else if(!_sprinting && _crouching)
+        else if(!_sprinting && _crouching && !custscene)
         {
             _speed = _crouchSpeed;
+        }
+        else if (custscene)
+        {
+            _speed = _walkSpeed;
         }
 
         if (_lerpCrouch)
@@ -83,7 +91,10 @@ public class PlayerMovement : MonoBehaviour
 
             if (_crouching)
             {
-                _controller.height = Mathf.Lerp(_controller.height, 1, p);
+                if (!custscene)
+                {
+                    _controller.height = Mathf.Lerp(_controller.height, 1, p);
+                }
             }
             else
             {
@@ -95,6 +106,11 @@ public class PlayerMovement : MonoBehaviour
                 _lerpCrouch = false;
                 _crouchTimer = 0;
             }
+        }
+
+        if(custscene && _crouching)
+        {
+            Crouch();
         }
     }
 

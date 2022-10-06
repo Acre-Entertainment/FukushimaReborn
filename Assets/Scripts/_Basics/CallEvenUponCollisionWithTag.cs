@@ -7,8 +7,9 @@ public class CallEvenUponCollisionWithTag : MonoBehaviour
 {
     public string tag;
     public UnityEvent unityEvent;
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionStay(Collision collision)
     {
+        Debug.Log("collision" + gameObject.name);
         if(collision.gameObject.tag == tag)
         {
             unityEvent.Invoke();
