@@ -8,6 +8,7 @@ public class PushableBox : MonoBehaviour
     PressButtonToInteract pbti;
     //MeshCollider ms;
     public GameObject anchorX, anchorXminor, anchorZ, anchorZminor;
+    //public float distanceFromPlayer;
     public bool noXMovement, noZmovement;
     public bool beingPushedByX, beingPushedByZ;
     float constantX, constantZ;
