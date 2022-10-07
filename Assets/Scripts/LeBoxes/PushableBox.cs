@@ -33,8 +33,16 @@ public class PushableBox : MonoBehaviour
             currentPlayerLocation = playerObject.transform.position;
             movement = currentPlayerLocation - lastPlayerLocation;
             newPosition = gameObject.transform.position + movement;
-            if(beingPushedByX == false){gameObject.transform.position = new Vector3(constantX, gameObject.transform.position.y, newPosition.z);}
-            if(beingPushedByZ == false){gameObject.transform.position = new Vector3(newPosition.x, gameObject.transform.position.y, constantZ);}
+            if(beingPushedByX == false)
+            {
+                gameObject.transform.position = new Vector3(constantX, gameObject.transform.position.y, newPosition.z);
+                playerObject.transform.position = new Vector3(constantX, playerObject.transform.position.y, playerObject.transform.position.z);
+            }
+            if(beingPushedByZ == false)
+            {
+                gameObject.transform.position = new Vector3(newPosition.x, gameObject.transform.position.y, constantZ);
+                playerObject.transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, constantZ);
+            }
         }
     }
     void Update()
