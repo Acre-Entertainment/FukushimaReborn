@@ -84,6 +84,7 @@ public class PressButtonToInteract : MonoBehaviour
         if(other.gameObject.tag == "Event")
         {
             hasEvent = false;
+            selectedText.SetText("");
         }
     }
 }
