@@ -75,6 +75,6 @@ public class CarriableBox : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-        setOff();
+        //setOff();
     }
 }

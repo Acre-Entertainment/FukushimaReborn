@@ -8,9 +8,10 @@ public class PushableBox : MonoBehaviour
     PressButtonToInteract pbti;
     //MeshCollider ms;
     public GameObject anchorX, anchorXminor, anchorZ, anchorZminor;
-    //public float distanceFromPlayer;
+    public float distanceFromPlayer, XOffset, ZOffset;
+    float realDistanceFromPlayer;
     public bool noXMovement, noZmovement;
-    public bool beingPushedByX, beingPushedByZ;
+    bool beingPushedByX, beingPushedByZ;
     float constantX, constantZ;
     int playerFixedRotation;
     Vector3 lastPlayerLocation, currentPlayerLocation, movement, newPosition;
@@ -30,21 +31,15 @@ public class PushableBox : MonoBehaviour
     {
         if(beingPushedByX == true || beingPushedByZ == true)
         {
-            lastPlayerLocation = currentPlayerLocation;
-            currentPlayerLocation = playerObject.transform.position;
-            movement = currentPlayerLocation - lastPlayerLocation;
-            newPosition = gameObject.transform.position + movement;
             if(beingPushedByX == false)
             {
-                gameObject.transform.position = new Vector3(constantX, gameObject.transform.position.y, newPosition.z);
-                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(constantX, playerObject.transform.position.y, playerObject.transform.position.z);
-                //Debug.Log(constantX);
+                gameObject.transform.position = new Vector3(constantX, gameObject.transform.position.y, playerObject.transform.position.z + realDistanceFromPlayer - ZOffset);
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(constantX + XOffset, playerObject.transform.position.y, playerObject.transform.position.z);
             }
             if(beingPushedByZ == false)
             {
-                gameObject.transform.position = new Vector3(newPosition.x, gameObject.transform.position.y, constantZ);
-                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, constantZ);
-                //Debug.Log(constantZ);
+                gameObject.transform.position = new Vector3(playerObject.transform.position.x + realDistanceFromPlayer - XOffset, gameObject.transform.position.y, constantZ);
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, constantZ + ZOffset);
             }
         }
     }
@@ -71,10 +66,10 @@ public class PushableBox : MonoBehaviour
 
                 float biggestDistance = Mathf.Max(distanceX, distanceXminor, distanceZ, distanceZminor);
 
-                if(biggestDistance == distanceX){beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z;}
-                if(biggestDistance == distanceXminor){beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z;}
-                if(biggestDistance == distanceZ){beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x;}
-                if(biggestDistance == distanceZminor){beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; playerFixedRotation = 0;}
+                if(biggestDistance == distanceX){beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = distanceFromPlayer;}
+                if(biggestDistance == distanceXminor){beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = -distanceFromPlayer;}
+                if(biggestDistance == distanceZ){beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; realDistanceFromPlayer = distanceFromPlayer;}
+                if(biggestDistance == distanceZminor){beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; playerFixedRotation = 0; realDistanceFromPlayer = -distanceFromPlayer;}
             }
             if(noXMovement == true && noZmovement == false)
             {
@@ -101,8 +96,18 @@ public class PushableBox : MonoBehaviour
                 Debug.Log("ERROR: Both movements blocked");
             }
 
-            lastPlayerLocation = playerObject.transform.position;
-            currentPlayerLocation = playerObject.transform.position;
+            if(beingPushedByX == false)
+            {
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(gameObject.transform.position.x + XOffset + realDistanceFromPlayer + ZOffset, playerObject.transform.position.y, gameObject.transform.position.z + realDistanceFromPlayer + ZOffset);
+                Debug.Log("X");
+            }
+            if(beingPushedByZ == false)
+            {
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(gameObject.transform.position.x + XOffset + realDistanceFromPlayer, playerObject.transform.position.y, gameObject.transform.position.z + realDistanceFromPlayer + ZOffset);
+                Debug.Log("Z");
+                Debug.Log("BOX POSITION IS " + (gameObject.transform.position.x + XOffset) + " AND DISTANCEFROMPLAYER IS " + realDistanceFromPlayer + "THUS OBVIOUSLY PLAYER SHOULD BE AT " + (gameObject.transform.position.x + XOffset + realDistanceFromPlayer));
+            }
+
             pbti.enabled = false;
             gameObject.layer = LayerMask.NameToLayer("Ignore Character");
             ignoreFrame = true;
