@@ -32,6 +32,26 @@ public class PushableBox : MonoBehaviour
     }
     void FixedUpdate()
     {
+        //if (beingPushedByX == true || beingPushedByZ == true)
+        //{
+        //    if (beingPushedByX == false)
+        //    {
+        //        gameObject.transform.position = new Vector3(constantX, gameObject.transform.position.y, playerObject.transform.position.z + realDistanceFromPlayer - ZOffset);
+        //        cc.enabled = false;
+        //        playerObject.GetComponent<CharacterController>().transform.position = new Vector3(constantX + XOffset, playerObject.transform.position.y, playerObject.transform.position.z);
+        //        cc.enabled = true;
+        //    }
+        //    if (beingPushedByZ == false)
+        //    {
+        //        gameObject.transform.position = new Vector3(playerObject.transform.position.x + realDistanceFromPlayer - XOffset, gameObject.transform.position.y, constantZ);
+        //        cc.enabled = false;
+        //        playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, constantZ + ZOffset);
+        //        cc.enabled = true;
+        //    }
+        //}
+    }
+    void Update()
+    {
         if (beingPushedByX == true || beingPushedByZ == true)
         {
             if (beingPushedByX == false)
@@ -49,9 +69,6 @@ public class PushableBox : MonoBehaviour
                 cc.enabled = true;
             }
         }
-    }
-    void Update()
-    {
         if (Input.GetKeyDown(KeyCode.F) && (beingPushedByX == true || beingPushedByZ == true))
         {
             setOff();
@@ -60,10 +77,10 @@ public class PushableBox : MonoBehaviour
     }
     public void setPush()
     {
-        Debug.Log("setPush");
+        //Debug.Log("setPush");
         if (ignoreFrame == false && beingPushedByX == false && beingPushedByZ == false)
         {
-            Debug.Log("setPushTrue");
+            //Debug.Log("setPushTrue");
             ignoreFrame = true;
             if (noXMovement == false && noZmovement == false)
             {
@@ -124,10 +141,10 @@ public class PushableBox : MonoBehaviour
     }
     void setOff()
     {
-        Debug.Log("setOff");
+        //Debug.Log("setOff");
         if (ignoreFrame == false)
         {
-            Debug.Log("setOffTrue");
+            //Debug.Log("setOffTrue");
             ignoreFrame = true;
             if (hasParent == true)
             {
