@@ -387,8 +387,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 2
-  m_Height: 3
+  m_Radius: 1.5
+  m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2065624504530942400
@@ -405,6 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasPressed: 0
   hasEvent: 0
+  isBusy: 0
   interactingGO: {fileID: 0}
   selectedText: {fileID: 0}
 --- !u!1 &2065624504551728988
@@ -543,7 +544,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.6
+  m_Height: 2.2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
