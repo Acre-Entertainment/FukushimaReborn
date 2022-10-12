@@ -8,7 +8,6 @@ public class PressButtonToInteract : MonoBehaviour
     PressButtonToInteract_Object pbo;
     public bool hasPressed;
     public bool hasEvent;
-    public bool isBusy;
     public GameObject interactingGO;
     [SerializeField] TMPro.TextMeshProUGUI selectedText;
 
@@ -16,7 +15,7 @@ public class PressButtonToInteract : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F))
         {
-            if(hasPressed == false && hasEvent == true && isBusy == false)
+            if(hasPressed == false && hasEvent == true)
             {
                 pbo.Event.Invoke();
             }

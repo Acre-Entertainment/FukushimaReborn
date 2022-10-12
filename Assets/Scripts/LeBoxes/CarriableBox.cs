@@ -43,7 +43,7 @@ public class CarriableBox : MonoBehaviour
         if(frameBuffer == false && beingCarried == false)
         {
             beingCarried = true;
-            pbti.isBusy = true;
+            pbti.enabled = true;
             pbti.hasEvent = false;
             rb.useGravity = false;
             gameObject.tag = "Carried";
@@ -58,7 +58,7 @@ public class CarriableBox : MonoBehaviour
         if(frameBuffer == false && beingCarried == true)
         {
             beingCarried = false;
-            pbti.isBusy = false;
+            pbti.enabled = false;
             rb.useGravity = true;
             gameObject.tag = "Event";
             cbgm.deactivate();

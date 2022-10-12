@@ -10,6 +10,8 @@ public class Crouch : MonoBehaviour
     CharacterController ccon;
     CapsuleCollider ccol;
     public bool isCrouched;
+    bool ignoreFrame;
+    public GameObject crouchInspector;
 
     PressButtonToInteract pressButtonToInteract;
 
@@ -39,8 +41,10 @@ public class Crouch : MonoBehaviour
 
                 pressButtonToInteract.enabled = false;
                 isCrouched = true;
+
+                ignoreFrame = true;
             }
-            else
+            if (isCrouched == true && crouchInspector.GetComponent<CrouchInspector>().spaceIsOccupied == false && ignoreFrame == false)
             {
                 ccon.height = startingConHeight;
                 ccon.center = new Vector3(0, startingConAltitude, 0);
@@ -51,6 +55,7 @@ public class Crouch : MonoBehaviour
                 pressButtonToInteract.enabled = true;
                 isCrouched = false;
             }
+            ignoreFrame = false;
         }
     }
 }
