@@ -11,6 +11,8 @@ public class Crouch : MonoBehaviour
     CapsuleCollider ccol;
     public bool isCrouched;
 
+    private PressButtonToInteract pbti;
+
     void Start()
     {
         ccon = gameObject.GetComponent<CharacterController>();
@@ -20,12 +22,14 @@ public class Crouch : MonoBehaviour
         ccol = gameObject.GetComponent<CapsuleCollider>();
         startingColHeight = ccol.height;
         startingColAltitude = ccol.center.y;
+
+        pbti = GameObject.FindGameObjectsWithTag("InteractArea").GetComponent<PressButtonToInteract>();
     }
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.C))
         {
-            if(isCrouched == false)
+            if(isCrouched == false && ptbi.enabled = true)
             {
                 ccon.height = controllerCrouchHeight;
                 ccon.center = new Vector3(0, controllerCrouchAltitude, 0);
@@ -33,6 +37,7 @@ public class Crouch : MonoBehaviour
                 ccol.height = colliderCrouchHeight;
                 ccol.center = new Vector3(0, colliderCrouchAltitude, 0);
 
+                ptbi.enabled = false;
                 isCrouched = true;
             }
             else
@@ -43,6 +48,7 @@ public class Crouch : MonoBehaviour
                 ccol.height = startingColHeight;
                 ccol.center = new Vector3(0, startingColAltitude, 0);
 
+                ptbi.enabled = true;
                 isCrouched = false;
             }
         }
