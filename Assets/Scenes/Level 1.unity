@@ -55843,6 +55843,16 @@ PrefabInstance:
       propertyPath: selectedText
       value: 
       objectReference: {fileID: 238070865}
+    - target: {fileID: 4704671033516014916, guid: 62978f37441c6e947b481a303ee12c62,
+        type: 3}
+      propertyPath: colliderCrouchAltitude
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4704671033516014916, guid: 62978f37441c6e947b481a303ee12c62,
+        type: 3}
+      propertyPath: controllerCrouchAltitude
+      value: -0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62978f37441c6e947b481a303ee12c62, type: 3}
 --- !u!1001 &2696291644750553497
