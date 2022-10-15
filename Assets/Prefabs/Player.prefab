@@ -451,7 +451,7 @@ GameObject:
   - component: {fileID: 2065624504530942401}
   - component: {fileID: 2065624504530942400}
   - component: {fileID: 1704067294}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: InteractArea
   m_TagString: InteractArea
   m_Icon: {fileID: 0}
@@ -606,7 +606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2065624504592689082}
   - component: {fileID: 2065624504592689081}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: TriggerCollision
   m_TagString: TriggerCollision
   m_Icon: {fileID: 0}
