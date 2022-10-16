@@ -12,6 +12,7 @@ public class CarriableBox : MonoBehaviour
     CarriableBoxGM cbgm;
     public bool inPosition;
     public GameObject potencial;
+    public float XPositionOffset, YPositionOffset, ZPositionOffset, XRotationOffset, YRotationOffset, ZRotationOffset;
 
     PlayerMovement pm;
     float startingJump;
@@ -38,8 +39,8 @@ public class CarriableBox : MonoBehaviour
 
         if (beingCarried == true)
         {
-            gameObject.transform.position = carryPoint.transform.position;
-            gameObject.transform.rotation = carryPoint.transform.rotation;
+            gameObject.transform.position = new Vector3(carryPoint.transform.position.x + XPositionOffset, carryPoint.transform.position.y + YPositionOffset, carryPoint.transform.position.z + ZPositionOffset);
+            gameObject.transform.eulerAngles = new Vector3(carryPoint.transform.eulerAngles.x + XRotationOffset, carryPoint.transform.eulerAngles.y + YRotationOffset, carryPoint.transform.eulerAngles.z + ZRotationOffset);
         }
     }
     public void setOn()
