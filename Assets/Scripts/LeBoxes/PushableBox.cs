@@ -18,6 +18,9 @@ public class PushableBox : MonoBehaviour
     bool hasParent, ignoreFrame;
     private CharacterController cc;
 
+    PlayerMovement pm;
+    float startingJump;
+
     void Start()
     {
         playerObject = GameObject.FindGameObjectWithTag("Player");
@@ -29,6 +32,8 @@ public class PushableBox : MonoBehaviour
             parentObject = gameObject.transform.parent.gameObject;
             hasParent = true;
         }
+        pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        startingJump = pm._jump;
     }
     void FixedUpdate()
     {
@@ -135,6 +140,7 @@ public class PushableBox : MonoBehaviour
             }
 
             pbti.enabled = false;
+            pm._jump = 0;
             gameObject.layer = LayerMask.NameToLayer("Ignore Character");
             ignoreFrame = true;
         }
@@ -156,6 +162,7 @@ public class PushableBox : MonoBehaviour
             }
             beingPushedByX = false; beingPushedByZ = false;
             pbti.enabled = true;
+            pm._jump = startingJump;
             gameObject.layer = LayerMask.NameToLayer("Default");
         }
     }

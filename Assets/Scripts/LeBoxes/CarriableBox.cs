@@ -13,6 +13,9 @@ public class CarriableBox : MonoBehaviour
     public bool inPosition;
     public GameObject potencial;
 
+    PlayerMovement pm;
+    float startingJump;
+
     void Start()
     {
         carryPoint = GameObject.FindGameObjectWithTag("CarryPoint");
@@ -20,6 +23,9 @@ public class CarriableBox : MonoBehaviour
         //mc = gameObject.GetComponent<MeshCollider>();
         rb = gameObject.GetComponent<Rigidbody>();
         cbgm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<CarriableBoxGM>();
+
+        pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        startingJump = pm._jump;
     }
     void Update()
     {
@@ -46,6 +52,7 @@ public class CarriableBox : MonoBehaviour
             pbti.enabled = true;
             pbti.hasEvent = false;
             rb.useGravity = false;
+            pm._jump = 0;
             gameObject.tag = "Carried";
             cbgm.activate();
 
@@ -60,6 +67,7 @@ public class CarriableBox : MonoBehaviour
             beingCarried = false;
             pbti.enabled = true;
             rb.useGravity = true;
+            pm._jump = startingJump;
             gameObject.tag = "Event";
             cbgm.deactivate();
             if(inPosition == true)
