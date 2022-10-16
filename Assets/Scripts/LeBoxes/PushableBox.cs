@@ -8,7 +8,7 @@ public class PushableBox : MonoBehaviour
     PressButtonToInteract pbti;
     //MeshCollider ms;
     public GameObject anchorX, anchorXminor, anchorZ, anchorZminor;
-    public float distanceFromPlayer, XOffset, ZOffset;
+    public float distanceFromPlayerX, distanceFromPlayerZ, XOffset, ZOffset;
     float realDistanceFromPlayer;
     public bool noXMovement, noZmovement;
     bool beingPushedByX, beingPushedByZ;
@@ -96,10 +96,10 @@ public class PushableBox : MonoBehaviour
 
                 float biggestDistance = Mathf.Max(distanceX, distanceXminor, distanceZ, distanceZminor);
 
-                if (biggestDistance == distanceX) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = distanceFromPlayer; }
-                if (biggestDistance == distanceXminor) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = -distanceFromPlayer; }
-                if (biggestDistance == distanceZ) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; realDistanceFromPlayer = distanceFromPlayer; }
-                if (biggestDistance == distanceZminor) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; playerFixedRotation = 0; realDistanceFromPlayer = -distanceFromPlayer; }
+                if (biggestDistance == distanceX) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = distanceFromPlayerX; }
+                if (biggestDistance == distanceXminor) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = -distanceFromPlayerX; }
+                if (biggestDistance == distanceZ) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; realDistanceFromPlayer = distanceFromPlayerZ; }
+                if (biggestDistance == distanceZminor) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; playerFixedRotation = 0; realDistanceFromPlayer = -distanceFromPlayerZ; }
             }
             if (noXMovement == true && noZmovement == false)
             {
