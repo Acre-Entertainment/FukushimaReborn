@@ -10,6 +10,7 @@ public class PushableBox : MonoBehaviour
     public GameObject anchorX, anchorXminor, anchorZ, anchorZminor;
     public float distanceFromPlayerX, distanceFromPlayerZ, XOffset, ZOffset;
     float realDistanceFromPlayer;
+    bool facingX, facingXMinor, facingZ, facingZMinor;
     public bool noXMovement, noZmovement;
     bool beingPushedByX, beingPushedByZ;
     float constantX, constantZ;
@@ -64,6 +65,14 @@ public class PushableBox : MonoBehaviour
                 gameObject.transform.position = new Vector3(constantX, gameObject.transform.position.y, playerObject.transform.position.z + realDistanceFromPlayer - ZOffset);
                 cc.enabled = false;
                 playerObject.GetComponent<CharacterController>().transform.position = new Vector3(constantX + XOffset, playerObject.transform.position.y, playerObject.transform.position.z);
+                if(facingZ == true)
+                {
+                    playerObject.GetComponent<CharacterController>().transform.eulerAngles = new Vector3(0, 0, 0);
+                }
+                if(facingZMinor == true)
+                {
+                    playerObject.GetComponent<CharacterController>().transform.eulerAngles = new Vector3(0, 180, 0);
+                }
                 cc.enabled = true;
             }
             if (beingPushedByZ == false)
@@ -71,6 +80,14 @@ public class PushableBox : MonoBehaviour
                 gameObject.transform.position = new Vector3(playerObject.transform.position.x + realDistanceFromPlayer - XOffset, gameObject.transform.position.y, constantZ);
                 cc.enabled = false;
                 playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, constantZ + ZOffset);
+                if (facingX == true)
+                {
+                    playerObject.GetComponent<CharacterController>().transform.eulerAngles = new Vector3(0, 90, 0);
+                }
+                if (facingXMinor == true)
+                {
+                    playerObject.GetComponent<CharacterController>().transform.eulerAngles = new Vector3(0, 270, 0);
+                }
                 cc.enabled = true;
             }
         }
@@ -96,10 +113,10 @@ public class PushableBox : MonoBehaviour
 
                 float biggestDistance = Mathf.Max(distanceX, distanceXminor, distanceZ, distanceZminor);
 
-                if (biggestDistance == distanceX) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = distanceFromPlayerX; }
-                if (biggestDistance == distanceXminor) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = -distanceFromPlayerX; }
-                if (biggestDistance == distanceZ) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; realDistanceFromPlayer = distanceFromPlayerZ; }
-                if (biggestDistance == distanceZminor) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; playerFixedRotation = 0; realDistanceFromPlayer = -distanceFromPlayerZ; }
+                if (biggestDistance == distanceX) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = distanceFromPlayerX; facingX = true;}
+                if (biggestDistance == distanceXminor) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = -distanceFromPlayerX; facingXMinor = true;}
+                if (biggestDistance == distanceZ) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; realDistanceFromPlayer = distanceFromPlayerZ; facingZ = true;}
+                if (biggestDistance == distanceZminor) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; playerFixedRotation = 0; realDistanceFromPlayer = -distanceFromPlayerZ; facingZMinor = true;}
             }
             if (noXMovement == true && noZmovement == false)
             {
@@ -160,7 +177,7 @@ public class PushableBox : MonoBehaviour
             {
                 gameObject.transform.parent = null;
             }
-            beingPushedByX = false; beingPushedByZ = false;
+            beingPushedByX = false; beingPushedByZ = false; facingX = false; facingXMinor = false; facingZ = false; facingZMinor = false;
             pbti.enabled = true;
             pm._jump = startingJump;
             gameObject.layer = LayerMask.NameToLayer("Default");
