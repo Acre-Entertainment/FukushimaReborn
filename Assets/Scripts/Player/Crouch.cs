@@ -6,9 +6,10 @@ public class Crouch : MonoBehaviour
 {
     public float colliderCrouchHeight, colliderCrouchAltitude;
     public float controllerCrouchHeight, controllerCrouchAltitude;
-    float startingConHeight, startingConAltitude, startingColHeight, startingColAltitude;
+    float startingConHeight, startingConAltitude, startingColHeight, startingColAltitude, startingJump;
     CharacterController ccon;
     CapsuleCollider ccol;
+    PlayerMovement pm;
     public bool isCrouched;
     bool ignoreFrame;
     public GameObject crouchInspector;
@@ -24,6 +25,9 @@ public class Crouch : MonoBehaviour
         ccol = gameObject.GetComponent<CapsuleCollider>();
         startingColHeight = ccol.height;
         startingColAltitude = ccol.center.y;
+
+        pm = gameObject.GetComponent<PlayerMovement>();
+        startingJump = pm._jump;
 
         pressButtonToInteract = GameObject.FindGameObjectWithTag("InteractArea").GetComponent<PressButtonToInteract>();
     }
@@ -41,6 +45,7 @@ public class Crouch : MonoBehaviour
 
                 pressButtonToInteract.enabled = false;
                 isCrouched = true;
+                pm._jump = 0;
 
                 ignoreFrame = true;
             }
@@ -54,6 +59,7 @@ public class Crouch : MonoBehaviour
 
                 pressButtonToInteract.enabled = true;
                 isCrouched = false;
+                pm._jump = startingJump;
             }
             ignoreFrame = false;
         }

@@ -13,8 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private float _runSpeed;
     [SerializeField]
     private float _crouchSpeed;
-    [SerializeField]
-    private float _jump;
+    public float _jump;
     [SerializeField]
     private float _gravity = -9.81f;
     [SerializeField]
