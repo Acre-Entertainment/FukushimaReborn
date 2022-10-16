@@ -35,10 +35,8 @@ public class CarriableBox : MonoBehaviour
             Debug.Log("setOff");
         }
         frameBuffer = false;
-    }
-    void FixedUpdate()
-    {
-        if(beingCarried == true)
+
+        if (beingCarried == true)
         {
             gameObject.transform.position = carryPoint.transform.position;
             gameObject.transform.rotation = carryPoint.transform.rotation;
