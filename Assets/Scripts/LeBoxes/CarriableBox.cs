@@ -33,7 +33,7 @@ public class CarriableBox : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F) && beingCarried == true)
         {
             setOff();
-            Debug.Log("setOff");
+            //Debug.Log("setOff");
         }
         frameBuffer = false;
 
@@ -56,7 +56,7 @@ public class CarriableBox : MonoBehaviour
             cbgm.activate();
 
             frameBuffer = true;
-            Debug.Log("on");
+            //Debug.Log("on");
         }
     }
     void setOff()
@@ -77,7 +77,7 @@ public class CarriableBox : MonoBehaviour
             }
 
             frameBuffer = true;
-            Debug.Log("off");
+            //Debug.Log("off");
         }
     }
     void OnCollisionEnter(Collision other)
