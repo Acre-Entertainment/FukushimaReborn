@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{8409B8F0-B133-7C50-8039-820C3AFA80DB}</ProjectGuid>
+    <ProjectGuid>{FB0D510D-CB09-3F3B-2A1F-64653916500E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -53,11 +53,11 @@
     <UnityVersion>2020.3.32f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Actions\PressButtonToInteract_Object.cs" />
-    <Compile Include="Assets\Scripts\CheckPoint\CheckpointLevel1.cs" />
+    <Compile Include="Assets\Scripts\CheckPoint\Level1\CheckpointLevel1.cs" />
     <Compile Include="Assets\Scripts\Spotlight\SpotlightScript.cs" />
     <Compile Include="Assets\Mobile\Scripts\VirtualInputs\UIVirtualButton.cs" />
     <Compile Include="Assets\InputSystem\StarterAssetsInputs.cs" />
@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\DebugFunction.cs" />
     <Compile Include="Assets\InputSystem\Player\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\LeBoxes\PushableBoxDiagonal.cs" />
+    <Compile Include="Assets\Scripts\CheckPoint\Level3\CheckPointsLevel3.cs" />
     <Compile Include="Assets\Scripts\_Basics\EventUponNamedObjectTriggerExit.cs" />
     <Compile Include="Assets\Scripts\Actions\PressButtonToInteract.cs" />
     <Compile Include="Assets\Scripts\LeBoxes\CarriableBoxLocation.cs" />
@@ -87,15 +88,18 @@
     <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\DutosDeÁgua\DutoDeAgua.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLook.cs" />
+    <Compile Include="Assets\Scripts\CheckPoint\Level2\CheckPointsLevel2.cs" />
     <Compile Include="Assets\Scripts\_Basics\CallEventUponTriggerExit.cs" />
     <Compile Include="Assets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
     <Compile Include="Assets\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
     <Compile Include="Assets\Scripts\LeBoxes\CarriableBox.cs" />
+    <Compile Include="Assets\Scripts\CheckPoint\Level2\CheckpointLevel2.cs" />
     <Compile Include="Assets\Scripts\UI\InteractText.cs" />
     <Compile Include="Assets\Scripts\BasicRigidBodyPush.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\Scripts\CheckPoint\CheckPoints.cs" />
+    <Compile Include="Assets\Scripts\CheckPoint\Level1\CheckPointsLevel1.cs" />
     <Compile Include="Assets\Scripts\UI\AtivarDesativar.cs" />
+    <Compile Include="Assets\Scripts\CheckPoint\Level3\CheckpointLevel3.cs" />
     <Compile Include="Assets\Scripts\UI\CursorScript.cs" />
     <Compile Include="Assets\Scripts\LeBoxes\PushableBox.cs" />
     <Compile Include="Assets\Scripts\_Basics\EventUponNamedObjectTriggerEnter.cs" />
@@ -109,6 +113,8 @@
     <Compile Include="Assets\Scripts\Player\InputManager.cs" />
     <Compile Include="Assets\Scripts\Player\Crouch.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\_Basics\IgnoreCollisionWith.cs" />
+    <Compile Include="Assets\Scripts\_Basics\ChangeTag.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -802,7 +808,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="InspectorGadgets.csproj">
-      <Project>{45D26B3F-3795-93B4-2D05-D80A72C21214}</Project>
+      <Project>{C0F73C7A-9322-B1FE-C4E1-9ECA55D9DCD1}</Project>
       <Name>InspectorGadgets</Name>
     </ProjectReference>
   </ItemGroup>

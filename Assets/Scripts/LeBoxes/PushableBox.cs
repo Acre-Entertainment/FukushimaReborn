@@ -145,7 +145,7 @@ public class PushableBox : MonoBehaviour
             ignoreFrame = true;
         }
     }
-    void setOff()
+    public void setOff()
     {
         //Debug.Log("setOff");
         if (ignoreFrame == false)
