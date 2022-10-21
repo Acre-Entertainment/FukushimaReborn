@@ -6,7 +6,7 @@ public class CarriableBox : MonoBehaviour
 {
     GameObject carryPoint;
     PressButtonToInteract pbti;
-    //MeshCollider mc;
+    MeshCollider mc;
     Rigidbody rb;
     public bool beingCarried, frameBuffer;
     CarriableBoxGM cbgm;
@@ -21,7 +21,7 @@ public class CarriableBox : MonoBehaviour
     {
         carryPoint = GameObject.FindGameObjectWithTag("CarryPoint");
         pbti = GameObject.FindGameObjectWithTag("InteractArea").GetComponent<PressButtonToInteract>();
-        //mc = gameObject.GetComponent<MeshCollider>();
+        mc = gameObject.GetComponent<MeshCollider>();
         rb = gameObject.GetComponent<Rigidbody>();
         cbgm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<CarriableBoxGM>();
 
@@ -39,8 +39,10 @@ public class CarriableBox : MonoBehaviour
 
         if (beingCarried == true)
         {
-            gameObject.transform.position = new Vector3(carryPoint.transform.position.x + XPositionOffset, carryPoint.transform.position.y + YPositionOffset, carryPoint.transform.position.z + ZPositionOffset);
-            gameObject.transform.eulerAngles = new Vector3(carryPoint.transform.eulerAngles.x + XRotationOffset, carryPoint.transform.eulerAngles.y + YRotationOffset, carryPoint.transform.eulerAngles.z + ZRotationOffset);
+            carryPoint.transform.localPosition = new Vector3(XPositionOffset, YPositionOffset, ZPositionOffset + 1.5f);
+            carryPoint.transform.localEulerAngles = new Vector3(XRotationOffset, YRotationOffset, ZPositionOffset);
+            gameObject.transform.position = new Vector3(carryPoint.transform.position.x, carryPoint.transform.position.y, carryPoint.transform.position.z);
+            gameObject.transform.eulerAngles = new Vector3(carryPoint.transform.eulerAngles.x, carryPoint.transform.eulerAngles.y, carryPoint.transform.eulerAngles.z);
         }
     }
     public void setOn()
@@ -53,6 +55,7 @@ public class CarriableBox : MonoBehaviour
             rb.useGravity = false;
             pm._jump = 0;
             gameObject.tag = "Carried";
+            mc.enabled = false;
             cbgm.activate();
 
             frameBuffer = true;
@@ -68,6 +71,7 @@ public class CarriableBox : MonoBehaviour
             rb.useGravity = true;
             pm._jump = startingJump;
             gameObject.tag = "Event";
+            mc.enabled = true;
             cbgm.deactivate();
             if(inPosition == true)
             {
