@@ -18,12 +18,18 @@ public class PlayerMovement : MonoBehaviour
     private float _gravity = -9.81f;
     [SerializeField]
     private float _groundedTimer;
+    [SerializeField]
+    private float _animationSmoothTime;
+    [SerializeField]
+    private float _animationPlayTransition;
 
     [Header("Camera")]
     [SerializeField]
     private Transform _camera;
 
     private CharacterController _controller;
+    private Animator _animator;
+
     private float _speed;
     private Vector3 _velocity;
     private bool _controllerGrounded;
@@ -34,6 +40,11 @@ public class PlayerMovement : MonoBehaviour
     private float _turnSmoothTime = 0.1f;
     private float _turnSmoothVelocity;
     private float _groundedCurrentTimer;
+    private int _moveXAnimator;
+    private int _moveZAnimator;
+    private int _jumpAnimation;
+    private Vector2 _currentAnimationBlendVector;
+    private Vector2 _animationVelocity;
 
     public static bool custscene;
 
@@ -42,11 +53,16 @@ public class PlayerMovement : MonoBehaviour
     {
         _controller = GetComponent<CharacterController>();
         _camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        _animator = GameObject.Find("Idle").GetComponent<Animator>();
 
         StartCoroutine(BugController());
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        _moveXAnimator = Animator.StringToHash("MoveX");
+        _moveZAnimator = Animator.StringToHash("MoveZ");
+        _jumpAnimation = Animator.StringToHash("Jump");
 
         custscene = false;
     }
@@ -67,10 +83,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (_sprinting && !_crouching && !custscene)
         {
+            _animator.SetBool("isWalking", false);
+            _animator.SetBool("isRunning", true);
             _speed = _runSpeed;
         }
         else if (!_sprinting && !_crouching && !custscene)
         {
+            _animator.SetBool("isWalking", true);
+            _animator.SetBool("isRunning", false);
             _speed = _walkSpeed;
         }
         else if(!_sprinting && _crouching && !custscene)
@@ -79,6 +99,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (custscene)
         {
+            _animator.SetBool("isWalking", true);
+            _animator.SetBool("isRunning", false);
             _speed = _walkSpeed;
         }
 
@@ -115,11 +137,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void Movement(Vector2 input)
     {
-        Vector3 movementDirection = new Vector3(input.x, 0, input.y).normalized;
+        _currentAnimationBlendVector = Vector2.SmoothDamp(_currentAnimationBlendVector, input, ref _animationVelocity, _animationSmoothTime);
+        Vector3 movementDirection = new Vector3(_currentAnimationBlendVector.x, 0, _currentAnimationBlendVector.y).normalized;
         movementDirection.x = input.x;
         movementDirection.z = input.y;
 
-        if(movementDirection.magnitude >= 0.1f)
+        if(movementDirection.magnitude >= 0.9f)
         {
             float targetAngle = Mathf.Atan2(movementDirection.x, movementDirection.z) * Mathf.Rad2Deg + _camera.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, _turnSmoothTime);
@@ -137,6 +160,9 @@ public class PlayerMovement : MonoBehaviour
         }
 
         _controller.Move(_velocity * Time.deltaTime);
+
+        _animator.SetFloat(_moveXAnimator, _currentAnimationBlendVector.x);
+        _animator.SetFloat(_moveZAnimator, _currentAnimationBlendVector.y);
     }
 
     public void Sprint()
@@ -162,8 +188,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_groundedCurrentTimer >= 0)
         {
-            _velocity.y = Mathf.Sqrt(_jump * -3.0f * _gravity);
+            _animator.CrossFade(_jumpAnimation, _animationPlayTransition);
+            StartCoroutine(FixAnimationJump());
         }
+    }
+
+    IEnumerator FixAnimationJump()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _velocity.y = Mathf.Sqrt(_jump * -3.0f * _gravity);
     }
 
     IEnumerator BugController()
