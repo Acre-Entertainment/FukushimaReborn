@@ -275,10 +275,10 @@ CapsuleCollider:
   m_Material: {fileID: 13400000, guid: a91900b1b4c1c9b42b81eff05a265531, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.95
+  m_Radius: 0.4
+  m_Height: 1.7
   m_Direction: 1
-  m_Center: {x: 0, y: 0.05, z: 0}
+  m_Center: {x: 0, y: -0.05, z: 0}
 --- !u!143 &2065624503657937181
 CharacterController:
   m_ObjectHideFlags: 0
@@ -290,13 +290,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.95
-  m_Radius: 0.5
+  m_Height: 1.7
+  m_Radius: 0.4
   m_SlopeLimit: 90
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.05, z: 0}
+  m_Center: {x: 0, y: -0.05, z: 0}
 --- !u!114 &2065624503657937182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,9 +355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b98a226db96e4441a6935c20cad8397, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderCrouchHeight: 0
+  colliderCrouchHeight: 0.85
   colliderCrouchAltitude: -0.5
-  controllerCrouchHeight: 0
+  controllerCrouchHeight: 0.85
   controllerCrouchAltitude: -0.5
   isCrouched: 0
   crouchInspector: {fileID: 1111682970}
@@ -385,7 +385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065624503911268829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0, z: 1.8}
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2065624503657938657}
@@ -450,7 +450,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.7, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2065624504592689083
 GameObject:
@@ -468,7 +468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2065624504592689082
 Transform:
   m_ObjectHideFlags: 0
