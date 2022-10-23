@@ -67,11 +67,11 @@ public class PushableBox : MonoBehaviour
                 playerObject.GetComponent<CharacterController>().transform.position = new Vector3(constantX + XOffset, playerObject.transform.position.y, playerObject.transform.position.z);
                 if(facingZ == true)
                 {
-                    playerObject.GetComponent<CharacterController>().transform.eulerAngles = new Vector3(0, 0, 0);
+                    playerObject.GetComponent<CharacterController>().transform.eulerAngles = new Vector3(0, 180, 0);
                 }
                 if(facingZMinor == true)
                 {
-                    playerObject.GetComponent<CharacterController>().transform.eulerAngles = new Vector3(0, 180, 0);
+                    playerObject.GetComponent<CharacterController>().transform.eulerAngles = new Vector3(0, 0, 0);
                 }
                 cc.enabled = true;
             }
@@ -82,11 +82,11 @@ public class PushableBox : MonoBehaviour
                 playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, constantZ + ZOffset);
                 if (facingX == true)
                 {
-                    playerObject.GetComponent<CharacterController>().transform.eulerAngles = new Vector3(0, 90, 0);
+                    playerObject.GetComponent<CharacterController>().transform.eulerAngles = new Vector3(0, 270, 0);
                 }
                 if (facingXMinor == true)
                 {
-                    playerObject.GetComponent<CharacterController>().transform.eulerAngles = new Vector3(0, 270, 0);
+                    playerObject.GetComponent<CharacterController>().transform.eulerAngles = new Vector3(0, 90, 0);
                 }
                 cc.enabled = true;
             }
@@ -111,32 +111,34 @@ public class PushableBox : MonoBehaviour
                 float distanceZ = Vector3.Distance(playerObject.transform.position, anchorZ.transform.position);
                 float distanceZminor = Vector3.Distance(playerObject.transform.position, anchorZminor.transform.position);
 
-                float biggestDistance = Mathf.Max(distanceX, distanceXminor, distanceZ, distanceZminor);
+                float smallestDistance = Mathf.Min(distanceX, distanceXminor, distanceZ, distanceZminor);
 
-                if (biggestDistance == distanceX) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = distanceFromPlayerX; facingX = true;}
-                if (biggestDistance == distanceXminor) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = -distanceFromPlayerX; facingXMinor = true;}
-                if (biggestDistance == distanceZ) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; realDistanceFromPlayer = distanceFromPlayerZ; facingZ = true;}
-                if (biggestDistance == distanceZminor) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; playerFixedRotation = 0; realDistanceFromPlayer = -distanceFromPlayerZ; facingZMinor = true;}
+                Debug.Log(smallestDistance);
+
+                if (smallestDistance == distanceX) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = -distanceFromPlayerX; facingX = true;}
+                if (smallestDistance == distanceXminor) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = distanceFromPlayerX; facingXMinor = true;}
+                if (smallestDistance == distanceZ) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; realDistanceFromPlayer = -distanceFromPlayerZ; facingZ = true;}
+                if (smallestDistance == distanceZminor) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; playerFixedRotation = 0; realDistanceFromPlayer = distanceFromPlayerZ; facingZMinor = true;}
             }
             if (noXMovement == true && noZmovement == false)
             {
                 float distanceZ = Vector3.Distance(playerObject.transform.position, anchorZ.transform.position);
                 float distanceZminor = Vector3.Distance(playerObject.transform.position, anchorZminor.transform.position);
 
-                float biggestDistance = Mathf.Max(distanceZ, distanceZminor);
+                float smallestDistance = Mathf.Max(distanceZ, distanceZminor);
 
-                if (biggestDistance == distanceZ) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; }
-                if (biggestDistance == distanceZminor) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; playerFixedRotation = 0; }
+                if (smallestDistance == distanceZ) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; }
+                if (smallestDistance == distanceZminor) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; playerFixedRotation = 0; }
             }
             if (noXMovement == false && noZmovement == true)
             {
                 float distanceX = Vector3.Distance(playerObject.transform.position, anchorX.transform.position);
                 float distanceXminor = Vector3.Distance(playerObject.transform.position, anchorXminor.transform.position);
 
-                float biggestDistance = Mathf.Max(distanceX, distanceXminor);
+                float smallestDistance = Mathf.Max(distanceX, distanceXminor);
 
-                if (biggestDistance == distanceX) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; }
-                if (biggestDistance == distanceXminor) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; }
+                if (smallestDistance == distanceX) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; }
+                if (smallestDistance == distanceXminor) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; }
             }
             if (noXMovement == true && noZmovement == true)
             {
