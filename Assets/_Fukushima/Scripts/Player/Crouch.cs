@@ -44,8 +44,8 @@ public class Crouch : MonoBehaviour
                 ccol.center = new Vector3(0, colliderCrouchAltitude, 0);
 
                 pressButtonToInteract.enabled = false;
-                isCrouched = true;
                 pm._jump = 0;
+                isCrouched = true;
 
                 ignoreFrame = true;
             }
@@ -58,8 +58,9 @@ public class Crouch : MonoBehaviour
                 ccol.center = new Vector3(0, startingColAltitude, 0);
 
                 pressButtonToInteract.enabled = true;
-                isCrouched = false;
                 pm._jump = startingJump;
+                isCrouched = false;
+                pm.crouchToIdle = true;
             }
             ignoreFrame = false;
         }

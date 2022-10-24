@@ -52,6 +52,13 @@ public class PlayerMovement : MonoBehaviour
     private int _layerCrouchedIndex;
     private int _layerCarryingIndex;
     private int _layerPuObjectIndex;
+    private float _layerWeightVelocity;
+    private float _currentCrouchedLayer;
+    private float _currentCarryingLayer;
+    private float _currentPuObjectLayer;
+    public bool crouchToIdle;
+    public bool carryingToIdle;
+    public bool pushAndPullToIdle;
 
     public static bool custscene;
 
@@ -93,20 +100,36 @@ public class PlayerMovement : MonoBehaviour
             _groundedCurrentTimer -= Time.deltaTime;
         }
 
+        _currentCrouchedLayer = _animator.GetLayerWeight(_layerCrouchedIndex);
+        _currentCarryingLayer = _animator.GetLayerWeight(_layerCarryingIndex);
+        _currentPuObjectLayer = _animator.GetLayerWeight(_layerPuObjectIndex);
+
+        if (crouchToIdle)
+        {
+            AnimationCrouchToIdle();
+            StartCoroutine(FixBugSmoothAnimation());
+        }
+
+        if (carryingToIdle)
+        {
+            AnimationCarryingToIdle();
+            StartCoroutine(FixBugSmoothAnimation());
+        }
+
+        if (pushAndPullToIdle)
+        {
+            AnimationPushAndPullToIdle();
+            StartCoroutine(FixBugSmoothAnimation());
+        }
+
         if (_sprinting && !_crouch.isCrouched && !_isCarrying && !_puObject && !custscene)
         {
-            _animator.SetLayerWeight(_layerCrouchedIndex, 0);
-            _animator.SetLayerWeight(_layerCarryingIndex, 0);
-            _animator.SetLayerWeight(_layerPuObjectIndex, 0);
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isRunning", true);
             _speed = _runSpeed;
         }
         else if (!_sprinting && !_crouch.isCrouched && !_isCarrying && !_puObject && !custscene)
         {
-            _animator.SetLayerWeight(_layerCrouchedIndex, 0);
-            _animator.SetLayerWeight(_layerCarryingIndex, 0);
-            _animator.SetLayerWeight(_layerPuObjectIndex, 0);
             _animator.SetBool("isWalking", true);
             _animator.SetBool("isRunning", false);
             _speed = _walkSpeed;
@@ -114,25 +137,19 @@ public class PlayerMovement : MonoBehaviour
         else if(!_sprinting && _crouch.isCrouched && !_isCarrying && !_puObject && !custscene)
         {
             _animator.SetBool("isRunning", false);
-            _animator.SetLayerWeight(_layerCrouchedIndex, 1);
-            _animator.SetLayerWeight(_layerCarryingIndex, 0);
-            _animator.SetLayerWeight(_layerPuObjectIndex, 0);
+            _animator.SetLayerWeight(_layerCrouchedIndex, Mathf.SmoothDamp(_currentCrouchedLayer, 1, ref _layerWeightVelocity, _animationSmoothTime));
             _speed = _crouchSpeed;
         }
         else if (!_sprinting && !_crouch.isCrouched && _isCarrying && !_puObject && !custscene)
         {
             _animator.SetBool("isRunning", false);
-            _animator.SetLayerWeight(_layerCrouchedIndex, 0);
-            _animator.SetLayerWeight(_layerCarryingIndex, 1);
-            _animator.SetLayerWeight(_layerPuObjectIndex, 0);
+            _animator.SetLayerWeight(_layerCarryingIndex, Mathf.SmoothDamp(_currentCarryingLayer, 1, ref _layerWeightVelocity, _animationSmoothTime));
             _speed = _carryingSpeed;
         }
         else if (!_sprinting && !_crouch.isCrouched && !_isCarrying && _puObject && !custscene)
         {
             _animator.SetBool("isRunning", false);
-            _animator.SetLayerWeight(_layerCrouchedIndex, 0);
-            _animator.SetLayerWeight(_layerCarryingIndex, 0);
-            _animator.SetLayerWeight(_layerPuObjectIndex, 1);
+            _animator.SetLayerWeight(_layerPuObjectIndex, Mathf.SmoothDamp(_currentPuObjectLayer, 1, ref _layerWeightVelocity, _animationSmoothTime));
             _speed = _pushAndPullSpeed;
         }
         else if (custscene)
@@ -212,6 +229,33 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void AnimationCrouchToIdle()
+    {
+        while(crouchToIdle)
+        {
+            _animator.SetLayerWeight(_layerCrouchedIndex, Mathf.SmoothDamp(_currentCrouchedLayer, 0, ref _layerWeightVelocity, _animationSmoothTime)); 
+            break;
+        }
+    }
+
+    public void AnimationCarryingToIdle()
+    {
+        while (carryingToIdle)
+        {
+            _animator.SetLayerWeight(_layerCarryingIndex, Mathf.SmoothDamp(_currentCarryingLayer, 0, ref _layerWeightVelocity, _animationSmoothTime));
+            break;
+        }
+    }
+
+    public void AnimationPushAndPullToIdle()
+    {
+        while (pushAndPullToIdle)
+        {
+            _animator.SetLayerWeight(_layerPuObjectIndex, Mathf.SmoothDamp(_currentPuObjectLayer, 0, ref _layerWeightVelocity, _animationSmoothTime));
+            break;
+        }
+    }
+
     IEnumerator FixAnimationJump()
     {
         yield return new WaitForSeconds(0.5f);
@@ -223,6 +267,14 @@ public class PlayerMovement : MonoBehaviour
         _controller.enabled = false;
         yield return new WaitForSeconds(0.1f);
         _controller.enabled = true;
+    }
+
+    IEnumerator FixBugSmoothAnimation()
+    {
+        yield return new WaitForSeconds(0.2f);
+        crouchToIdle = false;
+        carryingToIdle = false;
+        pushAndPullToIdle = false;
     }
 
     public void Impact(float force)

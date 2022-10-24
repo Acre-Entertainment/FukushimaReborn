@@ -72,6 +72,7 @@ public class CarriableBox : MonoBehaviour
             rb.useGravity = true;
             pm._jump = startingJump;
             pm._isCarrying = false;
+            pm.carryingToIdle = true;
             gameObject.tag = "Event";
             mc.enabled = true;
             cbgm.deactivate();

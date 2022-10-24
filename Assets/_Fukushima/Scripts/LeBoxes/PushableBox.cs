@@ -184,6 +184,7 @@ public class PushableBox : MonoBehaviour
             pbti.enabled = true;
             pm._jump = startingJump;
             pm._puObject = false;
+            pm.pushAndPullToIdle = true;
             gameObject.layer = LayerMask.NameToLayer("Default");
         }
     }
