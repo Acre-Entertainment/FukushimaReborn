@@ -37,7 +37,10 @@ public class InputManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        _movement.Movement(_onGround.Movimento.ReadValue<Vector2>());
+        if (_movement.canMove)
+        {
+            _movement.Movement(_onGround.Movimento.ReadValue<Vector2>());
+        }
     }
 
     //private void LateUpdate()

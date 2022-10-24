@@ -5,10 +5,23 @@ using UnityEngine;
 public class Hide_Character : MonoBehaviour
 {
     public GameObject opener;
+
+    PlayerMovement pm;
+
+    private void Start()
+    {
+        pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+    }
     public void Hide()
     {
-        //colokar animação
-        gameObject.SetActive(false);
+        pm.Hide();
+        StartCoroutine(HideAnimation());
+    }
+
+    IEnumerator HideAnimation()
+    {
+        yield return new WaitForSeconds(4f);
+        //gameObject.SetActive(false);
         opener.SetActive(true);
     }
 }

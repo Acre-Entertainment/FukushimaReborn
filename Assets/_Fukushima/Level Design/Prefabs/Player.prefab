@@ -334,6 +334,10 @@ MonoBehaviour:
   _camera: {fileID: 0}
   _isCarrying: 0
   _puObject: 0
+  crouchToIdle: 0
+  carryingToIdle: 0
+  pushAndPullToIdle: 0
+  timerTest: 0
 --- !u!114 &2065624503657937176
 MonoBehaviour:
   m_ObjectHideFlags: 0

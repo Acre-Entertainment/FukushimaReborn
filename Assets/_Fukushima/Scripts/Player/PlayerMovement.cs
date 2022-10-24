@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator _animator;
     private Crouch _crouch;
 
+    public bool canMove;
     private float _speed;
     private Vector3 _velocity;
     private bool _controllerGrounded;
@@ -47,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
     private int _moveXAnimator;
     private int _moveZAnimator;
     private int _jumpAnimation;
+    private int _hideAnimation;
+    private int _unhideAnimation;
     private Vector2 _currentAnimationBlendVector;
     private Vector2 _animationVelocity;
     private int _layerCrouchedIndex;
@@ -65,6 +68,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canMove = true;
+
         _controller = GetComponent<CharacterController>();
         _camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
         _animator = GameObject.Find("Idle").GetComponent<Animator>();
@@ -78,6 +83,8 @@ public class PlayerMovement : MonoBehaviour
         _moveXAnimator = Animator.StringToHash("MoveX");
         _moveZAnimator = Animator.StringToHash("MoveZ");
         _jumpAnimation = Animator.StringToHash("Jump");
+        _unhideAnimation = Animator.StringToHash("Unhide");
+        _hideAnimation = Animator.StringToHash("Hide");
 
         _layerCrouchedIndex = _animator.GetLayerIndex("Crouched");
         _layerCarryingIndex = _animator.GetLayerIndex("Carrying");
@@ -126,13 +133,28 @@ public class PlayerMovement : MonoBehaviour
         {
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isRunning", true);
-            _speed = _runSpeed;
+            while(_speed < _runSpeed)
+            {
+                _speed += 2.5f * Time.deltaTime;
+                break;
+            }
         }
         else if (!_sprinting && !_crouch.isCrouched && !_isCarrying && !_puObject && !custscene)
         {
             _animator.SetBool("isWalking", true);
             _animator.SetBool("isRunning", false);
-            _speed = _walkSpeed;
+            if(_speed > _walkSpeed)
+            {
+                while (_speed > _walkSpeed)
+                {
+                    _speed -= 2.5f * Time.deltaTime;
+                    break;
+                }
+            }
+            else
+            {
+                _speed = _walkSpeed;
+            }
         }
         else if(!_sprinting && _crouch.isCrouched && !_isCarrying && !_puObject && !custscene)
         {
@@ -227,6 +249,26 @@ public class PlayerMovement : MonoBehaviour
             _animator.CrossFade(_jumpAnimation, _animationPlayTransition);
             StartCoroutine(FixAnimationJump());
         }
+    }
+
+    public void Hide()
+    {
+        canMove = false;
+        _animator.CrossFade(_hideAnimation, _animationPlayTransition);
+        StartCoroutine(HideUnhideCanMove());
+    }
+
+    public void Unhide()
+    {
+        canMove = false;
+        _animator.CrossFade(_unhideAnimation, _animationPlayTransition);
+        StartCoroutine(HideUnhideCanMove());
+    }
+
+    IEnumerator HideUnhideCanMove()
+    {
+        yield return new WaitForSeconds(4f);
+        canMove = true;
     }
 
     public void AnimationCrouchToIdle()
