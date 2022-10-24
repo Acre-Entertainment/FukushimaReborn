@@ -54,6 +54,7 @@ public class CarriableBox : MonoBehaviour
             pbti.hasEvent = false;
             rb.useGravity = false;
             pm._jump = 0;
+            pm._isCarrying = true;
             gameObject.tag = "Carried";
             mc.enabled = false;
             cbgm.activate();
@@ -70,6 +71,7 @@ public class CarriableBox : MonoBehaviour
             pbti.enabled = true;
             rb.useGravity = true;
             pm._jump = startingJump;
+            pm._isCarrying = false;
             gameObject.tag = "Event";
             mc.enabled = true;
             cbgm.deactivate();

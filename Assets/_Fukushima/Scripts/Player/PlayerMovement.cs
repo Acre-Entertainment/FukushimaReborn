@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private float _runSpeed;
     [SerializeField]
     private float _crouchSpeed;
+    [SerializeField]
+    private float _carryingSpeed;
     public float _jump;
     [SerializeField]
     private float _gravity = -9.81f;
@@ -35,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _velocity;
     private bool _controllerGrounded;
     private bool _sprinting;
+    public bool _isCarrying;
     private float _turnSmoothTime = 0.1f;
     private float _turnSmoothVelocity;
     private float _groundedCurrentTimer;
@@ -44,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _currentAnimationBlendVector;
     private Vector2 _animationVelocity;
     private int _layerCrouchedIndex;
+    private int _layerCarryingIndex;
 
     public static bool custscene;
 
@@ -65,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
         _jumpAnimation = Animator.StringToHash("Jump");
 
         _layerCrouchedIndex = _animator.GetLayerIndex("Crouched");
+        _layerCarryingIndex = _animator.GetLayerIndex("Carrying");
 
         custscene = false;
     }
@@ -83,25 +88,35 @@ public class PlayerMovement : MonoBehaviour
             _groundedCurrentTimer -= Time.deltaTime;
         }
 
-        if (_sprinting && !_crouch.isCrouched && !custscene)
+        if (_sprinting && !_crouch.isCrouched && !_isCarrying && !custscene)
         {
             _animator.SetLayerWeight(_layerCrouchedIndex, 0);
+            _animator.SetLayerWeight(_layerCarryingIndex, 0);
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isRunning", true);
             _speed = _runSpeed;
         }
-        else if (!_sprinting && !_crouch.isCrouched && !custscene)
+        else if (!_sprinting && !_crouch.isCrouched && !_isCarrying && !custscene)
         {
             _animator.SetLayerWeight(_layerCrouchedIndex, 0);
+            _animator.SetLayerWeight(_layerCarryingIndex, 0);
             _animator.SetBool("isWalking", true);
             _animator.SetBool("isRunning", false);
             _speed = _walkSpeed;
         }
-        else if(!_sprinting && _crouch.isCrouched && !custscene)
+        else if(!_sprinting && _crouch.isCrouched && !_isCarrying && !custscene)
         {
             _animator.SetBool("isRunning", false);
-            _animator.SetLayerWeight(_layerCrouchedIndex, 100);
+            _animator.SetLayerWeight(_layerCrouchedIndex, 1);
+            _animator.SetLayerWeight(_layerCarryingIndex, 0);
             _speed = _crouchSpeed;
+        }
+        else if (!_sprinting && !_crouch.isCrouched && _isCarrying && !custscene)
+        {
+            _animator.SetBool("isRunning", false);
+            _animator.SetLayerWeight(_layerCrouchedIndex, 0);
+            _animator.SetLayerWeight(_layerCarryingIndex, 1);
+            _speed = _carryingSpeed;
         }
         else if (custscene)
         {
@@ -110,9 +125,17 @@ public class PlayerMovement : MonoBehaviour
             _speed = _walkSpeed;
         }
 
-        if(custscene && _crouch.isCrouched)
-        {
-            _animator.SetLayerWeight(_layerCrouchedIndex, 0);
+        if(custscene)
+       {
+            if (_crouch.isCrouched)
+            {
+                _crouch.isCrouched = false;
+            }
+
+            if (_isCarrying)
+            {
+                _isCarrying = false;
+            }
         }
     }
 
@@ -123,7 +146,7 @@ public class PlayerMovement : MonoBehaviour
         movementDirection.x = input.x;
         movementDirection.z = input.y;
 
-        if(movementDirection.magnitude >= 0.9f)
+        if(movementDirection.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(movementDirection.x, movementDirection.z) * Mathf.Rad2Deg + _camera.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, _turnSmoothTime);
