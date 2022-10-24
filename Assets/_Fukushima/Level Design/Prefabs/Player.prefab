@@ -327,8 +327,8 @@ MonoBehaviour:
   _jump: 1.3
   _gravity: -20
   _groundedTimer: 0.05
-  _animationSmoothTime: 0
-  _animationPlayTransition: 0
+  _animationSmoothTime: 0.1
+  _animationPlayTransition: 0.15
   _camera: {fileID: 0}
 --- !u!114 &2065624503657937176
 MonoBehaviour:
