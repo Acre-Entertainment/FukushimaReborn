@@ -160,6 +160,7 @@ public class PushableBox : MonoBehaviour
 
             pbti.enabled = false;
             pm._jump = 0;
+            pm._puObject = true;
             gameObject.layer = LayerMask.NameToLayer("Ignore Character");
             ignoreFrame = true;
         }
@@ -182,6 +183,7 @@ public class PushableBox : MonoBehaviour
             beingPushedByX = false; beingPushedByZ = false; facingX = false; facingXMinor = false; facingZ = false; facingZMinor = false;
             pbti.enabled = true;
             pm._jump = startingJump;
+            pm._puObject = false;
             gameObject.layer = LayerMask.NameToLayer("Default");
         }
     }

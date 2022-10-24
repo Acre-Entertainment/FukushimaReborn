@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     private float _crouchSpeed;
     [SerializeField]
     private float _carryingSpeed;
+    [SerializeField]
+    private float _pushAndPullSpeed;
     public float _jump;
     [SerializeField]
     private float _gravity = -9.81f;
@@ -38,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _controllerGrounded;
     private bool _sprinting;
     public bool _isCarrying;
+    public bool _puObject;
     private float _turnSmoothTime = 0.1f;
     private float _turnSmoothVelocity;
     private float _groundedCurrentTimer;
@@ -48,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _animationVelocity;
     private int _layerCrouchedIndex;
     private int _layerCarryingIndex;
+    private int _layerPuObjectIndex;
 
     public static bool custscene;
 
@@ -70,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
         _layerCrouchedIndex = _animator.GetLayerIndex("Crouched");
         _layerCarryingIndex = _animator.GetLayerIndex("Carrying");
+        _layerPuObjectIndex = _animator.GetLayerIndex("Pull/Push");
 
         custscene = false;
     }
@@ -88,35 +93,47 @@ public class PlayerMovement : MonoBehaviour
             _groundedCurrentTimer -= Time.deltaTime;
         }
 
-        if (_sprinting && !_crouch.isCrouched && !_isCarrying && !custscene)
+        if (_sprinting && !_crouch.isCrouched && !_isCarrying && !_puObject && !custscene)
         {
             _animator.SetLayerWeight(_layerCrouchedIndex, 0);
             _animator.SetLayerWeight(_layerCarryingIndex, 0);
+            _animator.SetLayerWeight(_layerPuObjectIndex, 0);
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isRunning", true);
             _speed = _runSpeed;
         }
-        else if (!_sprinting && !_crouch.isCrouched && !_isCarrying && !custscene)
+        else if (!_sprinting && !_crouch.isCrouched && !_isCarrying && !_puObject && !custscene)
         {
             _animator.SetLayerWeight(_layerCrouchedIndex, 0);
             _animator.SetLayerWeight(_layerCarryingIndex, 0);
+            _animator.SetLayerWeight(_layerPuObjectIndex, 0);
             _animator.SetBool("isWalking", true);
             _animator.SetBool("isRunning", false);
             _speed = _walkSpeed;
         }
-        else if(!_sprinting && _crouch.isCrouched && !_isCarrying && !custscene)
+        else if(!_sprinting && _crouch.isCrouched && !_isCarrying && !_puObject && !custscene)
         {
             _animator.SetBool("isRunning", false);
             _animator.SetLayerWeight(_layerCrouchedIndex, 1);
             _animator.SetLayerWeight(_layerCarryingIndex, 0);
+            _animator.SetLayerWeight(_layerPuObjectIndex, 0);
             _speed = _crouchSpeed;
         }
-        else if (!_sprinting && !_crouch.isCrouched && _isCarrying && !custscene)
+        else if (!_sprinting && !_crouch.isCrouched && _isCarrying && !_puObject && !custscene)
         {
             _animator.SetBool("isRunning", false);
             _animator.SetLayerWeight(_layerCrouchedIndex, 0);
             _animator.SetLayerWeight(_layerCarryingIndex, 1);
+            _animator.SetLayerWeight(_layerPuObjectIndex, 0);
             _speed = _carryingSpeed;
+        }
+        else if (!_sprinting && !_crouch.isCrouched && !_isCarrying && _puObject && !custscene)
+        {
+            _animator.SetBool("isRunning", false);
+            _animator.SetLayerWeight(_layerCrouchedIndex, 0);
+            _animator.SetLayerWeight(_layerCarryingIndex, 0);
+            _animator.SetLayerWeight(_layerPuObjectIndex, 1);
+            _speed = _pushAndPullSpeed;
         }
         else if (custscene)
         {
@@ -135,6 +152,11 @@ public class PlayerMovement : MonoBehaviour
             if (_isCarrying)
             {
                 _isCarrying = false;
+            }
+
+            if (_puObject)
+            {
+                _puObject = false;
             }
         }
     }
