@@ -323,7 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _walkSpeed: 5
   _runSpeed: 8
-  _crouchSpeed: 3
+  _crouchSpeed: 2
   _jump: 1.3
   _gravity: -20
   _groundedTimer: 0.05

@@ -29,14 +29,12 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController _controller;
     private Animator _animator;
+    private Crouch _crouch;
 
     private float _speed;
     private Vector3 _velocity;
     private bool _controllerGrounded;
     private bool _sprinting;
-    private bool _lerpCrouch;
-    private bool _crouching;
-    private float _crouchTimer;
     private float _turnSmoothTime = 0.1f;
     private float _turnSmoothVelocity;
     private float _groundedCurrentTimer;
@@ -45,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     private int _jumpAnimation;
     private Vector2 _currentAnimationBlendVector;
     private Vector2 _animationVelocity;
+    private int _layerCrouchedIndex;
 
     public static bool custscene;
 
@@ -54,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         _controller = GetComponent<CharacterController>();
         _camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
         _animator = GameObject.Find("Idle").GetComponent<Animator>();
+        _crouch = gameObject.GetComponent<Crouch>();
 
         StartCoroutine(BugController());
 
@@ -63,6 +63,8 @@ public class PlayerMovement : MonoBehaviour
         _moveXAnimator = Animator.StringToHash("MoveX");
         _moveZAnimator = Animator.StringToHash("MoveZ");
         _jumpAnimation = Animator.StringToHash("Jump");
+
+        _layerCrouchedIndex = _animator.GetLayerIndex("Crouched");
 
         custscene = false;
     }
@@ -81,20 +83,24 @@ public class PlayerMovement : MonoBehaviour
             _groundedCurrentTimer -= Time.deltaTime;
         }
 
-        if (_sprinting && !_crouching && !custscene)
+        if (_sprinting && !_crouch.isCrouched && !custscene)
         {
+            _animator.SetLayerWeight(_layerCrouchedIndex, 0);
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isRunning", true);
             _speed = _runSpeed;
         }
-        else if (!_sprinting && !_crouching && !custscene)
+        else if (!_sprinting && !_crouch.isCrouched && !custscene)
         {
+            _animator.SetLayerWeight(_layerCrouchedIndex, 0);
             _animator.SetBool("isWalking", true);
             _animator.SetBool("isRunning", false);
             _speed = _walkSpeed;
         }
-        else if(!_sprinting && _crouching && !custscene)
+        else if(!_sprinting && _crouch.isCrouched && !custscene)
         {
+            _animator.SetBool("isRunning", false);
+            _animator.SetLayerWeight(_layerCrouchedIndex, 100);
             _speed = _crouchSpeed;
         }
         else if (custscene)
@@ -104,34 +110,9 @@ public class PlayerMovement : MonoBehaviour
             _speed = _walkSpeed;
         }
 
-        if (_lerpCrouch)
+        if(custscene && _crouch.isCrouched)
         {
-            _crouchTimer += Time.deltaTime;
-            float p = _crouchTimer / 1;
-            p *= p;
-
-            if (_crouching)
-            {
-                if (!custscene)
-                {
-                    _controller.height = Mathf.Lerp(_controller.height, 1, p);
-                }
-            }
-            else
-            {
-                _controller.height = Mathf.Lerp(_controller.height, 2, p);
-            }
-
-            if (p > 1)
-            {
-                _lerpCrouch = false;
-                _crouchTimer = 0;
-            }
-        }
-
-        if(custscene && _crouching)
-        {
-            Crouch();
+            _animator.SetLayerWeight(_layerCrouchedIndex, 0);
         }
     }
 
@@ -167,7 +148,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Sprint()
     {
-        if (!_crouching)
+        if (!_crouch.isCrouched)
         {
             _sprinting = !_sprinting;
         }
@@ -175,13 +156,6 @@ public class PlayerMovement : MonoBehaviour
         {
             _sprinting = false;
         }
-    }
-
-    public void Crouch()
-    {
-        _crouching = !_crouching;
-        _crouchTimer = 0;
-        _lerpCrouch = true;
     }
 
     public void Jump()

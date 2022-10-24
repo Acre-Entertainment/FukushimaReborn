@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
 
         _onGround.Pulo.performed += ctx => _movement.Jump();
         _onGround.Correr.performed += ctx => _movement.Sprint();
-        _onGround.Agachar.performed += ctx => _movement.Crouch();
+        //_onGround.Agachar.performed += ctx => _movement.Crouch();
     }
     // Start is called before the first frame update
     void Start()
