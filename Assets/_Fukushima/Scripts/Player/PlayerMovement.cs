@@ -255,12 +255,10 @@ public class PlayerMovement : MonoBehaviour
     {
         canMove = false;
         _animator.CrossFade(_hideAnimation, _animationPlayTransition);
-        StartCoroutine(HideUnhideCanMove());
     }
 
     public void Unhide()
     {
-        canMove = false;
         _animator.CrossFade(_unhideAnimation, _animationPlayTransition);
         StartCoroutine(HideUnhideCanMove());
     }
