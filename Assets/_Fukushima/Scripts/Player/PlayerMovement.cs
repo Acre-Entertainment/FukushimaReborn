@@ -50,6 +50,9 @@ public class PlayerMovement : MonoBehaviour
     private int _jumpAnimation;
     private int _hideAnimation;
     private int _unhideAnimation;
+    private int _drowingAnimation;
+    private int _eletrocutedAnimation;
+    private int _surrenderAnimation;
     private Vector2 _currentAnimationBlendVector;
     private Vector2 _animationVelocity;
     private int _layerCrouchedIndex;
@@ -62,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
     public bool crouchToIdle;
     public bool carryingToIdle;
     public bool pushAndPullToIdle;
+    private bool _isJumping;
 
     public static bool custscene;
 
@@ -85,6 +89,10 @@ public class PlayerMovement : MonoBehaviour
         _jumpAnimation = Animator.StringToHash("Jump");
         _unhideAnimation = Animator.StringToHash("Unhide");
         _hideAnimation = Animator.StringToHash("Hide");
+        _drowingAnimation = Animator.StringToHash("Drowing");
+        _eletrocutedAnimation = Animator.StringToHash("Eletrocuted");
+        _surrenderAnimation = Animator.StringToHash("Surrender");
+
 
         _layerCrouchedIndex = _animator.GetLayerIndex("Crouched");
         _layerCarryingIndex = _animator.GetLayerIndex("Carrying");
@@ -97,14 +105,23 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         _controllerGrounded = _controller.isGrounded;
+        _animator.SetBool("Grounded", _controllerGrounded);
 
         if(_controllerGrounded)
         {
             _groundedCurrentTimer = _groundedTimer;
+            _isJumping = false;
         }
         else
         {
             _groundedCurrentTimer -= Time.deltaTime;
+        }
+
+        if(!_isJumping && !_controllerGrounded)
+        {
+            _animator.SetBool("isWalking", false);
+            _animator.SetBool("isRunning", false);
+            _animator.Play(_jumpAnimation);
         }
 
         _currentCrouchedLayer = _animator.GetLayerWeight(_layerCrouchedIndex);
@@ -131,35 +148,29 @@ public class PlayerMovement : MonoBehaviour
 
         if (_sprinting && !_crouch.isCrouched && !_isCarrying && !_puObject && !custscene)
         {
-            _animator.SetBool("isWalking", false);
-            _animator.SetBool("isRunning", true);
-            while(_speed < _runSpeed)
+            if (_controller.isGrounded)
             {
-                _speed += 2.5f * Time.deltaTime;
-                break;
+                _animator.SetBool("isWalking", false);
+                _animator.SetBool("isRunning", true);
             }
+            _speed = _runSpeed;
         }
         else if (!_sprinting && !_crouch.isCrouched && !_isCarrying && !_puObject && !custscene)
         {
-            _animator.SetBool("isWalking", true);
-            _animator.SetBool("isRunning", false);
-            if(_speed > _walkSpeed)
+            if (_controller.isGrounded)
             {
-                while (_speed > _walkSpeed)
-                {
-                    _speed -= 2.5f * Time.deltaTime;
-                    break;
-                }
+                _animator.SetBool("isWalking", true);
+                _animator.SetBool("isRunning", false);
             }
-            else
-            {
-                _speed = _walkSpeed;
-            }
+            _speed = _walkSpeed;
         }
         else if(!_sprinting && _crouch.isCrouched && !_isCarrying && !_puObject && !custscene)
         {
-            _animator.SetBool("isRunning", false);
-            _animator.SetLayerWeight(_layerCrouchedIndex, Mathf.SmoothDamp(_currentCrouchedLayer, 1, ref _layerWeightVelocity, _animationSmoothTime));
+            if (_controller.isGrounded)
+            {
+                _animator.SetBool("isRunning", false);
+                _animator.SetLayerWeight(_layerCrouchedIndex, Mathf.SmoothDamp(_currentCrouchedLayer, 1, ref _layerWeightVelocity, _animationSmoothTime));
+            }
             _speed = _crouchSpeed;
         }
         else if (!_sprinting && !_crouch.isCrouched && _isCarrying && !_puObject && !custscene)
@@ -246,6 +257,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_groundedCurrentTimer >= 0)
         {
+            _isJumping = true;
             _animator.CrossFade(_jumpAnimation, _animationPlayTransition);
             _velocity.y = Mathf.Sqrt(_jump * -3.0f * _gravity);
         }
@@ -317,5 +329,23 @@ public class PlayerMovement : MonoBehaviour
         impact.y = 0;
         impact.x = force;
         _controller.Move(impact * Time.deltaTime);
+    }
+
+    public void Dead(int typeOfDeath)
+    {
+        _controller.enabled = false;
+        canMove = false;
+        if(typeOfDeath == 0)
+        {
+            _animator.CrossFade(_drowingAnimation, _animationPlayTransition);
+        }
+        else if (typeOfDeath == 1)
+        {
+            _animator.CrossFade(_surrenderAnimation, _animationPlayTransition);
+        }
+        else if (typeOfDeath == 2)
+        {
+            _animator.CrossFade(_eletrocutedAnimation, _animationPlayTransition);
+        }
     }
 }

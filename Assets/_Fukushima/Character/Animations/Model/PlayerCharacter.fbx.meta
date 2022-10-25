@@ -48,6 +48,9 @@ ModelImporter:
   - first:
       74: -6054376069171115747
     second: Slow Run|Slow Run (1)
+  - first:
+      74: 7562392335832650413
+    second: Slow Run|Fast Run (1)
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -296,7 +299,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -401,11 +404,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Slow Run|Slow Run
-      takeName: Slow Run|Slow Run
+      name: Slow Run|Fast Run (1)
+      takeName: Slow Run|Fast Run
       internalID: 0
       firstFrame: 0
-      lastFrame: 17
+      lastFrame: 12
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
