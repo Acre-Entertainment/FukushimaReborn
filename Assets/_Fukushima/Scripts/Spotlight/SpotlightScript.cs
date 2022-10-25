@@ -24,7 +24,7 @@ public class SpotlightScript : MonoBehaviour
             currentTimeUntilGameOver = currentTimeUntilGameOver - 1 * Time.deltaTime;
             if(currentTimeUntilGameOver <= 0)
             {
-                GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameOver>().EndGame();
+                GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameOver>().EndGame("Spotted");
             }
         }
     }
