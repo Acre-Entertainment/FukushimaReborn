@@ -327,17 +327,17 @@ MonoBehaviour:
   _carryingSpeed: 2
   _pushAndPullSpeed: 1
   _jump: 1.3
-  _gravity: -20
+  _gravity: -30
   _groundedTimer: 0.05
   _animationSmoothTime: 0.1
   _animationPlayTransition: 0.15
   _camera: {fileID: 0}
+  canMove: 0
   _isCarrying: 0
   _puObject: 0
   crouchToIdle: 0
   carryingToIdle: 0
   pushAndPullToIdle: 0
-  timerTest: 0
 --- !u!114 &2065624503657937176
 MonoBehaviour:
   m_ObjectHideFlags: 0

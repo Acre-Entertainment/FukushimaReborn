@@ -247,7 +247,7 @@ public class PlayerMovement : MonoBehaviour
         if (_groundedCurrentTimer >= 0)
         {
             _animator.CrossFade(_jumpAnimation, _animationPlayTransition);
-            StartCoroutine(FixAnimationJump());
+            _velocity.y = Mathf.Sqrt(_jump * -3.0f * _gravity);
         }
     }
 
@@ -294,12 +294,6 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetLayerWeight(_layerPuObjectIndex, Mathf.SmoothDamp(_currentPuObjectLayer, 0, ref _layerWeightVelocity, _animationSmoothTime));
             break;
         }
-    }
-
-    IEnumerator FixAnimationJump()
-    {
-        yield return new WaitForSeconds(0.5f);
-        _velocity.y = Mathf.Sqrt(_jump * -3.0f * _gravity);
     }
 
     IEnumerator BugController()
