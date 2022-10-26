@@ -1,0 +1,348 @@
+fileFormatVersion: 2
+guid: 0bf6421884538c04db81e4bb073e2950
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -8178187769111739652
+    second: Helice Principal|Corpo do Helicoptero|Corpo do Helicoptero|Corpo do Helicopt
+  - first:
+      74: 3149819308804358507
+    second: Helice Principal|Corpo do Helicoptero|Corpo do Helicoptero|Corpo do Helicopt.001
+  - first:
+      74: 5874713551422188131
+    second: Helice Principal|Corpo do Helicoptero|Corpo do Helicoptero|Corpo do Helicopt.002
+  - first:
+      74: -6419910112706394505
+    second: Helice Principal|Corpo do Helicoptero|Corpo do Helicoptero|Corpo do HelicopteroA
+  - first:
+      74: -3915314353387562125
+    second: Helice Principal|Corpo do Helicoptero|Corpo do Helicoptero|Helicce da
+      CaudaA
+  - first:
+      74: -6526350174635363041
+    second: Helice Principal|Corpo do Helicoptero|Corpo do Helicoptero|Helicce da
+      CaudaActio
+  - first:
+      74: -3753826658096321362
+    second: Helice Principal|Corpo do Helicoptero|Corpo do Helicoptero|Helice PrincipalA
+  - first:
+      74: -8933187711104343532
+    second: Helice Principal|Corpo do Helicoptero|Corpo do Helicoptero|Helice PrincipalActio
+  - first:
+      74: -8573972079046688355
+    second: Helice Principal|Helicce da CaudaAction
+  - first:
+      74: 137414391837517299
+    second: Helice Principal|Helicce da Cauda|Helicce da Cauda|Corpo do HelicopteroActio
+  - first:
+      74: -9171984483916513709
+    second: Helice Principal|Helicce da Cauda|Helicce da Cauda|Corpo do HelicopteroActio.001
+  - first:
+      74: 262869850069035124
+    second: Helice Principal|Helicce da Cauda|Helicce da Cauda|Corpo do HelicopteroAction.00
+  - first:
+      74: 7338236046051516131
+    second: Helice Principal|Helicce da Cauda|Helicce da Cauda|Corpo do HelicopteroAction|He
+  - first:
+      74: -6003574057745736608
+    second: Helice Principal|Helicce da Cauda|Helicce da Cauda|Helicce da CaudaAction|He
+  - first:
+      74: -4820324821783359566
+    second: Helice Principal|Helicce da Cauda|Helicce da Cauda|Helicce da CaudaAction|Helicc
+  - first:
+      74: -6202342798314291277
+    second: Helice Principal|Helicce da Cauda|Helicce da Cauda|Helice PrincipalAction|He
+  - first:
+      74: -6987915774007446974
+    second: Helice Principal|Helicce da Cauda|Helicce da Cauda|Helice PrincipalAction|Helicc
+  - first:
+      74: 7268655222071597263
+    second: Helice Principal|Helice PrincipalAction
+  - first:
+      74: -5269612392966404243
+    second: Helice Principal|Helice Principal|Helice Principal|Corpo do HelicopteroActio
+  - first:
+      74: -6117866994496068085
+    second: Helice Principal|Helice Principal|Helice Principal|Corpo do HelicopteroActio.001
+  - first:
+      74: 8736905398884885880
+    second: Helice Principal|Helice Principal|Helice Principal|Corpo do HelicopteroAction.00
+  - first:
+      74: -7575219510011226489
+    second: Helice Principal|Helice Principal|Helice Principal|Corpo do HelicopteroAction|He
+  - first:
+      74: 1885343102893431767
+    second: Helice Principal|Helice Principal|Helice Principal|Helicce da CaudaAction|He
+  - first:
+      74: 997486371875265372
+    second: Helice Principal|Helice Principal|Helice Principal|Helicce da CaudaAction|Helice
+  - first:
+      74: -5002769498357213928
+    second: Helice Principal|Helice Principal|Helice Principal|Helice PrincipalAction|He
+  - first:
+      74: 6406968367874461535
+    second: Helice Principal|Helice Principal|Helice Principal|Helice PrincipalAction|Helice
+  - first:
+      74: -1013131940086939791
+    second: Helicce da Cauda|Corpo do Helicoptero|Corpo do Helicoptero|Corpo do Helicopt
+  - first:
+      74: -773710036424767283
+    second: Helicce da Cauda|Corpo do Helicoptero|Corpo do Helicoptero|Corpo do Helicopt.001
+  - first:
+      74: 3112228396956927951
+    second: Helicce da Cauda|Corpo do Helicoptero|Corpo do Helicoptero|Corpo do Helicopt.002
+  - first:
+      74: 3159261909265995024
+    second: Helicce da Cauda|Corpo do Helicoptero|Corpo do Helicoptero|Corpo do HelicopteroA
+  - first:
+      74: 8863962677905904107
+    second: Helicce da Cauda|Corpo do Helicoptero|Corpo do Helicoptero|Helicce da
+      CaudaA
+  - first:
+      74: -4953838604680020486
+    second: Helicce da Cauda|Corpo do Helicoptero|Corpo do Helicoptero|Helicce da
+      CaudaActio
+  - first:
+      74: 6170735149727687125
+    second: Helicce da Cauda|Corpo do Helicoptero|Corpo do Helicoptero|Helice PrincipalA
+  - first:
+      74: -6970930693078928197
+    second: Helicce da Cauda|Corpo do Helicoptero|Corpo do Helicoptero|Helice PrincipalActio
+  - first:
+      74: 6066440434325899445
+    second: Helicce da Cauda|Helicce da CaudaAction
+  - first:
+      74: 8335244652647614549
+    second: Helicce da Cauda|Helicce da Cauda|Helicce da Cauda|Corpo do HelicopteroActio
+  - first:
+      74: 7776936208007233284
+    second: Helicce da Cauda|Helicce da Cauda|Helicce da Cauda|Corpo do HelicopteroActio.001
+  - first:
+      74: -7487785097292604431
+    second: Helicce da Cauda|Helicce da Cauda|Helicce da Cauda|Corpo do HelicopteroAction.00
+  - first:
+      74: 4865864659428800481
+    second: Helicce da Cauda|Helicce da Cauda|Helicce da Cauda|Corpo do HelicopteroAction|He
+  - first:
+      74: -8835047449580236568
+    second: Helicce da Cauda|Helicce da Cauda|Helicce da Cauda|Helicce da CaudaAction|He
+  - first:
+      74: -5940481518228734980
+    second: Helicce da Cauda|Helicce da Cauda|Helicce da Cauda|Helicce da CaudaAction|Helicc
+  - first:
+      74: 3050854641614331903
+    second: Helicce da Cauda|Helicce da Cauda|Helicce da Cauda|Helice PrincipalAction|He
+  - first:
+      74: 7353929561609322681
+    second: Helicce da Cauda|Helicce da Cauda|Helicce da Cauda|Helice PrincipalAction|Helicc
+  - first:
+      74: -2831479948585587056
+    second: Helicce da Cauda|Helice PrincipalAction
+  - first:
+      74: -1430708618938304120
+    second: Helicce da Cauda|Helice Principal|Helice Principal|Corpo do HelicopteroActio
+  - first:
+      74: 8161595367165072843
+    second: Helicce da Cauda|Helice Principal|Helice Principal|Corpo do HelicopteroActio.001
+  - first:
+      74: -6333183386842019050
+    second: Helicce da Cauda|Helice Principal|Helice Principal|Corpo do HelicopteroAction.00
+  - first:
+      74: 8467428089008309002
+    second: Helicce da Cauda|Helice Principal|Helice Principal|Corpo do HelicopteroAction|He
+  - first:
+      74: 6868938290619727398
+    second: Helicce da Cauda|Helice Principal|Helice Principal|Helicce da CaudaAction|He
+  - first:
+      74: -5885745961524198901
+    second: Helicce da Cauda|Helice Principal|Helice Principal|Helicce da CaudaAction|Helice
+  - first:
+      74: -710412172683818489
+    second: Helicce da Cauda|Helice Principal|Helice Principal|Helice PrincipalAction|He
+  - first:
+      74: 8292272013679471318
+    second: Helicce da Cauda|Helice Principal|Helice Principal|Helice PrincipalAction|Helice
+  - first:
+      74: -4107321367370685222
+    second: Corpo do Helicoptero|Corpo do Helicoptero|Corpo do Helicoptero|Corpo
+      do Helicopt
+  - first:
+      74: 6932480407132720428
+    second: Corpo do Helicoptero|Corpo do Helicoptero|Corpo do Helicoptero|Corpo
+      do Helicopt.001
+  - first:
+      74: 3619622842352090518
+    second: Corpo do Helicoptero|Corpo do Helicoptero|Corpo do Helicoptero|Corpo
+      do Helicopt.002
+  - first:
+      74: 1663827581215810687
+    second: Corpo do Helicoptero|Corpo do Helicoptero|Corpo do Helicoptero|Corpo
+      do HelicopteroA
+  - first:
+      74: 1247622881143869184
+    second: Corpo do Helicoptero|Corpo do Helicoptero|Corpo do Helicoptero|Helicce
+      da CaudaA
+  - first:
+      74: -7189777191431214657
+    second: Corpo do Helicoptero|Corpo do Helicoptero|Corpo do Helicoptero|Helicce
+      da CaudaActio
+  - first:
+      74: -6279157387731952240
+    second: Corpo do Helicoptero|Corpo do Helicoptero|Corpo do Helicoptero|Helice
+      PrincipalA
+  - first:
+      74: 7167992137973638949
+    second: Corpo do Helicoptero|Corpo do Helicoptero|Corpo do Helicoptero|Helice
+      PrincipalActio
+  - first:
+      74: -2947599335608092075
+    second: Corpo do Helicoptero|Helicce da CaudaAction
+  - first:
+      74: 1899927135538797378
+    second: Corpo do Helicoptero|Helicce da Cauda|Helicce da Cauda|Corpo do HelicopteroActio
+  - first:
+      74: -1543588842814950360
+    second: Corpo do Helicoptero|Helicce da Cauda|Helicce da Cauda|Corpo do HelicopteroActio.001
+  - first:
+      74: 9156813787819830110
+    second: Corpo do Helicoptero|Helicce da Cauda|Helicce da Cauda|Corpo do HelicopteroAction.00
+  - first:
+      74: 455419953058957824
+    second: Corpo do Helicoptero|Helicce da Cauda|Helicce da Cauda|Corpo do HelicopteroAction|He
+  - first:
+      74: 293524352299715137
+    second: Corpo do Helicoptero|Helicce da Cauda|Helicce da Cauda|Helicce da CaudaAction|He
+  - first:
+      74: 4199230689635257289
+    second: Corpo do Helicoptero|Helicce da Cauda|Helicce da Cauda|Helicce da CaudaAction|Helicc
+  - first:
+      74: -2705806869692576106
+    second: Corpo do Helicoptero|Helicce da Cauda|Helicce da Cauda|Helice PrincipalAction|He
+  - first:
+      74: 6610231245048411030
+    second: Corpo do Helicoptero|Helicce da Cauda|Helicce da Cauda|Helice PrincipalAction|Helicc
+  - first:
+      74: 173889368308162813
+    second: Corpo do Helicoptero|Helice PrincipalAction
+  - first:
+      74: 1028429412485106972
+    second: Corpo do Helicoptero|Helice Principal|Helice Principal|Corpo do HelicopteroActio
+  - first:
+      74: 1257209603432394971
+    second: Corpo do Helicoptero|Helice Principal|Helice Principal|Corpo do HelicopteroActio.001
+  - first:
+      74: -3177345844572570479
+    second: Corpo do Helicoptero|Helice Principal|Helice Principal|Corpo do HelicopteroAction.00
+  - first:
+      74: -4608108630734778357
+    second: Corpo do Helicoptero|Helice Principal|Helice Principal|Corpo do HelicopteroAction|He
+  - first:
+      74: 3245383581321656695
+    second: Corpo do Helicoptero|Helice Principal|Helice Principal|Helicce da CaudaAction|He
+  - first:
+      74: -8319074130339041203
+    second: Corpo do Helicoptero|Helice Principal|Helice Principal|Helicce da CaudaAction|Helice
+  - first:
+      74: 8573607264431810083
+    second: Corpo do Helicoptero|Helice Principal|Helice Principal|Helice PrincipalAction|He
+  - first:
+      74: 9030893381877422706
+    second: Corpo do Helicoptero|Helice Principal|Helice Principal|Helice PrincipalAction|Helice
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
