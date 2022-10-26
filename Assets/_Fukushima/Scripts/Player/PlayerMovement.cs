@@ -66,6 +66,7 @@ public class PlayerMovement : MonoBehaviour
     public bool carryingToIdle;
     public bool pushAndPullToIdle;
     private bool _isJumping;
+    private bool _fixBug;
 
     public static bool custscene;
 
@@ -117,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
             _groundedCurrentTimer -= Time.deltaTime;
         }
 
-        if(!_isJumping && !_controllerGrounded)
+        if(!_isJumping && !_controllerGrounded && _fixBug)
         {
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isRunning", false);
@@ -313,6 +314,8 @@ public class PlayerMovement : MonoBehaviour
         _controller.enabled = false;
         yield return new WaitForSeconds(0.1f);
         _controller.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        _fixBug = true;
     }
 
     IEnumerator FixBugSmoothAnimation()
