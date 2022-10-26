@@ -17,8 +17,15 @@ public class Hide_Opener : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F))
         {
             HidedPlayer.SetActive(true);
-            gameObject.SetActive(false);
-            pm.Unhide();
+            StartCoroutine(Wait());
         }
+    }
+
+    IEnumerator Wait()
+    {
+        pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        pm.Unhide();
+        yield return new WaitForSeconds(4);
+        gameObject.SetActive(false);
     }
 }

@@ -21,7 +21,7 @@ public class Hide_Character : MonoBehaviour
     IEnumerator HideAnimation()
     {
         yield return new WaitForSeconds(4f);
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
         opener.SetActive(true);
     }
 }
