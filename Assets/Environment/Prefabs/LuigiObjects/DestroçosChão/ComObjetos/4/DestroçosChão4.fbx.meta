@@ -3,7 +3,247 @@ guid: cb2d34dfbca394541ad9431d3f417288
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apoio.002
+    second: {fileID: 2100000, guid: c05b0af5cd3359c40a6b00e6315dc38f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabo
+    second: {fileID: 2100000, guid: 5ed81115530cf5a4aaa3cf3f4d79cd23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabo.004
+    second: {fileID: 2100000, guid: 4b3ce5eede1502a4bb9bf5d1c70665ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Caixa
+    second: {fileID: 2100000, guid: ee9499cc3afd0d04486c6323d3124119, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concreto.002
+    second: {fileID: 2100000, guid: 066674063b0bb8f4f8d24f03a8c36209, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Concreto2
+    second: {fileID: 2100000, guid: 3a98b0b14c3e46c4292422993b4962dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Destro\xE7oCh\xE3o4.001"
+    second: {fileID: 2100000, guid: 1cc54a6d2b7f15649869131a24b2f85a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Encaixe.002
+    second: {fileID: 2100000, guid: a5a2d9ff9896f6d4f93bca60ccb3f445, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gerador.002
+    second: {fileID: 2100000, guid: fce0b03e115349448b7347349283705d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lata
+    second: {fileID: 2100000, guid: 87801500636bd4c43b7016033849a80d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lataria.003
+    second: {fileID: 2100000, guid: 49970c73c3501374785dce22abeb8223, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lataria.004
+    second: {fileID: 2100000, guid: 769eccaa0df1f5142a656f5b8bf96b7f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lataria.005
+    second: {fileID: 2100000, guid: 6a586525a6902cd4cb677f30f8fd1127, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madeira.013
+    second: {fileID: 2100000, guid: b0bd57ab5bf74d747b2ca8c8fcdc0635, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madeira.014
+    second: {fileID: 2100000, guid: 5398932a6db5a2c46810984939786644, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madeira.015
+    second: {fileID: 2100000, guid: 98c77aa7ef35ec542b45082c915c55ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madeira.016
+    second: {fileID: 2100000, guid: 2cb1134bd64cd5145b35de21fdc4a52a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madeira2.010
+    second: {fileID: 2100000, guid: 8fc85bf1e754cda4ebd561ce6b741bd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madeira2.011
+    second: {fileID: 2100000, guid: 4f2122920f004164b86cd9be19b8da2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Madeira2.012
+    second: {fileID: 2100000, guid: 13b1a81160721f14ea0b78928bb85965, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "MadeiraDestro\xE7os1.002"
+    second: {fileID: 2100000, guid: 8c4ed9545a0c6e343afde1e7cfcca85a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Ma\xE7aneta"
+    second: {fileID: 2100000, guid: 7c779cfb3f33bf347a4700a97ca93a32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MuretaQuebrada
+    second: {fileID: 2100000, guid: ea75597b125e3804bb58f02de120d5ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Placa.001
+    second: {fileID: 2100000, guid: 5152b7d37ee41ba4cb8e6081c731e505, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Placa6
+    second: {fileID: 2100000, guid: 028d3b3f85b173b42adec384b839a0c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pneu.003
+    second: {fileID: 2100000, guid: e2a112d4e72052e468548641a7abe9f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Porta
+    second: {fileID: 2100000, guid: 06489494534483d4c9ee56486e95d91d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poste.002
+    second: {fileID: 2100000, guid: 9edcc1b6037c4d541b56b9f73bdb5e92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Poste.003
+    second: {fileID: 2100000, guid: d98636c9bb359c04b922ad2d28c1ab21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rocha.002
+    second: {fileID: 2100000, guid: 17879ec41c4b56747ba0ad7a8fe49373, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rocha3.017
+    second: {fileID: 2100000, guid: 7576824c085edd4489df6e785ee3a7fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rocha3.018
+    second: {fileID: 2100000, guid: dd0615c3829b92d49878449eb12a3c73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rocha3.019
+    second: {fileID: 2100000, guid: d9f232c070509384ab59da7a917c92c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rocha3.020
+    second: {fileID: 2100000, guid: 9f47c18999928d54caf064225dd8360e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rocha3.021
+    second: {fileID: 2100000, guid: b389f17362447da48b161f0e9db95039, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rocha3.022
+    second: {fileID: 2100000, guid: b47adf61163d7b54bae12635e60a0480, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rocha3.023
+    second: {fileID: 2100000, guid: 95b40ba02b2f9ee4aa5c0aafe9354dba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roda.003
+    second: {fileID: 2100000, guid: eca1535e2359d8e488535b082141de44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tampa
+    second: {fileID: 2100000, guid: 4385deceae3f5564b8c7c0450a5a6a7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tampinha
+    second: {fileID: 2100000, guid: 11612ce154fcac84fbc5b064109a419b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Teclas
+    second: {fileID: 2100000, guid: 83a1cb8f254c13e4c9028cebce4eeb87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tela
+    second: {fileID: 2100000, guid: ca20efdc4704d4544bfd8418d862dfbb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Telephone
+    second: {fileID: 2100000, guid: 8524e62fe153e444e9a07245abbd7b39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tijolos.002
+    second: {fileID: 2100000, guid: 75ba4390ab741a14dbd6f24d0c2c5d65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tijolos.003
+    second: {fileID: 2100000, guid: d14ca845a8d99ca489b02e69b7be627a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tijolos.004
+    second: {fileID: 2100000, guid: f0f12faae6673694e92f1ef56b287524, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tronco
+    second: {fileID: 2100000, guid: 35d41ba8b7b3a9045a46af12511ad50e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vidro.002
+    second: {fileID: 2100000, guid: c1901d405c2bb974cac399fafc4c13be, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
