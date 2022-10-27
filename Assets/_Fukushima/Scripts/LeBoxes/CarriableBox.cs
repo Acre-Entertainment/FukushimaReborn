@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CarriableBox : MonoBehaviour
 {
@@ -9,13 +10,17 @@ public class CarriableBox : MonoBehaviour
     MeshCollider mc;
     Rigidbody rb;
     public bool beingCarried, frameBuffer;
-    CarriableBoxGM cbgm;
-    public bool inPosition;
-    public GameObject potencial;
     public float XPositionOffset, YPositionOffset, ZPositionOffset, XRotationOffset, YRotationOffset, ZRotationOffset, releaseDistance;
 
     PlayerMovement pm;
     float startingJump;
+
+    public bool isInEventArea1;
+    public bool isInEventArea2;
+    public string triggerAreaTag1;
+    public string triggerAreaTag2;
+    public UnityEvent area1Event;
+    public UnityEvent area2Event;
 
     void Start()
     {
@@ -23,7 +28,6 @@ public class CarriableBox : MonoBehaviour
         pbti = GameObject.FindGameObjectWithTag("InteractArea").GetComponent<PressButtonToInteract>();
         mc = gameObject.GetComponent<MeshCollider>();
         rb = gameObject.GetComponent<Rigidbody>();
-        cbgm = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<CarriableBoxGM>();
 
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         startingJump = pm._jump;
@@ -57,7 +61,6 @@ public class CarriableBox : MonoBehaviour
             pm._isCarrying = true;
             gameObject.tag = "Carried";
             mc.enabled = false;
-            cbgm.activate();
 
             frameBuffer = true;
             //Debug.Log("on");
@@ -82,13 +85,6 @@ public class CarriableBox : MonoBehaviour
             pm.carryingToIdle = true;
             gameObject.tag = "Event";
             mc.enabled = true;
-            cbgm.deactivate();
-            if(inPosition == true)
-            {
-                gameObject.transform.position = potencial.transform.position;
-                Destroy(potencial);
-                this.enabled = false;
-            }
 
             frameBuffer = true;
             //Debug.Log("off");
@@ -97,5 +93,27 @@ public class CarriableBox : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         //setOff();
+    }
+    void OnTriggerEnter(Collision other)
+    {
+        if(other.gameObject.tag == triggerAreaTag1)
+        {
+            isInEventArea1 = true;
+        }
+        if(other.gameObject.tag == triggerAreaTag2)
+        {
+            isInEventArea2 = true;
+        }
+    }
+    void OnTriggerExit(Collision other)
+    {
+        if(other.gameObject.tag == triggerAreaTag1)
+        {
+            isInEventArea1 = false;
+        }
+        if(other.gameObject.tag == triggerAreaTag2)
+        {
+            isInEventArea2 = false;
+        }
     }
 }

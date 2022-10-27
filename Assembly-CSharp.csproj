@@ -44,7 +44,6 @@
      <Compile Include="Assets\_Fukushima\Scripts\Player\CrouchInspector.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\Hiding\Hide_Opener.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\WaterBoxes\WterBox.cs" />
-     <Compile Include="Assets\_Fukushima\Scripts\LeBoxes\CarriableBoxGM.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\Spotlight\SpotlightMovement.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\Timer\Timer.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\DebugFunction.cs" />
@@ -53,7 +52,6 @@
      <Compile Include="Assets\_Fukushima\Scripts\CheckPoint\Level3\CheckPointsLevel3.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\_Basics\EventUponNamedObjectTriggerExit.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\Actions\PressButtonToInteract.cs" />
-     <Compile Include="Assets\_Fukushima\Scripts\LeBoxes\CarriableBoxLocation.cs" />
      <Compile Include="Assets\_ExternalAssets\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\FloatingText\TriggerText.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\Hiding\Hide_Object.cs" />
