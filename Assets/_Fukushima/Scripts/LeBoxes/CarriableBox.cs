@@ -60,7 +60,7 @@ public class CarriableBox : MonoBehaviour
             pm._jump = 0;
             pm._isCarrying = true;
             gameObject.tag = "Carried";
-            mc.enabled = false;
+            mc.isTrigger = true;
 
             frameBuffer = true;
             //Debug.Log("on");
@@ -84,16 +84,13 @@ public class CarriableBox : MonoBehaviour
             pm._isCarrying = false;
             pm.carryingToIdle = true;
             gameObject.tag = "Event";
-            mc.enabled = true;
+            mc.isTrigger = false;
 
             frameBuffer = true;
             //Debug.Log("off");
         }
     }
-    void OnCollisionEnter(Collision other)
-    {
-        //setOff();
-    }
+
     void OnTriggerEnter(Collision other)
     {
         if(other.gameObject.tag == triggerAreaTag1)
