@@ -88,6 +88,15 @@ public class CarriableBox : MonoBehaviour
 
             frameBuffer = true;
             //Debug.Log("off");
+
+            if(isInEventArea1 == true)
+            {
+                area1Event.Invoke();
+            }
+            if(isInEventArea2 == true)
+            {
+                area2Event.Invoke();
+            }
         }
     }
 
