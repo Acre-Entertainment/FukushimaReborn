@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1111682974}
   - component: {fileID: 1111682973}
   - component: {fileID: 1111682972}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: CrouchInspector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
