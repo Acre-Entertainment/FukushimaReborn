@@ -326,8 +326,8 @@ MonoBehaviour:
   _crouchSpeed: 2
   _carryingSpeed: 2
   _pushAndPullSpeed: 1
-  _jump: 1.3
-  _gravity: -30
+  _jump: 0.7
+  _gravity: -20
   _groundedTimer: 0.05
   _animationSmoothTime: 0.1
   _animationPlayTransition: 0.15

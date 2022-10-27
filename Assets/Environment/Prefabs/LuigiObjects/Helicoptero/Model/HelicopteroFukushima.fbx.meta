@@ -249,7 +249,27 @@ ModelImporter:
   - first:
       74: 9030893381877422706
     second: Corpo do Helicoptero|Helice Principal|Helice Principal|Helice PrincipalAction|Helice
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Helic\xF3ptero.001"
+    second: {fileID: 2100000, guid: ccdaf04f438a2974d9ca8c7c909471c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal.001
+    second: {fileID: 2100000, guid: 00291cd13dee29b49ad2342bef11b973, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Preto.001
+    second: {fileID: 2100000, guid: 913334d25f65bf140b258bde1f6b1223, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vidro.001
+    second: {fileID: 2100000, guid: 806f90589d6d0a74087f427383c70b86, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
