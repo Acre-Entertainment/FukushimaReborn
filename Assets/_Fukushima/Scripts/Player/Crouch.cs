@@ -6,13 +6,16 @@ public class Crouch : MonoBehaviour
 {
     public float colliderCrouchHeight, colliderCrouchAltitude;
     public float controllerCrouchHeight, controllerCrouchAltitude;
-    float startingConHeight, startingConAltitude, startingColHeight, startingColAltitude, startingJump;
+    public float collisionHeight, collisionCrouchAltitude;
+    public float angleFix;
+    float startingConHeight, startingConAltitude, startingColHeight, startingColAltitude, startingJump, startingTrigHeight, startingTrigAltitude;
     CharacterController ccon;
     CapsuleCollider ccol;
     PlayerMovement pm;
     public bool isCrouched;
     bool ignoreFrame;
     public GameObject crouchInspector;
+    public CapsuleCollider triggerCollision;
 
     PressButtonToInteract pressButtonToInteract;
 
@@ -26,6 +29,9 @@ public class Crouch : MonoBehaviour
         startingColHeight = ccol.height;
         startingColAltitude = ccol.center.y;
 
+        startingTrigHeight = triggerCollision.height;
+        startingTrigAltitude = triggerCollision.center.y;
+
         pm = gameObject.GetComponent<PlayerMovement>();
         startingJump = pm._jump;
 
@@ -33,6 +39,11 @@ public class Crouch : MonoBehaviour
     }
     void Update()
     {
+        //if(isCrouched == true)
+        //{
+        //    gameObject.transform.eulerAngles = new Vector3(gameObject.transform.eulerAngles.x, gameObject.transform.eulerAngles.y + angleFix, gameObject.transform.eulerAngles.z);
+        //}
+
         if(Input.GetKeyDown(KeyCode.C))
         {
             if(isCrouched == false && pressButtonToInteract.enabled == true)
@@ -42,6 +53,9 @@ public class Crouch : MonoBehaviour
 
                 ccol.height = colliderCrouchHeight;
                 ccol.center = new Vector3(0, colliderCrouchAltitude, 0);
+
+                triggerCollision.height = collisionHeight;
+                triggerCollision.center = new Vector3(0, colliderCrouchAltitude, 0);
 
                 pressButtonToInteract.enabled = false;
                 pm._jump = 0;
@@ -56,6 +70,9 @@ public class Crouch : MonoBehaviour
 
                 ccol.height = startingColHeight;
                 ccol.center = new Vector3(0, startingColAltitude, 0);
+
+                triggerCollision.height = startingTrigHeight;
+                triggerCollision.center = new Vector3(0, startingTrigAltitude, 0);
 
                 pressButtonToInteract.enabled = true;
                 pm._jump = startingJump;

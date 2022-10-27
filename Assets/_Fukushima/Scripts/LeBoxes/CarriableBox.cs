@@ -12,7 +12,7 @@ public class CarriableBox : MonoBehaviour
     CarriableBoxGM cbgm;
     public bool inPosition;
     public GameObject potencial;
-    public float XPositionOffset, YPositionOffset, ZPositionOffset, XRotationOffset, YRotationOffset, ZRotationOffset;
+    public float XPositionOffset, YPositionOffset, ZPositionOffset, XRotationOffset, YRotationOffset, ZRotationOffset, releaseDistance;
 
     PlayerMovement pm;
     float startingJump;
@@ -67,6 +67,13 @@ public class CarriableBox : MonoBehaviour
     {
         if(frameBuffer == false && beingCarried == true)
         {
+            carryPoint.transform.localPosition = new Vector3(XPositionOffset, YPositionOffset, ZPositionOffset + 1.5f + releaseDistance);
+            carryPoint.transform.localEulerAngles = new Vector3(XRotationOffset, YRotationOffset, ZPositionOffset);
+            gameObject.transform.position = new Vector3(carryPoint.transform.position.x, carryPoint.transform.position.y, carryPoint.transform.position.z);
+            gameObject.transform.eulerAngles = new Vector3(carryPoint.transform.eulerAngles.x, carryPoint.transform.eulerAngles.y, carryPoint.transform.eulerAngles.z);
+
+
+
             beingCarried = false;
             pbti.enabled = true;
             rb.useGravity = true;
