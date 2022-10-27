@@ -19,8 +19,10 @@ public class CarriableBox : MonoBehaviour
     public bool isInEventArea2;
     public string triggerAreaTag1;
     public string triggerAreaTag2;
+    public string triggerAreaTag3;
     public UnityEvent area1Event;
     public UnityEvent area2Event;
+    public UnityEvent area3Event;
 
     void Start()
     {
@@ -97,6 +99,10 @@ public class CarriableBox : MonoBehaviour
             {
                 area2Event.Invoke();
             }
+            if(isInEventArea3 == true)
+            {
+                area3Event.Invoke();
+            }
         }
     }
 
@@ -110,6 +116,10 @@ public class CarriableBox : MonoBehaviour
         {
             isInEventArea2 = true;
         }
+        if(other.gameObject.tag == triggerAreaTag3)
+        {
+            isInEventArea3 = true;
+        }
     }
     void OnTriggerExit(Collider other)
     {
@@ -120,6 +130,10 @@ public class CarriableBox : MonoBehaviour
         if(other.gameObject.tag == triggerAreaTag2)
         {
             isInEventArea2 = false;
+        }
+        if(other.gameObject.tag == triggerAreaTag3)
+        {
+            isInEventArea3 = false;
         }
     }
 }
