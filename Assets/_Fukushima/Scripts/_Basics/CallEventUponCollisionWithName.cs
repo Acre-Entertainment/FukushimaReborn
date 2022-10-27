@@ -9,7 +9,7 @@ public class CallEventUponCollisionWithName : MonoBehaviour
     public UnityEvent unityEvent;
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("collision" + gameObject.name);
+        Debug.Log("collision" + gameObject.name + " and " + collision.gameObject.name);
         if(collision.gameObject.name == name)
         {
             unityEvent.Invoke();
