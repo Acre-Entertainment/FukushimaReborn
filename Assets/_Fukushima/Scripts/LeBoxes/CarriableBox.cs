@@ -91,7 +91,7 @@ public class CarriableBox : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == triggerAreaTag1)
         {
@@ -102,7 +102,7 @@ public class CarriableBox : MonoBehaviour
             isInEventArea2 = true;
         }
     }
-    void OnTriggerExit(Collision other)
+    void OnTriggerExit(Collider other)
     {
         if(other.gameObject.tag == triggerAreaTag1)
         {
