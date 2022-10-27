@@ -3,7 +3,49 @@ guid: d39c1546940ce114f84621b69da938ff
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cano
+    second: {fileID: 2100000, guid: 07646beed8f4e514aac5088b48310775, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CorBase.007
+    second: {fileID: 2100000, guid: 2d52901e27b0d3f4f9ee1c614ba8c01f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Detalhes.007
+    second: {fileID: 2100000, guid: a2b14c34da4db514cb5533ae1bd7a72b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Porta
+    second: {fileID: 2100000, guid: b265e86c34790d24a9c61f934e03a6ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Telhado.161
+    second: {fileID: 8969852399679768964, guid: ab3eab8e5a5c2b148a54519a028d3b42,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Telhado2
+    second: {fileID: 8969852399679768964, guid: ab3eab8e5a5c2b148a54519a028d3b42,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "TuboDeVentila\xE7\xE3o"
+    second: {fileID: 2100000, guid: 71b181386d5bb834e98eb0e7aad96043, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vidros
+    second: {fileID: 2100000, guid: 529dc4067c1f4b44b9ef6ac6f5ec9592, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

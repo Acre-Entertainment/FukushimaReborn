@@ -3,7 +3,38 @@ guid: 9f295dd1bcc184a49bb0829d60b88370
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Canos.001
+    second: {fileID: 2100000, guid: 07646beed8f4e514aac5088b48310775, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Detalhes.008
+    second: {fileID: 2100000, guid: 8aad5df5fa776a547a53b7e973965b9e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Detalhes2.001
+    second: {fileID: 2100000, guid: 49c0468edc30535419147e1781359457, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grades.001
+    second: {fileID: 2100000, guid: 304f1c9be9342494db493ada9100462f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Telhado.183
+    second: {fileID: 8969852399679768964, guid: ab3eab8e5a5c2b148a54519a028d3b42,
+      type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vidros.Casa3.001
+    second: {fileID: 2100000, guid: 529dc4067c1f4b44b9ef6ac6f5ec9592, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
