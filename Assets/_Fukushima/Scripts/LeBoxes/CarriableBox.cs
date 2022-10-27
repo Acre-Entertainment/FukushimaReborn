@@ -17,6 +17,7 @@ public class CarriableBox : MonoBehaviour
 
     public bool isInEventArea1;
     public bool isInEventArea2;
+    public bool isInEventArea3;
     public string triggerAreaTag1;
     public string triggerAreaTag2;
     public string triggerAreaTag3;
