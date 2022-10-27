@@ -17,6 +17,6 @@ public class CrouchInspector : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         spaceIsOccupied = false;
-        Debug.Log("EXIT");
+        //Debug.Log("EXIT");
     }
 }
