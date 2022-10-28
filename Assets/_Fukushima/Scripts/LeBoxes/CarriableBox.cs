@@ -102,7 +102,7 @@ public class CarriableBox : MonoBehaviour
             setOn();
         }
     }
-    void setOff()
+    public void setOff()
     {
         if(frameBuffer == false && beingCarried == true)
         {
