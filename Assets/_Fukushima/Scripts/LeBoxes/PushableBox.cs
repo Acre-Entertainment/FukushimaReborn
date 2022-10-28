@@ -166,6 +166,7 @@ public class PushableBox : MonoBehaviour
             pm._jump = 0;
             pm._puObject = true;
             gameObject.layer = LayerMask.NameToLayer("Ignore Character");
+            gameObject.tag = "Untagged";
             ignoreFrame = true;
         }
     }
@@ -190,6 +191,7 @@ public class PushableBox : MonoBehaviour
             pm._puObject = false;
             pm.pushAndPullToIdle = true;
             gameObject.layer = LayerMask.NameToLayer("Default");
+            gameObject.tag = "Event";
         }
     }
 

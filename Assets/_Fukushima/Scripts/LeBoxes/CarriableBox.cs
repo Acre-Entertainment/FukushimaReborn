@@ -25,7 +25,7 @@ public class CarriableBox : MonoBehaviour
     public UnityEvent area2Event;
     public UnityEvent area3Event;
 
-    bool startingFrameActivation;
+    TMPro.TextMeshProUGUI selectedText;
 
     void Start()
     {
@@ -36,6 +36,8 @@ public class CarriableBox : MonoBehaviour
 
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         startingJump = pm._jump;
+
+        selectedText = GameObject.FindGameObjectWithTag("SelectedText").GetComponent<TMPro.TextMeshProUGUI>();
     }
     void Update()
     {
@@ -68,38 +70,6 @@ public class CarriableBox : MonoBehaviour
             mc.isTrigger = true;
 
             frameBuffer = true;
-        }
-    }
-    public void ActivatedOnFrameSetOn()
-    {
-        if(startingFrameActivation == false)
-        {
-            carryPoint = GameObject.FindGameObjectWithTag("CarryPoint");
-            pbti = GameObject.FindGameObjectWithTag("InteractArea").GetComponent<PressButtonToInteract>();
-            mc = gameObject.GetComponent<MeshCollider>();
-            rb = gameObject.GetComponent<Rigidbody>();
-
-            pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-            startingJump = pm._jump;
-
-            if(frameBuffer == false && beingCarried == false)
-            {
-                beingCarried = true;
-                pbti.enabled = true;
-                pbti.hasEvent = false;
-                rb.useGravity = false;
-                pm._jump = 0;
-                pm._isCarrying = true;
-                gameObject.tag = "Carried";
-                mc.isTrigger = true;
-
-                frameBuffer = true;
-            }
-            startingFrameActivation = true;
-        }
-        else
-        {
-            setOn();
         }
     }
     public void setOff()
@@ -145,29 +115,42 @@ public class CarriableBox : MonoBehaviour
         if(other.gameObject.tag == triggerAreaTag1)
         {
             isInEventArea1 = true;
+            selectedText.SetText("[F]");
         }
         if(other.gameObject.tag == triggerAreaTag2)
         {
             isInEventArea2 = true;
+            selectedText.SetText("[F]");
         }
         if(other.gameObject.tag == triggerAreaTag3)
         {
             isInEventArea3 = true;
+            selectedText.SetText("[F]");
         }
+    }
+    void OnTriggerStay(Collider other)
+    {
+         if(other.gameObject.tag == triggerAreaTag1 || other.gameObject.tag == triggerAreaTag2 || other.gameObject.tag == triggerAreaTag3)
+         {
+            selectedText.SetText("[F]");
+         }
     }
     void OnTriggerExit(Collider other)
     {
         if(other.gameObject.tag == triggerAreaTag1)
         {
             isInEventArea1 = false;
+            selectedText.SetText("");
         }
         if(other.gameObject.tag == triggerAreaTag2)
         {
             isInEventArea2 = false;
+            selectedText.SetText("");
         }
         if(other.gameObject.tag == triggerAreaTag3)
         {
             isInEventArea3 = false;
+            selectedText.SetText("");
         }
     }
 }

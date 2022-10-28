@@ -18,6 +18,7 @@ TagManager:
   - Puzzle1
   - Puzzle2
   - Puzzle3
+  - SelectedText
   layers:
   - Default
   - TransparentFX

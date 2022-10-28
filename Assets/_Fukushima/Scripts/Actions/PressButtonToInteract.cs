@@ -18,6 +18,7 @@ public class PressButtonToInteract : MonoBehaviour
             if(hasPressed == false && hasEvent == true)
             {
                 pbo.Event.Invoke();
+                selectedText.SetText("");
             }
             hasPressed = true;
         }
