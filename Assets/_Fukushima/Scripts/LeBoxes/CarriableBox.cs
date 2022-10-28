@@ -25,6 +25,8 @@ public class CarriableBox : MonoBehaviour
     public UnityEvent area2Event;
     public UnityEvent area3Event;
 
+    bool startingFrameActivation;
+
     void Start()
     {
         carryPoint = GameObject.FindGameObjectWithTag("CarryPoint");
@@ -66,7 +68,38 @@ public class CarriableBox : MonoBehaviour
             mc.isTrigger = true;
 
             frameBuffer = true;
-            //Debug.Log("on");
+        }
+    }
+    public void ActivatedOnFrameSetOn()
+    {
+        if(startingFrameActivation == false)
+        {
+            carryPoint = GameObject.FindGameObjectWithTag("CarryPoint");
+            pbti = GameObject.FindGameObjectWithTag("InteractArea").GetComponent<PressButtonToInteract>();
+            mc = gameObject.GetComponent<MeshCollider>();
+            rb = gameObject.GetComponent<Rigidbody>();
+
+            pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+            startingJump = pm._jump;
+
+            if(frameBuffer == false && beingCarried == false)
+            {
+                beingCarried = true;
+                pbti.enabled = true;
+                pbti.hasEvent = false;
+                rb.useGravity = false;
+                pm._jump = 0;
+                pm._isCarrying = true;
+                gameObject.tag = "Carried";
+                mc.isTrigger = true;
+
+                frameBuffer = true;
+            }
+            startingFrameActivation = true;
+        }
+        else
+        {
+            setOn();
         }
     }
     void setOff()
