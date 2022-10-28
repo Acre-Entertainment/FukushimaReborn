@@ -8,12 +8,15 @@ public class Hide_Character : MonoBehaviour
 
     PlayerMovement pm;
 
+    public static bool _canChangeThePosition;
+
     private void Start()
     {
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
     public void Hide()
     {
+        _canChangeThePosition = true;
         pm.Hide();
         StartCoroutine(HideAnimation());
     }

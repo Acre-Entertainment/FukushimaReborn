@@ -31,17 +31,22 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Transform _camera;
 
+    [Header("Others")]
+    public bool canMove;
+    public bool _isCarrying;
+    public bool _puObject;
+    public bool crouchToIdle;
+    public bool carryingToIdle;
+    public bool pushAndPullToIdle;
+
     private CharacterController _controller;
     private Animator _animator;
     private Crouch _crouch;
 
-    public bool canMove;
     private float _speed;
     private Vector3 _velocity;
     private bool _controllerGrounded;
     private bool _sprinting;
-    public bool _isCarrying;
-    public bool _puObject;
     private float _turnSmoothTime = 0.1f;
     private float _turnSmoothVelocity;
     private float _groundedCurrentTimer;
@@ -62,11 +67,9 @@ public class PlayerMovement : MonoBehaviour
     private float _currentCrouchedLayer;
     private float _currentCarryingLayer;
     private float _currentPuObjectLayer;
-    public bool crouchToIdle;
-    public bool carryingToIdle;
-    public bool pushAndPullToIdle;
     private bool _isJumping;
     private bool _fixBug;
+    private bool _isDead;
 
     public static bool custscene;
 
@@ -122,7 +125,11 @@ public class PlayerMovement : MonoBehaviour
         {
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isRunning", false);
-            _animator.Play(_jumpAnimation);
+            while (!_isDead)
+            {
+                _animator.Play(_jumpAnimation);
+                break;
+            }
         }
 
         _currentCrouchedLayer = _animator.GetLayerWeight(_layerCrouchedIndex);
@@ -267,6 +274,7 @@ public class PlayerMovement : MonoBehaviour
     public void Hide()
     {
         canMove = false;
+        _animator.applyRootMotion = true;
         _animator.CrossFade(_hideAnimation, _animationPlayTransition);
     }
 
@@ -279,6 +287,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator HideUnhideCanMove()
     {
         yield return new WaitForSeconds(4f);
+        _animator.applyRootMotion = false;
         canMove = true;
     }
 
@@ -337,6 +346,7 @@ public class PlayerMovement : MonoBehaviour
     public void Dead(int typeOfDeath)
     {
         _controller.enabled = false;
+        _isDead = true;
         canMove = false;
         if(typeOfDeath == 0)
         {
