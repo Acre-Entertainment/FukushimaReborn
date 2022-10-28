@@ -67,6 +67,7 @@
      <Compile Include="Assets\_Fukushima\Scripts\DutosDeÁgua\DutoDeAgua.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\Player\PlayerLook.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\CheckPoint\Level2\CheckPointsLevel2.cs" />
+     <Compile Include="Assets\_Fukushima\Scripts\_Basics\FunctionSetLocalPositionToZero.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\_Basics\CallEventUponTriggerExit.cs" />
      <Compile Include="Assets\_ExternalAssets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
      <Compile Include="Assets\_ExternalAssets\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
@@ -78,6 +79,7 @@
      <Compile Include="Assets\_ExternalAssets\TutorialInfo\Scripts\Readme.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\CheckPoint\Level1\CheckPointsLevel1.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\UI\AtivarDesativar.cs" />
+     <Compile Include="Assets\_Fukushima\Scripts\_Basics\CallEventUponCollisionWithName.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\CheckPoint\Level3\CheckpointLevel3.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\UI\CursorScript.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\LeBoxes\PushableBox.cs" />
@@ -93,8 +95,8 @@
      <Compile Include="Assets\_Fukushima\Scripts\Player\InputManager.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\Player\Crouch.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\Player\PlayerMovement.cs" />
-     <Compile Include="Assets\_Fukushima\Scripts\_Basics\CallEventUponCollisionWithName.cs" />
-     <Compile Include="Assets\_Fukushima\Scripts\_Basics\FunctionSetLocalPositionToZero.cs" />
+     <Compile Include="Assets\_Fukushima\Scripts\_Basics\TimedEvent.cs" />
+     <Compile Include="Assets\_Fukushima\Scripts\_Basics\LoadSceneFunction.cs" />
      <None Include="Assets\_ExternalAssets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\_ExternalAssets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\_ExternalAssets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

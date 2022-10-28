@@ -200,7 +200,6 @@ public class PushableBox : MonoBehaviour
         if (other.tag == "InteractArea")
         {
             setOff();
-            //Debug.Log("Stopped moving box: trigger");
         }
     }
     void OnCollisionEnter(Collision other)
