@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Garrafa
-    second: {fileID: 2100000, guid: 9e94f930d90c8f24f8f4332ce49d6f8d, type: 2}
+    second: {fileID: 2100000, guid: 529dc4067c1f4b44b9ef6ac6f5ec9592, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

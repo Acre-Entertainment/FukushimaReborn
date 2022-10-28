@@ -123,12 +123,14 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Placa.001
-    second: {fileID: 2100000, guid: 5152b7d37ee41ba4cb8e6081c731e505, type: 2}
+    second: {fileID: 5111471542915892761, guid: 421afcf1608729d468fb7ddd689a101b,
+      type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Placa6
-    second: {fileID: 2100000, guid: 028d3b3f85b173b42adec384b839a0c4, type: 2}
+    second: {fileID: 3220366517688736485, guid: 7f3fa5c5a869b1843a48cf7b188349d3,
+      type: 3}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -243,7 +245,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Vidro.002
-    second: {fileID: 2100000, guid: c1901d405c2bb974cac399fafc4c13be, type: 2}
+    second: {fileID: 2100000, guid: 5a206b73e84e79c45ae2c605cbe1deba, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
