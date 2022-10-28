@@ -13,10 +13,21 @@ public class DutoDeAgua : MonoBehaviour
     private float _timeSquirt;
     [SerializeField]
     private float _timeStop;
+
+    [Header("Start")]
+    [SerializeField]
+    private bool _start;
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Squirt());
+        if (_start)
+        {
+            StartCoroutine(Squirt());
+        }
+        else
+        {
+            StartCoroutine(Stop());
+        }
     }
 
     // Update is called once per frame
