@@ -3,7 +3,27 @@ guid: dec738da5608df44fadede74c644aa99
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Areia
+    second: {fileID: 2100000, guid: ebc6875fd0ca92140a9f3812022167e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "BaldeAl\xE7a"
+    second: {fileID: 2100000, guid: 1b8954bc88f83434f84d7d2232cd9867, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaldeEncaixe
+    second: {fileID: 2100000, guid: 8026fd76a6297294cbc26331cd04ba6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base
+    second: {fileID: 2100000, guid: 6756d501199677144890650125c8ffcf, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

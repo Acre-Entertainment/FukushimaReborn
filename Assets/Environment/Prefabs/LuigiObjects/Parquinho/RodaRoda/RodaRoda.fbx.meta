@@ -3,7 +3,42 @@ guid: 403e58c0154ec14459664e41c96cd5d3
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BancoCor1
+    second: {fileID: 2100000, guid: 6ef6754e16e9a7848929e7715be4dd67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BancoCor2
+    second: {fileID: 2100000, guid: 3d02bfa643f7a7a4b96138f01328906f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BancoCor3
+    second: {fileID: 2100000, guid: 4507a1a3dc701f9458498b917afa9a8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BancoCor4
+    second: {fileID: 2100000, guid: b06f079e94c28ff4dbb1dd74b31f163d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base.001
+    second: {fileID: 2100000, guid: 01ffeb872b25d2847a6993753c0d53a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base2
+    second: {fileID: 2100000, guid: 2a661d992bee17146b2d934fa7c1e204, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Detalhe
+    second: {fileID: 2100000, guid: 5fcd561f11abf6e45801e3f2ca756334, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
