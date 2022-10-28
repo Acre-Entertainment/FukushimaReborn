@@ -77,6 +77,14 @@ public class PressButtonToInteract : MonoBehaviour
             {
                 selectedText.SetText("[F]");
             }
+
+            if (other.GetComponent<Hide_Object>())
+            {
+                if (Hide_Character._canChangeThePosition)
+                {
+                    other.GetComponent<Hide_Object>().PlayerPosition();
+                }
+            }
         }
     }
     void OnTriggerExit(Collider other)
