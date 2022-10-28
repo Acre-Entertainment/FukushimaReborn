@@ -13,6 +13,11 @@ TagManager:
   - PuzzleObject
   - TriggerCollision
   - Carried
+  - UI
+  - Cursor
+  - Puzzle1
+  - Puzzle2
+  - Puzzle3
   layers:
   - Default
   - TransparentFX
