@@ -249,19 +249,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4968716800479277239}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &4968716801177036768
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5203069665438862822}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7103084, y: 2.2567916, z: 0.6407562}
-  m_Center: {x: -0.000000014901163, y: -0.00000011920929, z: -0.01410264}
 --- !u!54 &4764696539114136489
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -278,19 +265,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7119766827775767033
-MonoBehaviour:
+--- !u!65 &4968716801177036768
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5203069665438862822}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad6a6fc47804e134f911769411d778fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  point: {fileID: 8490245303852161471}
+  serializedVersion: 2
+  m_Size: {x: 0.7103084, y: 2.2567916, z: 0.6407562}
+  m_Center: {x: -0.000000014901163, y: -0.00000011920929, z: -0.01410264}
 --- !u!114 &4514527622278611486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,3 +305,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7119766827775767033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5203069665438862822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6a6fc47804e134f911769411d778fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 8479020209193595916}
+  open: 0
+  point: {fileID: 8490245303852161471}

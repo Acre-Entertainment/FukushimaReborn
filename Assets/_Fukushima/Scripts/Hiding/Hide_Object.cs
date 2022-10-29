@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Hide_Object : MonoBehaviour
 {
+    public Animator _animator;
     private Transform _player;
+    public bool open;
     public Transform point;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,13 @@ public class Hide_Object : MonoBehaviour
     public void PlayerPosition()
     {
         _player.position = point.position;
-        //Tocar Animação
+        _animator.SetBool("Open", true);
+        open = true;
+    }
+
+    public void Close()
+    {
+        _animator.SetBool("Open", false);
+        open = false;
     }
 }
