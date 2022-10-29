@@ -3843,6 +3843,11 @@ PrefabInstance:
       propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4764696539114136489, guid: 6ba0e0c500a3de846947ef13ddc6c9da,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4968716801369363148, guid: 6ba0e0c500a3de846947ef13ddc6c9da,
         type: 3}
       propertyPath: m_Name
@@ -68752,6 +68757,16 @@ PrefabInstance:
       propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4764696539114136489, guid: 6ba0e0c500a3de846947ef13ddc6c9da,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764696539114136489, guid: 6ba0e0c500a3de846947ef13ddc6c9da,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4968716801369363148, guid: 6ba0e0c500a3de846947ef13ddc6c9da,
         type: 3}
       propertyPath: m_Name
@@ -68925,6 +68940,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Event.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4764696539114136489, guid: 6ba0e0c500a3de846947ef13ddc6c9da,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4968716801369363148, guid: 6ba0e0c500a3de846947ef13ddc6c9da,
         type: 3}
