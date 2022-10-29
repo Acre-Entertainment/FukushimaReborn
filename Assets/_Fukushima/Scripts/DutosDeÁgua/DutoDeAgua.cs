@@ -17,6 +17,8 @@ public class DutoDeAgua : MonoBehaviour
     [Header("Start")]
     [SerializeField]
     private bool _start;
+    [SerializeField]
+    private float _startWaitTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class DutoDeAgua : MonoBehaviour
         }
         else
         {
-            StartCoroutine(Stop());
+            StartCoroutine(WaitStart());
         }
     }
 
@@ -47,6 +49,13 @@ public class DutoDeAgua : MonoBehaviour
     {
         _water.SetActive(false);
         yield return new WaitForSeconds(_timeStop);
+        StartCoroutine(Squirt());
+    }
+
+    IEnumerator WaitStart()
+    {
+        _water.SetActive(false);
+        yield return new WaitForSeconds(_startWaitTime);
         StartCoroutine(Squirt());
     }
 }
