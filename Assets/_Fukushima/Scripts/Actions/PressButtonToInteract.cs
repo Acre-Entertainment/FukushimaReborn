@@ -33,10 +33,8 @@ public class PressButtonToInteract : MonoBehaviour
             }
             hasPressed = true;
         }
-        if(Input.GetKeyUp(KeyCode.F))
-        {
-            hasPressed = false;
-        }
+
+        hasPressed = false;
     }
 
     public void callEvent()

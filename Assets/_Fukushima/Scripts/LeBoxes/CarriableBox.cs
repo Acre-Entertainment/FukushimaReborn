@@ -47,7 +47,6 @@ public class CarriableBox : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F) && beingCarried == true)
         {
             setOff();
-            //Debug.Log("setOff");
         }
         frameBuffer = false;
 
