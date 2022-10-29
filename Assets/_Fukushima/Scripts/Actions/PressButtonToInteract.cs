@@ -17,8 +17,19 @@ public class PressButtonToInteract : MonoBehaviour
         {
             if(hasPressed == false && hasEvent == true)
             {
-                pbo.Event.Invoke();
-                selectedText.SetText("");
+                if(pbo.GetComponent<PushableBox>() != null)
+                {
+                    if(pbo.GetComponent<PushableBox>().calculateDistanceFromPlayer(gameObject))
+                    {
+                        pbo.Event.Invoke();
+                        selectedText.SetText("");
+                    }
+                }
+                else
+                {
+                    pbo.Event.Invoke();
+                    selectedText.SetText("");
+                }
             }
             hasPressed = true;
         }
@@ -44,18 +55,26 @@ public class PressButtonToInteract : MonoBehaviour
             pbo = interactingGO.GetComponent<PressButtonToInteract_Object>();
             hasEvent = true;
 
-            if(other.GetComponent<InteractText>() != null)
+            //if(other.GetComponent<InteractText>() != null)
+            //{
+            //    selectedText.SetText(other.GetComponent<InteractText>().text);
+            //}
+
+            if(other.GetComponent<PushableBox>() != null)
             {
-                selectedText.SetText(other.GetComponent<InteractText>().text);
+                if(other.GetComponent<PushableBox>().calculateDistanceFromPlayer(gameObject))
+                {
+                    selectedText.SetText("[F]");
+                }
+                else
+                {
+                    selectedText.SetText("");
+                }
             }
             else
             {
                 selectedText.SetText("[F]");
             }
-        }
-        else
-        {
-            selectedText.SetText("");
         }
     }
     void OnTriggerStay(Collider other)
@@ -69,9 +88,21 @@ public class PressButtonToInteract : MonoBehaviour
                 hasEvent = true;
             }
 
-            if (other.GetComponent<InteractText>() != null)
+            //if (other.GetComponent<InteractText>() != null)
+            //{
+            // selectedText.SetText(other.GetComponent<InteractText>().text);
+            //}
+
+            if(other.GetComponent<PushableBox>() != null)
             {
-                selectedText.SetText(other.GetComponent<InteractText>().text);
+                if(other.GetComponent<PushableBox>().calculateDistanceFromPlayer(gameObject))
+                {
+                    selectedText.SetText("[F]");
+                }
+                else
+                {
+                    selectedText.SetText("");
+                }
             }
             else
             {

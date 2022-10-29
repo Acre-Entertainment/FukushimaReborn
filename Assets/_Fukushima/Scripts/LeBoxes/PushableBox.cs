@@ -9,6 +9,7 @@ public class PushableBox : MonoBehaviour
     //MeshCollider ms;
     public GameObject anchorX, anchorXminor, anchorZ, anchorZminor;
     public float distanceFromPlayerX, distanceFromPlayerZ, XOffset, ZOffset;
+    public float minimunDistanceFromAnchor = 0.75f;
     float realDistanceFromPlayer;
     bool facingX, facingXMinor, facingZ, facingZMinor;
     public bool noXMovement, noZmovement;
@@ -36,26 +37,6 @@ public class PushableBox : MonoBehaviour
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         startingJump = pm._jump;
     }
-    //void FixedUpdate()
-    //{
-    //    if (beingPushedByX == true || beingPushedByZ == true)
-    //    {
-    //        if (beingPushedByX == false)
-    //        {
-    //            gameObject.transform.position = new Vector3(constantX, gameObject.transform.position.y, playerObject.transform.position.z + realDistanceFromPlayer - ZOffset);
-    //            cc.enabled = false;
-    //            playerObject.GetComponent<CharacterController>().transform.position = new Vector3(constantX + XOffset, playerObject.transform.position.y, playerObject.transform.position.z);
-    //            cc.enabled = true;
-    //        }
-    //        if (beingPushedByZ == false)
-    //        {
-    //            gameObject.transform.position = new Vector3(playerObject.transform.position.x + realDistanceFromPlayer - XOffset, gameObject.transform.position.y, constantZ);
-    //            cc.enabled = false;
-    //            playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, constantZ + ZOffset);
-    //            cc.enabled = true;
-    //        }
-    //    }
-    //}
     void Update()
     {
         if (beingPushedByX == true || beingPushedByZ == true)
@@ -99,10 +80,8 @@ public class PushableBox : MonoBehaviour
     }
     public void setPush()
     {
-        //Debug.Log("setPush");
         if (ignoreFrame == false && beingPushedByX == false && beingPushedByZ == false)
         {
-            //Debug.Log("setPushTrue");
             ignoreFrame = true;
             if (noXMovement == false && noZmovement == false)
             {
@@ -112,8 +91,6 @@ public class PushableBox : MonoBehaviour
                 float distanceZminor = Vector3.Distance(playerObject.transform.position, anchorZminor.transform.position);
 
                 float smallestDistance = Mathf.Min(distanceX, distanceXminor, distanceZ, distanceZminor);
-
-                Debug.Log(smallestDistance);
 
                 if (smallestDistance == distanceX) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = -distanceFromPlayerX; facingX = true;}
                 if (smallestDistance == distanceXminor) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = distanceFromPlayerX; facingXMinor = true;}
@@ -127,8 +104,6 @@ public class PushableBox : MonoBehaviour
 
                 float smallestDistance = Mathf.Min(distanceZ, distanceZminor);
 
-                Debug.Log(smallestDistance);
-
                 if (smallestDistance == distanceZ) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; realDistanceFromPlayer = -distanceFromPlayerZ; facingZ = true;}
                 if (smallestDistance == distanceZminor) { beingPushedByX = false; beingPushedByZ = true; constantX = gameObject.transform.position.x; playerFixedRotation = 0; realDistanceFromPlayer = distanceFromPlayerZ; facingZMinor = true;}
             }
@@ -138,8 +113,6 @@ public class PushableBox : MonoBehaviour
                 float distanceXminor = Vector3.Distance(playerObject.transform.position, anchorXminor.transform.position);
 
                 float smallestDistance = Mathf.Min(distanceX, distanceXminor);
-
-                Debug.Log(smallestDistance);
 
                 if (smallestDistance == distanceX) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = -distanceFromPlayerX; facingX = true;}
                 if (smallestDistance == distanceXminor) { beingPushedByX = true; beingPushedByZ = false; constantZ = gameObject.transform.position.z; realDistanceFromPlayer = distanceFromPlayerX; facingXMinor = true;}
@@ -192,6 +165,59 @@ public class PushableBox : MonoBehaviour
             pm.pushAndPullToIdle = true;
             gameObject.layer = LayerMask.NameToLayer("Default");
             gameObject.tag = "Event";
+        }
+    }
+    public bool calculateDistanceFromPlayer(GameObject gopull)
+    {
+        if (noXMovement == false && noZmovement == false)
+        {
+            float distanceX = Vector3.Distance(playerObject.transform.position, anchorX.transform.position);
+            float distanceXminor = Vector3.Distance(playerObject.transform.position, anchorXminor.transform.position);
+            float distanceZ = Vector3.Distance(playerObject.transform.position, anchorZ.transform.position);
+            float distanceZminor = Vector3.Distance(playerObject.transform.position, anchorZminor.transform.position);
+            float smallestDistance = Mathf.Min(distanceX, distanceXminor, distanceZ, distanceZminor);
+            if(smallestDistance <= minimunDistanceFromAnchor)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (noXMovement == true && noZmovement == false)
+        {
+            float distanceZ = Vector3.Distance(playerObject.transform.position, anchorZ.transform.position);
+            float distanceZminor = Vector3.Distance(playerObject.transform.position, anchorZminor.transform.position);
+
+            float smallestDistance = Mathf.Min(distanceZ, distanceZminor);
+
+            if(smallestDistance <= minimunDistanceFromAnchor)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else if (noXMovement == false && noZmovement == true)
+        {
+            float distanceX = Vector3.Distance(playerObject.transform.position, anchorX.transform.position);
+            float distanceXminor = Vector3.Distance(playerObject.transform.position, anchorXminor.transform.position);
+            float smallestDistance = Mathf.Min(distanceX, distanceXminor);
+            if(smallestDistance <= minimunDistanceFromAnchor)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
         }
     }
 
