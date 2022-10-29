@@ -39,7 +39,6 @@ public class CarriableBox : MonoBehaviour
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         dropInspector = GameObject.FindGameObjectWithTag("DropInspector").GetComponent<CrouchInspector>();
         startingJump = pm._jump;
-
         selectedText = GameObject.FindGameObjectWithTag("SelectedText").GetComponent<TMPro.TextMeshProUGUI>();
     }
     void Update()
