@@ -230,7 +230,6 @@ public class PushableBox : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-        //setOff();
-        //Debug.Log("Stopped moving box: collision");
+        setOff();
     }
 }
