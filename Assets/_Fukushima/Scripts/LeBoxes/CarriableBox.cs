@@ -98,14 +98,17 @@ public class CarriableBox : MonoBehaviour
             if(isInEventArea1 == true)
             {
                 area1Event.Invoke();
+                selectedText.SetText("");
             }
             if(isInEventArea2 == true)
             {
                 area2Event.Invoke();
+                selectedText.SetText("");
             }
             if(isInEventArea3 == true)
             {
                 area3Event.Invoke();
+                selectedText.SetText("");
             }
         }
     }

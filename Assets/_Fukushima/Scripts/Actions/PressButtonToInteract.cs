@@ -78,18 +78,22 @@ public class PressButtonToInteract : MonoBehaviour
                 selectedText.SetText("[F]");
             }
 
-            if (!other.GetComponent<Hide_Object>().open)
+
+            if(other.GetComponent<Hide_Object>() != null)
             {
-                if (Hide_Character._canChangeThePosition)
+                if (other.GetComponent<Hide_Object>().open == false)
                 {
-                    other.GetComponent<Hide_Object>().PlayerPosition();
+                    if (Hide_Character._canChangeThePosition)
+                    {
+                        other.GetComponent<Hide_Object>().PlayerPosition();
+                    }
                 }
-            }
-            else if (other.GetComponent<Hide_Object>().open)
-            {
-                if (Hide_Character._canChangeThePosition)
+                else if (other.GetComponent<Hide_Object>().open == true)
                 {
-                    other.GetComponent<Hide_Object>().Close();
+                    if (Hide_Character._canChangeThePosition)
+                    {
+                        other.GetComponent<Hide_Object>().Close();
+                    }
                 }
             }
         }
