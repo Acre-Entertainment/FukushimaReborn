@@ -510,6 +510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287df581453658c4eb3609676b6a79bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CooldownTime: 0.5
+  hasCooldown: 0
   hasPressed: 0
   hasEvent: 0
   interactingGO: {fileID: 0}

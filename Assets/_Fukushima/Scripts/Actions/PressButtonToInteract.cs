@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class PressButtonToInteract : MonoBehaviour
 {
     PressButtonToInteract_Object pbo;
+    public float CooldownTime;
+    public bool hasCooldown;
     public bool hasPressed;
     public bool hasEvent;
     public GameObject interactingGO;
@@ -15,7 +17,7 @@ public class PressButtonToInteract : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F))
         {
-            if(hasPressed == false && hasEvent == true)
+            if(hasPressed == false && hasEvent == true && hasCooldown == false)
             {
                 if(pbo.GetComponent<PushableBox>() != null)
                 {
@@ -23,12 +25,21 @@ public class PressButtonToInteract : MonoBehaviour
                     {
                         pbo.Event.Invoke();
                         selectedText.SetText("");
+                        hasCooldown = true;
+                        StartCoroutine(Cooldown());
                     }
+                }
+                else if(pbo.GetComponent<CarriableBox>() != null)
+                {
+                    pbo.Event.Invoke();
+                    selectedText.SetText("");
                 }
                 else
                 {
                     pbo.Event.Invoke();
                     selectedText.SetText("");
+                    hasCooldown = true;
+                    StartCoroutine(Cooldown());
                 }
             }
             hasPressed = true;
@@ -74,6 +85,11 @@ public class PressButtonToInteract : MonoBehaviour
                 selectedText.SetText("[F]");
             }
         }
+    }
+    IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(CooldownTime);
+        hasCooldown = false;
     }
     void OnTriggerStay(Collider other)
     {

@@ -13,6 +13,9 @@ public class CarriableBox : MonoBehaviour
     public bool beingCarried, frameBuffer;
     public float XPositionOffset, YPositionOffset, ZPositionOffset, XRotationOffset, YRotationOffset, ZRotationOffset, releaseDistance;
 
+    public bool hasCooldown;
+    public float CooldownTime = 0.5f;
+
     PlayerMovement pm;
     float startingJump;
     CrouchInspector dropInspector;
@@ -72,11 +75,13 @@ public class CarriableBox : MonoBehaviour
             mc.isTrigger = true;
 
             frameBuffer = true;
+            hasCooldown = true;
+            StartCoroutine(Cooldown());
         }
     }
     public void setOff()
     {
-        if(frameBuffer == false && beingCarried == true)
+        if(frameBuffer == false && hasCooldown == false && beingCarried == true)
         {
             if(isInEventArea1 == false && isInEventArea2 == false && isInEventArea3 == false && dropInspector.spaceIsOccupied == true)
             {
@@ -116,6 +121,11 @@ public class CarriableBox : MonoBehaviour
                 selectedText.SetText("");
             }
         }
+    }
+    IEnumerator Cooldown()
+    {
+        yield return new WaitForSeconds(CooldownTime);
+        hasCooldown = false;
     }
 
     void OnTriggerEnter(Collider other)
