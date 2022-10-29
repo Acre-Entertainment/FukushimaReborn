@@ -247,6 +247,14 @@ public class PushableBox : MonoBehaviour
         }
     }
 
+    void OnCollisionStay(Collision other)
+    {
+        if(other.gameObject.layer != 9 && other.gameObject.tag != "Player")
+        {
+            setBuffer();
+            setOff();
+        }
+    }
     void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.layer != 9 && other.gameObject.tag != "Player")
