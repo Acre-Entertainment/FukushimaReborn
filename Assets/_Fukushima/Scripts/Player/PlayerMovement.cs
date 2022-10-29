@@ -123,8 +123,13 @@ public class PlayerMovement : MonoBehaviour
 
         if(!_isJumping && !_controllerGrounded && _fixBug)
         {
+            _animator.SetLayerWeight(_layerCrouchedIndex, 0);
+            _animator.SetLayerWeight(_layerCarryingIndex, 0);
+            _animator.SetLayerWeight(_layerPuObjectIndex, 0);
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isRunning", false);
+            _isCarrying = false;
+            _puObject = false;
             while (!_isDead)
             {
                 _animator.Play(_jumpAnimation);
@@ -350,14 +355,17 @@ public class PlayerMovement : MonoBehaviour
         canMove = false;
         if(typeOfDeath == 0)
         {
+            _crouch.isCrouched = false;
             _animator.CrossFade(_drowingAnimation, _animationPlayTransition);
         }
         else if (typeOfDeath == 1)
         {
+            _crouch.isCrouched = false;
             _animator.CrossFade(_surrenderAnimation, _animationPlayTransition);
         }
         else if (typeOfDeath == 2)
         {
+            _crouch.isCrouched = false;
             _animator.CrossFade(_eletrocutedAnimation, _animationPlayTransition);
         }
     }
