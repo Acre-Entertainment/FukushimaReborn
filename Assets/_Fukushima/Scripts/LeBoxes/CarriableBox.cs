@@ -94,6 +94,8 @@ public class CarriableBox : MonoBehaviour
 
             beingCarried = false;
             interactArea.SetActive(true);
+            pbti.hasCooldown = true;
+            StartCoroutine(pbti.Cooldown());
             rb.useGravity = true;
             pm._jump = startingJump;
             pm._isCarrying = false;

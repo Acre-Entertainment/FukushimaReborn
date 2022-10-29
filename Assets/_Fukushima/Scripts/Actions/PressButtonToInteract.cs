@@ -86,7 +86,7 @@ public class PressButtonToInteract : MonoBehaviour
             }
         }
     }
-    IEnumerator Cooldown()
+    public IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(CooldownTime);
         hasCooldown = false;
