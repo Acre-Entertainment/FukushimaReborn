@@ -10,7 +10,7 @@ public class PushableBox : MonoBehaviour
     public GameObject anchorX, anchorXminor, anchorZ, anchorZminor;
     public float distanceFromPlayerX, distanceFromPlayerZ, XOffset, ZOffset;
     public float minimunDistanceFromAnchor = 0.75f;
-    public float collisionBuffer = 0.05f;
+    public float collisionBuffer = 0.1f;
     float realDistanceFromPlayer;
     bool facingX, facingXMinor, facingZ, facingZMinor;
     public bool noXMovement, noZmovement;
@@ -271,10 +271,16 @@ public class PushableBox : MonoBehaviour
             if(movingX == true)
             {
                 gameObject.transform.position = new Vector3(gameObject.transform.position.x - collisionBuffer, gameObject.transform.position.y, gameObject.transform.position.z);
+                cc.enabled = false;
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x - collisionBuffer, playerObject.transform.position.y, playerObject.transform.position.z);
+                cc.enabled = true;
             }
             if(movingXminor == true)
             {
                 gameObject.transform.position = new Vector3(gameObject.transform.position.x + collisionBuffer, gameObject.transform.position.y, gameObject.transform.position.z);
+                cc.enabled = false;
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x + collisionBuffer, playerObject.transform.position.y, playerObject.transform.position.z);
+                cc.enabled = true;
             }
         }
         if(beingPushedByZ == true)
@@ -282,10 +288,16 @@ public class PushableBox : MonoBehaviour
             if(movingZ == true)
             {
                 gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z - collisionBuffer);
+                cc.enabled = false;
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, playerObject.transform.position.z - collisionBuffer);
+                cc.enabled = true;
             }
             if(movingZminor == true)
             {
                 gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z + collisionBuffer);
+                cc.enabled = false;
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, playerObject.transform.position.z + collisionBuffer);
+                cc.enabled = true;
             }
         }
     }
