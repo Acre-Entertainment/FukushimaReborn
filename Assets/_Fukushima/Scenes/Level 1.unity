@@ -10337,7 +10337,7 @@ PrefabInstance:
     - target: {fileID: 1155568361555395459, guid: 12901d05051cbcc4cb05fc4273fa65ae,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1155568361555395467, guid: 12901d05051cbcc4cb05fc4273fa65ae,
         type: 3}
@@ -53953,6 +53953,8 @@ MonoBehaviour:
   YRotationOffset: 0
   ZRotationOffset: 0
   releaseDistance: 0.5
+  hasCooldown: 0
+  CooldownTime: 0.5
   isInEventArea1: 0
   isInEventArea2: 0
   isInEventArea3: 0
@@ -70250,6 +70252,7 @@ MonoBehaviour:
   XOffset: 0.5
   ZOffset: 0
   minimunDistanceFromAnchor: 0.75
+  collisionBuffer: 0.05
   noXMovement: 0
   noZmovement: 1
 --- !u!114 &1579071785
@@ -78368,6 +78371,8 @@ MonoBehaviour:
   YRotationOffset: 0
   ZRotationOffset: 0
   releaseDistance: 0.6
+  hasCooldown: 0
+  CooldownTime: 0.5
   isInEventArea1: 0
   isInEventArea2: 0
   isInEventArea3: 0
@@ -80401,6 +80406,7 @@ MonoBehaviour:
   XOffset: 0.2
   ZOffset: 0.05
   minimunDistanceFromAnchor: 0.75
+  collisionBuffer: 0.05
   noXMovement: 0
   noZmovement: 0
 --- !u!64 &1872037918
