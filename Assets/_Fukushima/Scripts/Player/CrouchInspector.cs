@@ -8,15 +8,17 @@ public class CrouchInspector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("entry");
         spaceIsOccupied = true;
     }
     private void OnTriggerStay(Collider other)
     {
+        //Debug.Log("stay");
         spaceIsOccupied = true;
     }
     private void OnTriggerExit(Collider other)
     {
+        //Debug.Log("leave");
         spaceIsOccupied = false;
-        //Debug.Log("EXIT");
     }
 }
