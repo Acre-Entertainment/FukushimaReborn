@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1762363691}
   - component: {fileID: 1762363692}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 7442253864125351751}
   - component: {fileID: 7442253864206991044}
   - component: {fileID: 7442253864206991045}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,6 +442,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: untitled
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 681069887987a684e8b04107e7254b0e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 681069887987a684e8b04107e7254b0e, type: 3}
 --- !u!4 &543450653521556366 stripped
@@ -457,6 +462,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7442253864125351750}
     m_Modifications:
+    - target: {fileID: 1600504403136606302, guid: 3bc17a3d1f570674c93732af6c1c2e25,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4859319193145657200, guid: 3bc17a3d1f570674c93732af6c1c2e25,
         type: 3}
       propertyPath: m_RootOrder
@@ -516,6 +526,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HelicopteroFukushima
+      objectReference: {fileID: 0}
+    - target: {fileID: 5198303663728041418, guid: 3bc17a3d1f570674c93732af6c1c2e25,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737830932784898359, guid: 3bc17a3d1f570674c93732af6c1c2e25,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8467202471452952254, guid: 3bc17a3d1f570674c93732af6c1c2e25,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bc17a3d1f570674c93732af6c1c2e25, type: 3}

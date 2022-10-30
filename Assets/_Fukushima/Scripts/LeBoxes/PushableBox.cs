@@ -250,6 +250,7 @@ public class PushableBox : MonoBehaviour
     {
         if(other.gameObject.layer != 9 && other.gameObject.tag != "Player" && (beingPushedByX == true || beingPushedByZ == true))
         {
+            Debug.Log(gameObject.name + " was stopped by " + other.gameObject.name);
             setBuffer();
             setOff();
         }
@@ -258,6 +259,7 @@ public class PushableBox : MonoBehaviour
     {
         if(other.gameObject.layer != 9 && other.gameObject.tag != "Player" && (beingPushedByX == true || beingPushedByZ == true))
         {
+            Debug.Log(gameObject.name + " was stopped" + other.gameObject.name);
             setBuffer();
             setOff();
         }
