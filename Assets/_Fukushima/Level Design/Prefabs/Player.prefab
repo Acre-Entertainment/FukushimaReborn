@@ -516,6 +516,7 @@ MonoBehaviour:
   hasEvent: 0
   interactingGO: {fileID: 0}
   selectedText: {fileID: 0}
+  itenDropInspector: {fileID: 8919606667596110613}
 --- !u!65 &1704067294
 BoxCollider:
   m_ObjectHideFlags: 0

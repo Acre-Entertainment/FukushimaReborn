@@ -12,10 +12,11 @@ public class PressButtonToInteract : MonoBehaviour
     public bool hasEvent;
     public GameObject interactingGO;
     [SerializeField] TMPro.TextMeshProUGUI selectedText;
+    [SerializeField] CrouchInspector itenDropInspector;
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(KeyCode.F) && !Input.GetKey(KeyCode.LeftShift))
         {
             //Debug.Log("PBTI 1");
             if(hasPressed == false && hasEvent == true && hasCooldown == false)
@@ -36,6 +37,7 @@ public class PressButtonToInteract : MonoBehaviour
                 else if(pbo.GetComponent<CarriableBox>() != null)
                 {
                     //Debug.Log("PBTI 3 C");
+                    itenDropInspector.spaceIsOccupied = false;
                     pbo.Event.Invoke();
                     selectedText.SetText("");
                 }
