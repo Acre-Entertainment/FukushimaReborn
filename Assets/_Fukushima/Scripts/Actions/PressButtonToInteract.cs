@@ -17,12 +17,16 @@ public class PressButtonToInteract : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F))
         {
+            Debug.Log("PBTI 1");
             if(hasPressed == false && hasEvent == true && hasCooldown == false)
             {
+                Debug.Log("PBTI 2");
                 if(pbo.GetComponent<PushableBox>() != null)
                 {
+                    Debug.Log("PBTI 3 P");
                     if(pbo.GetComponent<PushableBox>().calculateDistanceFromPlayer(gameObject))
                     {
+                        Debug.Log("PBTI 4 P");
                         pbo.Event.Invoke();
                         selectedText.SetText("");
                         hasCooldown = true;
@@ -31,11 +35,13 @@ public class PressButtonToInteract : MonoBehaviour
                 }
                 else if(pbo.GetComponent<CarriableBox>() != null)
                 {
+                    Debug.Log("PBTI 3 C");
                     pbo.Event.Invoke();
                     selectedText.SetText("");
                 }
                 else
                 {
+                    Debug.Log("PBTI 3 E");
                     pbo.Event.Invoke();
                     selectedText.SetText("");
                     hasCooldown = true;
@@ -88,8 +94,11 @@ public class PressButtonToInteract : MonoBehaviour
     }
     public IEnumerator Cooldown()
     {
+        Debug.Log("CooldownStarted");
         yield return new WaitForSeconds(CooldownTime);
+        Debug.Log("CooldownNearEnd");
         hasCooldown = false;
+        Debug.Log("CooldownEnd");
     }
     void OnTriggerStay(Collider other)
     {

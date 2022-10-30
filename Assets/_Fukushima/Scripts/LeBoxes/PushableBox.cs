@@ -248,7 +248,7 @@ public class PushableBox : MonoBehaviour
 
     void OnCollisionStay(Collision other)
     {
-        if(other.gameObject.layer != 9 && other.gameObject.tag != "Player")
+        if(other.gameObject.layer != 9 && other.gameObject.tag != "Player" && (beingPushedByX == true || beingPushedByZ == true))
         {
             setBuffer();
             setOff();
@@ -256,7 +256,7 @@ public class PushableBox : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.layer != 9 && other.gameObject.tag != "Player")
+        if(other.gameObject.layer != 9 && other.gameObject.tag != "Player" && (beingPushedByX == true || beingPushedByZ == true))
         {
             setBuffer();
             setOff();

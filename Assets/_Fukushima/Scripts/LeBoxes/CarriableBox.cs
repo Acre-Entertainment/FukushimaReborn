@@ -94,8 +94,10 @@ public class CarriableBox : MonoBehaviour
 
             beingCarried = false;
             interactArea.SetActive(true);
+
             pbti.hasCooldown = true;
             StartCoroutine(pbti.Cooldown());
+
             rb.useGravity = true;
             pm._jump = startingJump;
             pm._isCarrying = false;
@@ -105,20 +107,23 @@ public class CarriableBox : MonoBehaviour
             mc.isTrigger = false;
 
             frameBuffer = true;
-            //Debug.Log("off");
 
+            StartCoroutine(pbti.Cooldown());
             if(isInEventArea1 == true)
             {
+                pbti.hasCooldown = false;
                 area1Event.Invoke();
                 selectedText.SetText("");
             }
             if(isInEventArea2 == true)
             {
+                pbti.hasCooldown = false;
                 area2Event.Invoke();
                 selectedText.SetText("");
             }
             if(isInEventArea3 == true)
             {
+                pbti.hasCooldown = false;
                 area3Event.Invoke();
                 selectedText.SetText("");
             }
