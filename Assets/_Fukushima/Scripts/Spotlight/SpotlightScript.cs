@@ -44,7 +44,7 @@ public class SpotlightScript : MonoBehaviour
             if(Physics.Raycast(ray, out hit))
             {
                 hittingThing = hit.collider.gameObject;
-                if(hittingThing.tag == "Player")
+                if(hittingThing.tag == "Player" && !Hide_Character.isHided)
                 {
                     isSeeingPlayer = true;
                 }

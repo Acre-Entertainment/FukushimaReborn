@@ -23,14 +23,12 @@ public class Hide_Object : MonoBehaviour
     public void PlayerPosition()
     {
         _player.position = point.position;
-        _player.rotation = point.rotation = Quaternion.identity;
-        _animator.SetBool("Open", true);
+        //_player.rotation = point.rotation = Quaternion.identity;
         open = true;
     }
 
     public void Close()
     {
-        _animator.SetBool("Open", false);
         open = false;
     }
 }

@@ -27,6 +27,7 @@ public class Hide_Opener : MonoBehaviour
         pm.Unhide();
         yield return new WaitForSeconds(2);
         Hide_Character._canChangeThePosition = false;
+        Hide_Character.isHided = false;
         gameObject.SetActive(false);
     }
 }
