@@ -31,7 +31,14 @@ public class PressButtonToInteract : MonoBehaviour
                         pbo.Event.Invoke();
                         if(pbo.hasSound)
                         {
-                            pbo.gameObject.GetComponent<AudioSource>().Play();
+                            if(!pbo.playOneShot)
+                            {
+                                pbo.gameObject.GetComponent<AudioSource>().Play();
+                            }
+                            else
+                            {
+                                GameObject.FindGameObjectWithTag("SFX").GetComponent<AudioSource>().PlayOneShot(pbo.oneShotSound, pbo.volume);
+                            }
                         }
                         selectedText.SetText("");
                         hasCooldown = true;
@@ -42,6 +49,17 @@ public class PressButtonToInteract : MonoBehaviour
                 {
                     //Debug.Log("PBTI 3 C");
                     itenDropInspector.spaceIsOccupied = false;
+                    if(pbo.hasSound)
+                    {
+                        if (!pbo.playOneShot)
+                        {
+                            pbo.gameObject.GetComponent<AudioSource>().Play();
+                        }
+                        else
+                        {
+                            GameObject.FindGameObjectWithTag("SFX").GetComponent<AudioSource>().PlayOneShot(pbo.oneShotSound, pbo.volume);
+                        }
+                    }
                     pbo.Event.Invoke();
                     selectedText.SetText("");
                 }
@@ -49,6 +67,17 @@ public class PressButtonToInteract : MonoBehaviour
                 {
                     //Debug.Log("PBTI 3 E");
                     pbo.Event.Invoke();
+                    if (pbo.hasSound)
+                    {
+                        if (!pbo.playOneShot)
+                        {
+                            pbo.gameObject.GetComponent<AudioSource>().Play();
+                        }
+                        else
+                        {
+                            GameObject.FindGameObjectWithTag("SFX").GetComponent<AudioSource>().PlayOneShot(pbo.oneShotSound, pbo.volume);
+                        }
+                    }
                     selectedText.SetText("");
                     hasCooldown = true;
                     StartCoroutine(Cooldown());
