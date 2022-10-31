@@ -22,6 +22,10 @@ public class PressButtonToInteract : MonoBehaviour
                     if(pbo.GetComponent<PushableBox>().calculateDistanceFromPlayer(gameObject))
                     {
                         pbo.Event.Invoke();
+                        if(pbo.hasSound)
+                        {
+                            pbo.gameObject.GetComponent<AudioSource>().Play();
+                        }
                         selectedText.SetText("");
                     }
                 }

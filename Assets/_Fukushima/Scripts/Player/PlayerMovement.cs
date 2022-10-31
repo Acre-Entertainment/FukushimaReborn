@@ -31,6 +31,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Transform _camera;
 
+    [Header("Sound")]
+    [SerializeField]
+    private AudioSource _audioSource;
+    [SerializeField]
+    private AudioClip _jumpSFX;
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float jumpVolume;
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float landVolume;
+    [SerializeField]
+    private AudioClip _landSFX;
+    private bool wasOnAir;
+
     [Header("Others")]
     public bool canMove;
     public bool _isCarrying;
@@ -222,6 +237,19 @@ public class PlayerMovement : MonoBehaviour
                 _puObject = false;
             }
         }
+
+        if(!_controllerGrounded)
+        {
+            wasOnAir = true;
+        }
+        else
+        {
+            if(wasOnAir)
+            {
+                _audioSource.PlayOneShot(_landSFX, landVolume);
+                wasOnAir = false;
+            }
+        }
     }
 
     public void Movement(Vector2 input)
@@ -273,6 +301,7 @@ public class PlayerMovement : MonoBehaviour
             _isJumping = true;
             _animator.CrossFade(_jumpAnimation, _animationPlayTransition);
             _velocity.y = Mathf.Sqrt(_jump * -3.0f * _gravity);
+            _audioSource.PlayOneShot(_jumpSFX, jumpVolume);
         }
     }
 
