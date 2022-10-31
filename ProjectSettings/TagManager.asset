@@ -19,6 +19,7 @@ TagManager:
   - Puzzle2
   - Puzzle3
   - SelectedText
+  - DropInspector
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Ignore Character
   - Water
   - UI
-  - 
+  - Ignore Ignore Raycast
   - 
   - Character
   - Ground
@@ -35,8 +36,8 @@ TagManager:
   - Invisible
   - GangorraCollider
   - Gangorra
-  - 
-  - 
+  - Box
+  - IgnoreBox
   - 
   - 
   - 

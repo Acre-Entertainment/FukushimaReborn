@@ -18,7 +18,7 @@ public class WaterForce : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _playerGameObject = GameObject.Find("Player");
+        _playerGameObject = GameObject.FindGameObjectWithTag("Player");
         _playerScript = _playerGameObject.GetComponent<PlayerMovement>();
     }
 

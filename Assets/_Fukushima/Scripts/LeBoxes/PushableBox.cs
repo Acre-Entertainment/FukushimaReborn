@@ -10,6 +10,7 @@ public class PushableBox : MonoBehaviour
     public GameObject anchorX, anchorXminor, anchorZ, anchorZminor;
     public float distanceFromPlayerX, distanceFromPlayerZ, XOffset, ZOffset;
     public float minimunDistanceFromAnchor = 0.75f;
+    public float collisionBuffer = 0.1f;
     float realDistanceFromPlayer;
     bool facingX, facingXMinor, facingZ, facingZMinor;
     public bool noXMovement, noZmovement;
@@ -17,7 +18,8 @@ public class PushableBox : MonoBehaviour
     float constantX, constantZ;
     int playerFixedRotation;
     Vector3 lastPlayerLocation, currentPlayerLocation, movement, newPosition;
-    bool hasParent, ignoreFrame;
+    bool hasParent, ignoreFrame, movingX, movingXminor, movingZ, movingZminor;
+    float previousX, previousZ;
     private CharacterController cc;
 
     PlayerMovement pm;
@@ -41,9 +43,21 @@ public class PushableBox : MonoBehaviour
     {
         if (beingPushedByX == true || beingPushedByZ == true)
         {
-            if (beingPushedByX == false)
+            if (beingPushedByZ == true)
             {
+                previousZ = gameObject.transform.position.z;
                 gameObject.transform.position = new Vector3(constantX, gameObject.transform.position.y, playerObject.transform.position.z + realDistanceFromPlayer - ZOffset);
+                if(previousZ < gameObject.transform.position.z)
+                {
+                    movingZ = true;
+                    movingZminor = false;
+                }
+                if(previousZ > gameObject.transform.position.z)
+                {
+                    movingZ = false;
+                    movingZminor = true;
+                }
+
                 cc.enabled = false;
                 playerObject.GetComponent<CharacterController>().transform.position = new Vector3(constantX + XOffset, playerObject.transform.position.y, playerObject.transform.position.z);
                 if(facingZ == true)
@@ -56,9 +70,21 @@ public class PushableBox : MonoBehaviour
                 }
                 cc.enabled = true;
             }
-            if (beingPushedByZ == false)
+            if (beingPushedByX == true)
             {
+                previousX = gameObject.transform.position.x;
                 gameObject.transform.position = new Vector3(playerObject.transform.position.x + realDistanceFromPlayer - XOffset, gameObject.transform.position.y, constantZ);
+                if(previousX < gameObject.transform.position.x)
+                {
+                    movingX = true;
+                    movingXminor = false;
+                }
+                if(previousX > gameObject.transform.position.x)
+                {
+                    movingX = false;
+                    movingXminor = true;
+                }
+                
                 cc.enabled = false;
                 playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, constantZ + ZOffset);
                 if (facingX == true)
@@ -145,7 +171,6 @@ public class PushableBox : MonoBehaviour
     }
     public void setOff()
     {
-        //Debug.Log("setOff");
         if (ignoreFrame == false)
         {
             //Debug.Log("setOffTrue");
@@ -221,16 +246,60 @@ public class PushableBox : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider other)
+    void OnCollisionStay(Collision other)
     {
-        if (other.tag == "InteractArea")
+        if(other.gameObject.layer != 9 && other.gameObject.tag != "Player" && (beingPushedByX == true || beingPushedByZ == true))
         {
+            Debug.Log(gameObject.name + " was stopped by " + other.gameObject.name);
+            setBuffer();
             setOff();
         }
     }
     void OnCollisionEnter(Collision other)
     {
-        //setOff();
-        //Debug.Log("Stopped moving box: collision");
+        if(other.gameObject.layer != 9 && other.gameObject.tag != "Player" && (beingPushedByX == true || beingPushedByZ == true))
+        {
+            Debug.Log(gameObject.name + " was stopped" + other.gameObject.name);
+            setBuffer();
+            setOff();
+        }
+    }
+
+    void setBuffer()
+    {
+        if(beingPushedByX == true)
+        {
+            if(movingX == true)
+            {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x - collisionBuffer, gameObject.transform.position.y, gameObject.transform.position.z);
+                cc.enabled = false;
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x - collisionBuffer, playerObject.transform.position.y, playerObject.transform.position.z);
+                cc.enabled = true;
+            }
+            if(movingXminor == true)
+            {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x + collisionBuffer, gameObject.transform.position.y, gameObject.transform.position.z);
+                cc.enabled = false;
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x + collisionBuffer, playerObject.transform.position.y, playerObject.transform.position.z);
+                cc.enabled = true;
+            }
+        }
+        if(beingPushedByZ == true)
+        {
+            if(movingZ == true)
+            {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z - collisionBuffer);
+                cc.enabled = false;
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, playerObject.transform.position.z - collisionBuffer);
+                cc.enabled = true;
+            }
+            if(movingZminor == true)
+            {
+                gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z + collisionBuffer);
+                cc.enabled = false;
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, playerObject.transform.position.z + collisionBuffer);
+                cc.enabled = true;
+            }
+        }
     }
 }

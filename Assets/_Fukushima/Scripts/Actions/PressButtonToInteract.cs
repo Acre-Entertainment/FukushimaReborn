@@ -6,41 +6,58 @@ using UnityEngine.Events;
 public class PressButtonToInteract : MonoBehaviour
 {
     PressButtonToInteract_Object pbo;
+    public float CooldownTime;
+    public bool hasCooldown;
     public bool hasPressed;
     public bool hasEvent;
     public GameObject interactingGO;
     [SerializeField] TMPro.TextMeshProUGUI selectedText;
+    [SerializeField] CrouchInspector itenDropInspector;
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(KeyCode.F) && !Input.GetKey(KeyCode.LeftShift))
         {
-            if(hasPressed == false && hasEvent == true)
+            //Debug.Log("PBTI 1");
+            if(hasPressed == false && hasEvent == true && hasCooldown == false)
             {
+                //Debug.Log("PBTI 2");
                 if(pbo.GetComponent<PushableBox>() != null)
                 {
+                    //Debug.Log("PBTI 3 P");
                     if(pbo.GetComponent<PushableBox>().calculateDistanceFromPlayer(gameObject))
                     {
+                        //Debug.Log("PBTI 4 P");
                         pbo.Event.Invoke();
                         if(pbo.hasSound)
                         {
                             pbo.gameObject.GetComponent<AudioSource>().Play();
                         }
                         selectedText.SetText("");
+                        hasCooldown = true;
+                        StartCoroutine(Cooldown());
                     }
+                }
+                else if(pbo.GetComponent<CarriableBox>() != null)
+                {
+                    //Debug.Log("PBTI 3 C");
+                    itenDropInspector.spaceIsOccupied = false;
+                    pbo.Event.Invoke();
+                    selectedText.SetText("");
                 }
                 else
                 {
+                    //Debug.Log("PBTI 3 E");
                     pbo.Event.Invoke();
                     selectedText.SetText("");
+                    hasCooldown = true;
+                    StartCoroutine(Cooldown());
                 }
             }
             hasPressed = true;
         }
-        if(Input.GetKeyUp(KeyCode.F))
-        {
-            hasPressed = false;
-        }
+
+        hasPressed = false;
     }
 
     public void callEvent()
@@ -80,6 +97,14 @@ public class PressButtonToInteract : MonoBehaviour
                 selectedText.SetText("[F]");
             }
         }
+    }
+    public IEnumerator Cooldown()
+    {
+        //Debug.Log("CooldownStarted");
+        yield return new WaitForSeconds(CooldownTime);
+        //Debug.Log("CooldownNearEnd");
+        hasCooldown = false;
+        //Debug.Log("CooldownEnd");
     }
     void OnTriggerStay(Collider other)
     {

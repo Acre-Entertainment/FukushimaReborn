@@ -8,15 +8,24 @@ public class CrouchInspector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        spaceIsOccupied = true;
+        if(other.gameObject.tag != "Carried" && other.gameObject.tag != "Player" && other.gameObject.tag != "TriggerCollision" && other.gameObject.tag != "InteractArea")
+        {
+            spaceIsOccupied = true;
+            Debug.Log("this fuck is fault of " + other.gameObject.name);
+        }
     }
     private void OnTriggerStay(Collider other)
     {
-        spaceIsOccupied = true;
+        if(other.gameObject.tag != "Carried" && other.gameObject.tag != "Player" && other.gameObject.tag != "TriggerCollision" && other.gameObject.tag != "InteractArea")
+        {
+            spaceIsOccupied = true;
+        }
     }
     private void OnTriggerExit(Collider other)
     {
-        spaceIsOccupied = false;
-        //Debug.Log("EXIT");
+        if(other.gameObject.tag != "Carried" && other.gameObject.tag != "Player" && other.gameObject.tag != "TriggerCollision" && other.gameObject.tag != "InteractArea")
+        {
+            spaceIsOccupied = false;
+        }
     }
 }
