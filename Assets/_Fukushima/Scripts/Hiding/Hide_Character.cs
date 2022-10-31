@@ -13,6 +13,8 @@ public class Hide_Character : MonoBehaviour
     private void Start()
     {
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+
+        _canChangeThePosition = false;
     }
     public void Hide()
     {
@@ -23,8 +25,7 @@ public class Hide_Character : MonoBehaviour
 
     IEnumerator HideAnimation()
     {
-        yield return new WaitForSeconds(4f);
-        gameObject.SetActive(false);
+        yield return new WaitForSeconds(2f);
         opener.SetActive(true);
     }
 }

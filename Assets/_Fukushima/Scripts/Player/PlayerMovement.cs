@@ -320,7 +320,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator HideUnhideCanMove()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(2f);
         _animator.applyRootMotion = false;
         canMove = true;
     }

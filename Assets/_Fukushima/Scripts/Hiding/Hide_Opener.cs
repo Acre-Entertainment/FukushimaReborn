@@ -25,7 +25,7 @@ public class Hide_Opener : MonoBehaviour
     {
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         pm.Unhide();
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
         Hide_Character._canChangeThePosition = false;
         gameObject.SetActive(false);
     }
