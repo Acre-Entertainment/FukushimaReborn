@@ -17,6 +17,20 @@ public class CheckpointLevel3 : MonoBehaviour
     [SerializeField]
     private Vector3 _checkpointPosition;
 
+    [Header("ResetCheckPoint")]
+    [SerializeField]
+    private bool _resetCheckpoint;
+
+    private void Awake()
+    {
+        if (_resetCheckpoint)
+        {
+            PlayerPrefs.DeleteKey("CheckPointLevel3X");
+            PlayerPrefs.DeleteKey("CheckPointLevel3Y");
+            PlayerPrefs.DeleteKey("CheckPointLevel3Z");
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
