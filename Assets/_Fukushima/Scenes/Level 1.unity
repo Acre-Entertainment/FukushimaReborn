@@ -2938,8 +2938,10 @@ MonoBehaviour:
   _player: {fileID: 1982747642}
   _checkpoints:
   - {fileID: 1127223428}
+  - {fileID: 1799710328}
+  - {fileID: 697127936}
   _checkpointPosition: {x: 0, y: 0, z: 0}
-  _resetCheckpoint: 1
+  _resetCheckpoint: 0
 --- !u!4 &55389254
 Transform:
   m_ObjectHideFlags: 0
@@ -26284,7 +26286,7 @@ Transform:
   m_LocalScale: {x: 1.2549, y: 1.2549, z: 1.2549}
   m_Children: []
   m_Father: {fileID: 1842623877}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &585243707
 Light:
@@ -49603,7 +49605,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103964888}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 71.20811, y: 4.1806455, z: 145.9739}
+  m_LocalPosition: {x: 71.20811, y: 4.1806455, z: 144.48569}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -68386,7 +68388,7 @@ Transform:
   m_LocalScale: {x: 1.2549, y: 1.2549, z: 1.2549}
   m_Children: []
   m_Father: {fileID: 1920667213}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1563168346
 Light:
@@ -89803,7 +89805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948421960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25.095535, y: -5.020299, z: 36.12249}
+  m_LocalPosition: {x: 30.358574, y: -5.020299, z: 30.450172}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 959936940}
