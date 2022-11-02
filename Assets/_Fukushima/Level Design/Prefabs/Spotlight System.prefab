@@ -266,7 +266,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 3
+  m_Radius: 4.3
   m_Height: 14
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 15}
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9c94731d90848439059c9eb65ab54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setTimeUntilGameOver: 1
+  setTimeUntilGameOver: 0.6
   currentTimeUntilGameOver: 0
   playerHeight: 0
   isSeeingPlayer: 0
