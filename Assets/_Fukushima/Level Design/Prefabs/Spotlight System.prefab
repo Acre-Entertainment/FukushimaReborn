@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 7442253864125351751}
   - component: {fileID: 7442253864206991044}
   - component: {fileID: 7442253864206991045}
+  - component: {fileID: 8528055778453285871}
   m_Layer: 2
   m_Name: Spot Light
   m_TagString: Untagged
@@ -321,6 +322,21 @@ MonoBehaviour:
   patrolZones:
   - {fileID: 7442253864125882131}
   - {fileID: 7442253863159697136}
+  currentTarget: 0
+--- !u!114 &8528055778453285871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7442253864125351755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb3a9a01a1c0c2f41ba03330046e9982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spotlightMovement: {fileID: 7442253864206991045}
+  rotationSpeed: 5
 --- !u!1 &7442253864125882131
 GameObject:
   m_ObjectHideFlags: 0

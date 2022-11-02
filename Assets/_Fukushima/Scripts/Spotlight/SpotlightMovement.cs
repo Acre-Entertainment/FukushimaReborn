@@ -8,7 +8,7 @@ public class SpotlightMovement : MonoBehaviour
     public float spaceBuffer;
     Rigidbody rb;
     public List<GameObject> patrolZones = new List<GameObject>();
-    int currentTarget;
+    public int currentTarget;
     Vector3 target, targetDistance, myTP, targetTP;
     float distance;
 

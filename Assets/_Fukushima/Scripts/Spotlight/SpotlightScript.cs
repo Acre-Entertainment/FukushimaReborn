@@ -29,10 +29,6 @@ public class SpotlightScript : MonoBehaviour
             }
         }
     }
-    public void onGameOver()
-    {
-
-    }
     void OnTriggerStay(Collider other)
     {
         if(other.tag == "Player")
