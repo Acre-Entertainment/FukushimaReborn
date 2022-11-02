@@ -148,13 +148,13 @@ public class PushableBox : MonoBehaviour
                 Debug.Log("ERROR: Both movements blocked");
             }
 
-            if (beingPushedByX == false)
+            if (beingPushedByZ == true)
             {
                 cc.enabled = false;
                 playerObject.transform.position = new Vector3(gameObject.transform.position.x + XOffset, playerObject.transform.position.y, gameObject.transform.position.z - realDistanceFromPlayer + ZOffset);
                 cc.enabled = true;
             }
-            if (beingPushedByZ == false)
+            if (beingPushedByX == true)
             {
                 cc.enabled = false;
                 playerObject.GetComponent<CharacterController>().transform.position = new Vector3(gameObject.transform.position.x - realDistanceFromPlayer + XOffset, playerObject.transform.position.y, gameObject.transform.position.z + ZOffset);
@@ -273,14 +273,14 @@ public class PushableBox : MonoBehaviour
             {
                 gameObject.transform.position = new Vector3(gameObject.transform.position.x - collisionBuffer, gameObject.transform.position.y, gameObject.transform.position.z);
                 cc.enabled = false;
-                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x - collisionBuffer, playerObject.transform.position.y, playerObject.transform.position.z);
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(gameObject.transform.position.x - realDistanceFromPlayer + XOffset, playerObject.transform.position.y, gameObject.transform.position.z + ZOffset);
                 cc.enabled = true;
             }
             if(movingXminor == true)
             {
                 gameObject.transform.position = new Vector3(gameObject.transform.position.x + collisionBuffer, gameObject.transform.position.y, gameObject.transform.position.z);
                 cc.enabled = false;
-                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x + collisionBuffer, playerObject.transform.position.y, playerObject.transform.position.z);
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(gameObject.transform.position.x - realDistanceFromPlayer + XOffset, playerObject.transform.position.y, gameObject.transform.position.z + ZOffset);
                 cc.enabled = true;
             }
         }
@@ -290,14 +290,14 @@ public class PushableBox : MonoBehaviour
             {
                 gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z - collisionBuffer);
                 cc.enabled = false;
-                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, playerObject.transform.position.z - collisionBuffer);
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(gameObject.transform.position.x + XOffset, playerObject.transform.position.y, gameObject.transform.position.z - realDistanceFromPlayer + ZOffset);
                 cc.enabled = true;
             }
             if(movingZminor == true)
             {
                 gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z + collisionBuffer);
                 cc.enabled = false;
-                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, playerObject.transform.position.z + collisionBuffer);
+                playerObject.GetComponent<CharacterController>().transform.position = new Vector3(gameObject.transform.position.x + XOffset, playerObject.transform.position.y, gameObject.transform.position.z - realDistanceFromPlayer + ZOffset);
                 cc.enabled = true;
             }
         }
