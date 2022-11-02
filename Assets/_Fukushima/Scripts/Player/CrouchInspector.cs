@@ -11,7 +11,6 @@ public class CrouchInspector : MonoBehaviour
         if(other.gameObject.tag != "Carried" && other.gameObject.tag != "Player" && other.gameObject.tag != "TriggerCollision" && other.gameObject.tag != "InteractArea")
         {
             spaceIsOccupied = true;
-            Debug.Log("this fuck is fault of " + other.gameObject.name);
         }
     }
     private void OnTriggerStay(Collider other)
