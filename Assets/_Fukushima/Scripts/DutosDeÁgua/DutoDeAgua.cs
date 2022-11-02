@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DutoDeAgua : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class DutoDeAgua : MonoBehaviour
     private bool _start;
     [SerializeField]
     private float _startWaitTime;
+
+    public UnityEvent onStartWater;
+    public UnityEvent onEndWater;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,15 +36,10 @@ public class DutoDeAgua : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator Squirt()
     {
         _water.SetActive(true);
+        onStartWater.Invoke();
         yield return new WaitForSeconds(_timeSquirt);
         StartCoroutine(Stop());
     }
@@ -48,6 +47,7 @@ public class DutoDeAgua : MonoBehaviour
     IEnumerator Stop()
     {
         _water.SetActive(false);
+        onEndWater.Invoke();
         yield return new WaitForSeconds(_timeStop);
         StartCoroutine(Squirt());
     }
