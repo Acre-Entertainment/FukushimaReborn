@@ -8,6 +8,7 @@ public class SpotlightScript : MonoBehaviour
     public float currentTimeUntilGameOver;
     public float playerHeight;
     public bool isSeeingPlayer;
+    public GameObject rayOrigin;
     public GameObject hittingThing;
     Ray ray;
     RaycastHit hit;
@@ -37,7 +38,7 @@ public class SpotlightScript : MonoBehaviour
         if(other.tag == "Player")
         {
             target = other.transform.position + new Vector3(0, playerHeight, 0);
-            origin = gameObject.transform.position;
+            origin = rayOrigin.transform.position;
             direction = target - origin;
             ray = new Ray(origin, direction);
             Debug.DrawRay(origin, direction, Color.green);
