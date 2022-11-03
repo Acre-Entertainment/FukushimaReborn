@@ -170,19 +170,16 @@ public class PressButtonToInteract : MonoBehaviour
 
             if(other.GetComponent<Hide_Object>() != null)
             {
-                if (other.GetComponent<Hide_Object>().open == false)
+                if (!Hide_Opener.hasPressed)
                 {
                     if (Hide_Character._canChangeThePosition)
                     {
                         other.GetComponent<Hide_Object>().PlayerPosition();
                     }
                 }
-                else if (other.GetComponent<Hide_Object>().open == true)
+                else
                 {
-                    if (Hide_Character._canChangeThePosition)
-                    {
-                        other.GetComponent<Hide_Object>().Close();
-                    }
+                    other.GetComponent<Hide_Object>().Play();
                 }
             }
         }

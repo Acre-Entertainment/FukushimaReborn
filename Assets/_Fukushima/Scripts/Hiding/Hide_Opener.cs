@@ -6,6 +6,8 @@ public class Hide_Opener : MonoBehaviour
 {
     public GameObject HidedPlayer;
 
+    public static bool hasPressed;
+
     PlayerMovement pm;
 
     private void Start()
@@ -16,6 +18,7 @@ public class Hide_Opener : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F))
         {
+            hasPressed = true;
             HidedPlayer.SetActive(true);
             StartCoroutine(Wait());
         }
@@ -26,6 +29,7 @@ public class Hide_Opener : MonoBehaviour
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         pm.Unhide();
         yield return new WaitForSeconds(1);
+        hasPressed = false;
         Hide_Character._canChangeThePosition = false;
         Hide_Character.isHided = false;
         HidedPlayer.SetActive(true);

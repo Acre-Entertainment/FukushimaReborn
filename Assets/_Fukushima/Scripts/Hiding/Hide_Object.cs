@@ -6,7 +6,6 @@ public class Hide_Object : MonoBehaviour
 {
     public Animator _animator;
     private Transform _player;
-    public bool open;
     public Transform point;
     // Start is called before the first frame update
     void Start()
@@ -23,12 +22,11 @@ public class Hide_Object : MonoBehaviour
     public void PlayerPosition()
     {
         _player.position = point.position;
-        //_player.rotation = point.rotation = Quaternion.identity;
-        open = true;
+        _animator.Play("ArmarioOpen");
     }
 
-    public void Close()
+    public void Play()
     {
-        open = false;
+        _animator.Play("ArmarioClose");
     }
 }
