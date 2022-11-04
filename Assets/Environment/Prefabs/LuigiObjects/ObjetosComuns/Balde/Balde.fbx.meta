@@ -3,7 +3,22 @@ guid: 76e3b39bf393b894081143a1138595db
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "BaldeAl\xE7a"
+    second: {fileID: 2100000, guid: 12d43f4ce63419d43bfaaa68d562b726, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaldeCorBase
+    second: {fileID: 2100000, guid: 753ebb2dd7354d5429fcc1259cc6702c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BaldeEncaixe
+    second: {fileID: 2100000, guid: 9b114eaf5f4fa3241b793a3947992c16, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
