@@ -12,6 +12,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Coluna.001
+    second: {fileID: 2100000, guid: fe951351e4d2d604e973905e4662c99d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CorBase.008
+    second: {fileID: 2100000, guid: 15c91bd7ec240d342badc6c1c4bd3bba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Detalhes.008
     second: {fileID: 2100000, guid: 8aad5df5fa776a547a53b7e973965b9e, type: 2}
   - first:
@@ -24,6 +34,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Grades.001
     second: {fileID: 2100000, guid: 304f1c9be9342494db493ada9100462f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PortaCasa3.001
+    second: {fileID: 2100000, guid: 2c501665df6790c4d824160906a79076, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
