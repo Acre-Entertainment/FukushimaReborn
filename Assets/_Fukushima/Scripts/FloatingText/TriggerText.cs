@@ -30,12 +30,12 @@ public class TriggerText : MonoBehaviour
         {
             if (fadeIn)
             {
-                PlayerMovement.custscene = true;
+                //PlayerMovement.custscene = true;
                 _floatingTextScript.FadeIn();
             }
             else if (fadeOut)
             {
-                PlayerMovement.custscene = false;
+                //PlayerMovement.custscene = false;
                 _floatingTextScript.FadeOut();
             }
         }
