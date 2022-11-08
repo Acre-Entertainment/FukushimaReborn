@@ -296,7 +296,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if (_groundedCurrentTimer >= 0)
+        if (_groundedCurrentTimer >= 0 && !custscene)
         {
             _isJumping = true;
             _animator.CrossFade(_jumpAnimation, _animationPlayTransition);

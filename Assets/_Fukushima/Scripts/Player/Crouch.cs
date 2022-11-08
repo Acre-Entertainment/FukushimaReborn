@@ -46,7 +46,7 @@ public class Crouch : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.C))
         {
-            if(isCrouched == false && pressButtonToInteract.enabled == true)
+            if(isCrouched == false && pressButtonToInteract.enabled == true && !PlayerMovement.custscene)
             {
                 ccon.height = controllerCrouchHeight;
                 ccon.center = new Vector3(0, controllerCrouchAltitude, 0);
@@ -79,6 +79,25 @@ public class Crouch : MonoBehaviour
                 isCrouched = false;
                 pm.crouchToIdle = true;
             }
+            ignoreFrame = false;
+        }
+
+        if (PlayerMovement.custscene)
+        {
+            ccon.height = startingConHeight;
+            ccon.center = new Vector3(0, startingConAltitude, 0);
+
+            ccol.height = startingColHeight;
+            ccol.center = new Vector3(0, startingColAltitude, 0);
+
+            triggerCollision.height = startingTrigHeight;
+            triggerCollision.center = new Vector3(0, startingTrigAltitude, 0);
+
+            pressButtonToInteract.enabled = true;
+            pm._jump = startingJump;
+            isCrouched = false;
+            pm.crouchToIdle = true;
+
             ignoreFrame = false;
         }
     }

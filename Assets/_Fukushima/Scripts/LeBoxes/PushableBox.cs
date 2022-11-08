@@ -103,10 +103,15 @@ public class PushableBox : MonoBehaviour
             setOff();
         }
         ignoreFrame = false;
+
+        if (PlayerMovement.custscene)
+        {
+            setOff();
+        }
     }
     public void setPush()
     {
-        if (ignoreFrame == false && beingPushedByX == false && beingPushedByZ == false)
+        if (ignoreFrame == false && beingPushedByX == false && beingPushedByZ == false && !PlayerMovement.custscene)
         {
             ignoreFrame = true;
             if (noXMovement == false && noZmovement == false)
