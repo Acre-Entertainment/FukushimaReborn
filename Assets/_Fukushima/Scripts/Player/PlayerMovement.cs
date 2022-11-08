@@ -377,6 +377,14 @@ public class PlayerMovement : MonoBehaviour
         _controller.Move(impact * Time.deltaTime);
     }
 
+    public void Impact2(float force)
+    {
+        Vector3 impact = Vector3.zero;
+        impact.y = 0;
+        impact.z = force;
+        _controller.Move(impact * Time.deltaTime);
+    }
+
     public void Dead(int typeOfDeath)
     {
         _controller.enabled = false;

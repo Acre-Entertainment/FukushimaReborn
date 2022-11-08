@@ -12,6 +12,8 @@ public class WaterForce : MonoBehaviour
     [Header("What is The Axis, Choose One")]
     public bool axisX;
     public bool axisXNegative;
+    public bool axisZ;
+    public bool axisZNegative;
 
     private GameObject _playerGameObject;
     private PlayerMovement _playerScript;
@@ -39,6 +41,14 @@ public class WaterForce : MonoBehaviour
             else if (axisXNegative)
             {
                 _playerScript.Impact(-_force);
+            }
+            else if (axisZ)
+            {
+                _playerScript.Impact2(_force);
+            }
+            else if (axisZNegative)
+            {
+                _playerScript.Impact2(-_force);
             }
         }
     }
