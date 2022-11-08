@@ -64,6 +64,7 @@
      <Compile Include="Assets\_Fukushima\Scripts\_Basics\CallEventUponTriggerEntry.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\UI\IsEnabled.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\UI\GameOverMenu.cs" />
+     <Compile Include="Assets\_Fukushima\Scripts\Spotlight\SpotlightRotation.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\UI\PauseMenu.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\DutosDeÁgua\DutoDeAgua.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\Player\PlayerLook.cs" />
@@ -97,7 +98,7 @@
      <Compile Include="Assets\_Fukushima\Scripts\Player\InputManager.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\Player\Crouch.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\Player\PlayerMovement.cs" />
-     <Compile Include="Assets\_Fukushima\Scripts\Spotlight\SpotlightRotation.cs" />
+     <Compile Include="Assets\_Fukushima\Scripts\_Basics\ChangePositionToGameObject.cs" />
      <None Include="Assets\_ExternalAssets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\_ExternalAssets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\_ExternalAssets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
