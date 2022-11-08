@@ -59,10 +59,15 @@ public class CarriableBox : MonoBehaviour
             gameObject.transform.position = new Vector3(carryPoint.transform.position.x, carryPoint.transform.position.y, carryPoint.transform.position.z);
             gameObject.transform.eulerAngles = new Vector3(carryPoint.transform.eulerAngles.x, carryPoint.transform.eulerAngles.y, carryPoint.transform.eulerAngles.z);
         }
+
+        if (PlayerMovement.custscene)
+        {
+            setOff();
+        }
     }
     public void setOn()
     {
-        if(frameBuffer == false && beingCarried == false)
+        if(frameBuffer == false && beingCarried == false && !PlayerMovement.custscene)
         {
             beingCarried = true;
             pbti.hasEvent = false;
