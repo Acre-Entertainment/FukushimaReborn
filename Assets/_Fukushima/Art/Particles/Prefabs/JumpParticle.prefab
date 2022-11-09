@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 797266122716026919}
   - component: {fileID: 797266122716026912}
   - component: {fileID: 797266122716026913}
+  - component: {fileID: 479378358}
   m_Layer: 0
   m_Name: JumpParticle
   m_TagString: Untagged
@@ -49,7 +50,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -169,7 +170,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.64
+      scalar: 4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -223,7 +224,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 0.6862745}
+      maxColor: {r: 1, g: 1, b: 1, a: 0.18431373}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -286,7 +287,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 1
-      minScalar: 1.4
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -660,8 +661,8 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 2
-    angle: 25
+    type: 4
+    angle: 18.3
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0.16
@@ -744,7 +745,7 @@ ParticleSystem:
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
     randomDirectionAmount: 0
-    sphericalDirectionAmount: 0.4
+    sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
       value: 0.9
@@ -976,7 +977,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 10
+        scalar: 20
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -1362,8 +1363,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.2830189, g: 0.2712788, b: 0.26566395, a: 1}
-        key1: {r: 0, g: 0, b: 0, a: 1}
+        key0: {r: 0.3584906, g: 0.29046655, b: 0.25872198, a: 1}
+        key1: {r: 0.24528301, g: 0.17663461, b: 0.14231043, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4863,6 +4864,24 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &479378358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797266122716026914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a61e2c36540347842bd7f9f33c41e7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xOffset: 0
+  yOffset: 0
+  zOffset: 0
+  localXOffset: 0
+  localYOffset: 0
+  localZOffset: 0
 --- !u!1 &797266123018799795
 GameObject:
   m_ObjectHideFlags: 0
@@ -4911,7 +4930,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -4978,7 +4997,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.62
+      scalar: 0.6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5031,8 +5050,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2
-      minScalar: 3
+      scalar: 4
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5523,7 +5542,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 0
+    angle: 11.85
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0.06
@@ -5606,7 +5625,7 @@ ParticleSystem:
     m_TextureAlphaAffectsParticles: 1
     m_TextureBilinearFiltering: 0
     randomDirectionAmount: 0
-    sphericalDirectionAmount: 0.12
+    sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
       value: 0.0001
@@ -6224,7 +6243,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
+        key0: {r: 0.35686275, g: 0.30370265, b: 0.27450982, a: 1}
         key1: {r: 0, g: 0, b: 0, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}

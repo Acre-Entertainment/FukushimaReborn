@@ -142,6 +142,7 @@ public class PlayerMovement : MonoBehaviour
             _groundedCurrentTimer -= Time.deltaTime;
         }
 
+
         if(!_isJumping && !_controllerGrounded && _fixBug)
         {
             _animator.SetLayerWeight(_layerCrouchedIndex, 0);
@@ -254,6 +255,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 _audioSource.PlayOneShot(_landSFX, landVolume);
                 wasOnAir = false;
+
+                if(isOnWater == true)
+                {
+                    jumpWaterEvent.Invoke();
+                }
+                else
+                {
+                  jumpEvent.Invoke();
+                }
             }
         }
     }
@@ -309,14 +319,7 @@ public class PlayerMovement : MonoBehaviour
             _velocity.y = Mathf.Sqrt(_jump * -3.0f * _gravity);
             _audioSource.PlayOneShot(_jumpSFX, jumpVolume);
 
-            if(isOnWater == true)
-            {
-                jumpWaterEvent.Invoke();
-            }
-            else
-            {
-                jumpEvent.Invoke();
-            }
+
         }
     }
 
