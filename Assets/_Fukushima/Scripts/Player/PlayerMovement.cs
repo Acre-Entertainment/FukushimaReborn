@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -53,6 +54,11 @@ public class PlayerMovement : MonoBehaviour
     public bool crouchToIdle;
     public bool carryingToIdle;
     public bool pushAndPullToIdle;
+
+    public UnityEvent jumpWaterEvent;
+    public UnityEvent jumpEvent;
+    public string WaterTag;
+    public bool isOnWater;
 
     private CharacterController _controller;
     private Animator _animator;
@@ -302,6 +308,27 @@ public class PlayerMovement : MonoBehaviour
             _animator.CrossFade(_jumpAnimation, _animationPlayTransition);
             _velocity.y = Mathf.Sqrt(_jump * -3.0f * _gravity);
             _audioSource.PlayOneShot(_jumpSFX, jumpVolume);
+
+            if(isOnWater == true)
+            {
+                jumpWaterEvent.Invoke();
+            }
+            else
+            {
+                jumpEvent.Invoke();
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if(collider.gameObject.tag == WaterTag)
+        {
+            isOnWater = true;
+        }
+        else
+        {
+            isOnWater = false;
         }
     }
 

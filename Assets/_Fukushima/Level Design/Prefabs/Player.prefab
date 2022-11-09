@@ -327,6 +327,7 @@ Transform:
   - {fileID: 1484728901}
   - {fileID: 6248850080979844276}
   - {fileID: 8794046510182332444}
+  - {fileID: 6672127460940701061}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -408,6 +409,14 @@ MonoBehaviour:
   crouchToIdle: 0
   carryingToIdle: 0
   pushAndPullToIdle: 0
+  jumpWaterEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  jumpEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  WaterTag: 
+  isOnWater: 0
 --- !u!114 &2065624503657937176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,6 +705,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!1 &3068975698853331353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6672127460940701061}
+  m_Layer: 8
+  m_Name: Feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6672127460940701061
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3068975698853331353}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.9382658, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2065624503657938657}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8377697693352739806
 GameObject:
   m_ObjectHideFlags: 0
