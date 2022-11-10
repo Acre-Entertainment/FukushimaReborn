@@ -305,10 +305,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  hasSound: 0
-  playOneShot: 0
-  oneShotSound: {fileID: 0}
-  volume: 1
+  hasSound: 1
+  playOneShot: 1
+  oneShotSound: {fileID: 8300000, guid: f17f5a952563ebb40870731ad3e75cbd, type: 3}
+  volume: 0.5
 --- !u!114 &7119766827775767033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,5 +322,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 8479020209193595916}
-  open: 0
   point: {fileID: 8490245303852161471}
