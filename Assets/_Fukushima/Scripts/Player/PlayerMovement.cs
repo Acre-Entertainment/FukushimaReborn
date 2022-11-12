@@ -44,8 +44,13 @@ public class PlayerMovement : MonoBehaviour
     [Range(0f, 1f)]
     private float landVolume;
     [SerializeField]
+    [Range(0f, 1f)]
+    private float waterSplashVolume;
+    [SerializeField]
     private AudioClip _landSFX;
     private bool wasOnAir;
+    [SerializeField]
+    private AudioClip _waterSplashSFX;
 
     [Header("Others")]
     public bool canMove;
@@ -253,16 +258,17 @@ public class PlayerMovement : MonoBehaviour
         {
             if(wasOnAir)
             {
-                _audioSource.PlayOneShot(_landSFX, landVolume);
                 wasOnAir = false;
 
                 if(isOnWater == true)
                 {
+                    _audioSource.PlayOneShot(_waterSplashSFX, waterSplashVolume);
                     jumpWaterEvent.Invoke();
                 }
                 else
                 {
-                  jumpEvent.Invoke();
+                    _audioSource.PlayOneShot(_landSFX, landVolume);
+                    jumpEvent.Invoke();
                 }
             }
         }
