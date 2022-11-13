@@ -21,6 +21,7 @@ TagManager:
   - SelectedText
   - DropInspector
   - SFX
+  - DefaultObject
   layers:
   - Default
   - TransparentFX
