@@ -87,6 +87,7 @@
      <Compile Include="Assets\_Fukushima\Scripts\CheckPoint\Level3\CheckpointLevel3.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\UI\CursorScript.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\LeBoxes\PushableBox.cs" />
+     <Compile Include="Assets\_Fukushima\Scripts\_Basics\EventUponReachingXPoint.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\_Basics\EventUponNamedObjectTriggerEnter.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\UI\NoMouseUI.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\GameOver\GameOver.cs" />
@@ -100,7 +101,7 @@
      <Compile Include="Assets\_Fukushima\Scripts\Player\InputManager.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\Player\Crouch.cs" />
      <Compile Include="Assets\_Fukushima\Scripts\Player\PlayerMovement.cs" />
-     <Compile Include="Assets\_Fukushima\Scripts\_Basics\EventUponReachingXPoint.cs" />
+     <Compile Include="Assets\_Fukushima\Scripts\_Basics\SummonEventAtAnyKeyPress.cs" />
      <None Include="Assets\_ExternalAssets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\_ExternalAssets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\_ExternalAssets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
