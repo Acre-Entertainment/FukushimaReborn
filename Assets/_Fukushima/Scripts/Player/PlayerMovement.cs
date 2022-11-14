@@ -243,7 +243,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _animator.SetBool("isWalking", true);
             _animator.SetBool("isRunning", false);
-            _animator.SetLayerWeight(_layerCustsceneIndex, Mathf.SmoothDamp(_currentCustsceneLayer, 1, ref _layerWeightVelocity, _animationSmoothTime));
+            _animator.SetLayerWeight(_layerCustsceneIndex, 1);
             _speed = _custsceneSpeed;
         }
 
