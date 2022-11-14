@@ -22,6 +22,8 @@ TagManager:
   - DropInspector
   - SFX
   - DefaultObject
+  - Water
+  - Trigger
   layers:
   - Default
   - TransparentFX
