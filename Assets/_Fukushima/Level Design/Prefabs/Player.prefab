@@ -392,6 +392,7 @@ MonoBehaviour:
   _crouchSpeed: 2
   _carryingSpeed: 2
   _pushAndPullSpeed: 1
+  _custsceneSpeed: 2
   _jump: 0.7
   _gravity: -20
   _groundedTimer: 0.05
@@ -411,6 +412,7 @@ MonoBehaviour:
   crouchToIdle: 0
   carryingToIdle: 0
   pushAndPullToIdle: 0
+  custsceneToIdle: 0
   jumpWaterEvent:
     m_PersistentCalls:
       m_Calls:

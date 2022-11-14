@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private float _carryingSpeed;
     [SerializeField]
     private float _pushAndPullSpeed;
+    [SerializeField]
+    private float _custsceneSpeed;
     public float _jump;
     [SerializeField]
     private float _gravity = -9.81f;
@@ -59,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
     public bool crouchToIdle;
     public bool carryingToIdle;
     public bool pushAndPullToIdle;
+    public bool custsceneToIdle;
 
     public UnityEvent jumpWaterEvent;
     public UnityEvent jumpEvent;
@@ -89,10 +92,12 @@ public class PlayerMovement : MonoBehaviour
     private int _layerCrouchedIndex;
     private int _layerCarryingIndex;
     private int _layerPuObjectIndex;
+    private int _layerCustsceneIndex;
     private float _layerWeightVelocity;
     private float _currentCrouchedLayer;
     private float _currentCarryingLayer;
     private float _currentPuObjectLayer;
+    private float _currentCustsceneLayer;
     private bool _isJumping;
     private bool _fixBug;
     private bool _isDead;
@@ -127,6 +132,7 @@ public class PlayerMovement : MonoBehaviour
         _layerCrouchedIndex = _animator.GetLayerIndex("Crouched");
         _layerCarryingIndex = _animator.GetLayerIndex("Carrying");
         _layerPuObjectIndex = _animator.GetLayerIndex("Pull/Push");
+        _layerCustsceneIndex = _animator.GetLayerIndex("Custscene");
 
         custscene = false;
     }
@@ -153,6 +159,7 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetLayerWeight(_layerCrouchedIndex, 0);
             _animator.SetLayerWeight(_layerCarryingIndex, 0);
             _animator.SetLayerWeight(_layerPuObjectIndex, 0);
+            _animator.SetLayerWeight(_layerCustsceneIndex, 0);
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isRunning", false);
             _isCarrying = false;
@@ -167,6 +174,7 @@ public class PlayerMovement : MonoBehaviour
         _currentCrouchedLayer = _animator.GetLayerWeight(_layerCrouchedIndex);
         _currentCarryingLayer = _animator.GetLayerWeight(_layerCarryingIndex);
         _currentPuObjectLayer = _animator.GetLayerWeight(_layerPuObjectIndex);
+        _currentCustsceneLayer = _animator.GetLayerWeight(_layerCustsceneIndex);
 
         if (crouchToIdle)
         {
@@ -183,6 +191,12 @@ public class PlayerMovement : MonoBehaviour
         if (pushAndPullToIdle)
         {
             AnimationPushAndPullToIdle();
+            StartCoroutine(FixBugSmoothAnimation());
+        }
+
+        if (custsceneToIdle)
+        {
+            AnimationCustsceneToIdle();
             StartCoroutine(FixBugSmoothAnimation());
         }
 
@@ -229,7 +243,8 @@ public class PlayerMovement : MonoBehaviour
         {
             _animator.SetBool("isWalking", true);
             _animator.SetBool("isRunning", false);
-            _speed = _walkSpeed;
+            _animator.SetLayerWeight(_layerCustsceneIndex, Mathf.SmoothDamp(_currentCustsceneLayer, 1, ref _layerWeightVelocity, _animationSmoothTime));
+            _speed = _custsceneSpeed;
         }
 
         if(custscene)
@@ -388,6 +403,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void AnimationCustsceneToIdle()
+    {
+        while (custsceneToIdle)
+        {
+            _animator.SetLayerWeight(_layerCustsceneIndex, Mathf.SmoothDamp(_currentCustsceneLayer, 0, ref _layerWeightVelocity, _animationSmoothTime));
+        }
+    }
+
     IEnumerator BugController()
     {
         _controller.enabled = false;
@@ -403,6 +426,7 @@ public class PlayerMovement : MonoBehaviour
         crouchToIdle = false;
         carryingToIdle = false;
         pushAndPullToIdle = false;
+        custsceneToIdle = false;
     }
 
     public void Impact(float force)
