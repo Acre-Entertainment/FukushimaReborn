@@ -8,21 +8,21 @@ public class CrouchInspector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag != "Carried" && other.gameObject.tag != "Player" && other.gameObject.tag != "TriggerCollision" && other.gameObject.tag != "InteractArea")
+        if(other.gameObject.tag != "Carried" && other.gameObject.tag != "Player" && other.gameObject.tag != "TriggerCollision" && other.gameObject.tag != "InteractArea" && other.gameObject.tag != "Trigger")
         {
             spaceIsOccupied = true;
         }
     }
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag != "Carried" && other.gameObject.tag != "Player" && other.gameObject.tag != "TriggerCollision" && other.gameObject.tag != "InteractArea")
+        if(other.gameObject.tag != "Carried" && other.gameObject.tag != "Player" && other.gameObject.tag != "TriggerCollision" && other.gameObject.tag != "InteractArea" && other.gameObject.tag != "Trigger")
         {
             spaceIsOccupied = true;
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.tag != "Carried" && other.gameObject.tag != "Player" && other.gameObject.tag != "TriggerCollision" && other.gameObject.tag != "InteractArea")
+        if(other.gameObject.tag != "Carried" && other.gameObject.tag != "Player" && other.gameObject.tag != "TriggerCollision" && other.gameObject.tag != "InteractArea" && other.gameObject.tag != "Trigger")
         {
             spaceIsOccupied = false;
         }

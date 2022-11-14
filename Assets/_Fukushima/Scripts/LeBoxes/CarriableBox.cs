@@ -96,10 +96,12 @@ public class CarriableBox : MonoBehaviour
     {
         if(frameBuffer == false && hasCooldown == false && beingCarried == true)
         {
+            Debug.Log("1");
             if(isInEventArea1 == false && isInEventArea2 == false && isInEventArea3 == false && dropInspector.spaceIsOccupied == true)
             {
                 return;
             }
+            Debug.Log("2");
             carryPoint.transform.localPosition = new Vector3(XPositionOffset, YPositionOffset, ZPositionOffset + 1.5f + releaseDistance);
             carryPoint.transform.localEulerAngles = new Vector3(XRotationOffset, YRotationOffset, ZPositionOffset);
             gameObject.transform.position = new Vector3(carryPoint.transform.position.x, carryPoint.transform.position.y, carryPoint.transform.position.z);
