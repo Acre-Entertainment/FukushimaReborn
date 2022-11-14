@@ -10,11 +10,13 @@ public class CarriableBox : MonoBehaviour
     GameObject interactArea;
     MeshCollider mc;
     Rigidbody rb;
+    CharacterController pcc;
     public bool beingCarried, frameBuffer;
     public float XPositionOffset, YPositionOffset, ZPositionOffset, XRotationOffset, YRotationOffset, ZRotationOffset, releaseDistance;
 
     public bool hasCooldown;
     public float CooldownTime = 0.5f;
+    public float fallSpeedToDrop = 5;
 
     PlayerMovement pm;
     float startingJump;
@@ -39,6 +41,7 @@ public class CarriableBox : MonoBehaviour
         pbti = interactArea.GetComponent<PressButtonToInteract>();
         mc = gameObject.GetComponent<MeshCollider>();
         rb = gameObject.GetComponent<Rigidbody>();
+        pcc = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         dropInspector = GameObject.FindGameObjectWithTag("DropInspector").GetComponent<CrouchInspector>();
         startingJump = pm._jump;
@@ -58,6 +61,11 @@ public class CarriableBox : MonoBehaviour
             carryPoint.transform.localEulerAngles = new Vector3(XRotationOffset, YRotationOffset, ZPositionOffset);
             gameObject.transform.position = new Vector3(carryPoint.transform.position.x, carryPoint.transform.position.y, carryPoint.transform.position.z);
             gameObject.transform.eulerAngles = new Vector3(carryPoint.transform.eulerAngles.x, carryPoint.transform.eulerAngles.y, carryPoint.transform.eulerAngles.z);
+
+            if(-fallSpeedToDrop >= pcc.velocity.y)
+            {
+                setOff();
+            }
         }
 
         if (PlayerMovement.custscene)

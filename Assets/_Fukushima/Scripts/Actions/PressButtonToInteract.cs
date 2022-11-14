@@ -58,7 +58,6 @@ public class PressButtonToInteract : MonoBehaviour
                         else
                         {
                             GameObject.FindGameObjectWithTag("SFX").GetComponent<AudioSource>().PlayOneShot(pbo.oneShotSound, pbo.volume);
-                            Debug.Log("Name of Object is " + GameObject.FindGameObjectWithTag("SFX").name);
                         }
                     }
                     pbo.Event.Invoke();
