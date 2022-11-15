@@ -16,7 +16,7 @@ public class CarriableBox : MonoBehaviour
 
     public bool hasCooldown;
     public float CooldownTime = 0.5f;
-    public float fallSpeedToDrop = 5;
+    public float fallSpeedToDrop = 3;
 
     PlayerMovement pm;
     float startingJump;
