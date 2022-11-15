@@ -406,7 +406,7 @@ public class PlayerMovement : MonoBehaviour
     {
         while (custsceneToIdle)
         {
-            _animator.SetLayerWeight(_layerCustsceneIndex, Mathf.SmoothDamp(_currentCustsceneLayer, 0, ref _layerWeightVelocity, _animationSmoothTime / 2));
+            _animator.SetLayerWeight(_layerCustsceneIndex, Mathf.SmoothDamp(_currentCustsceneLayer, 0, ref _layerWeightVelocity, _animationSmoothTime));
             break;
         }
     }
