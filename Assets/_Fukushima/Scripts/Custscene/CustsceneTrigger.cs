@@ -23,7 +23,11 @@ public class CustsceneTrigger : MonoBehaviour
         {
             PlayerMovement.custscene = true;
         }
-        else if(other.CompareTag("Player") && !activeCustscene)
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player") && !activeCustscene)
         {
             PlayerMovement.custscene = false;
             PlayerMovement.custsceneToIdle = true;
