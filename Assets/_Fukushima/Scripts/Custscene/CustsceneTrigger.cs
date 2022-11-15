@@ -26,6 +26,7 @@ public class CustsceneTrigger : MonoBehaviour
         else if(other.CompareTag("Player") && !activeCustscene)
         {
             PlayerMovement.custscene = false;
+            PlayerMovement.custsceneToIdle = true;
         }
     }
 }

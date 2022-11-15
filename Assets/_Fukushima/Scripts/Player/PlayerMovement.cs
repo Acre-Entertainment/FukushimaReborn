@@ -102,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _isDead;
 
     public static bool custscene;
+    public static bool custsceneToIdle;
 
     // Start is called before the first frame update
     void Start()
@@ -190,6 +191,12 @@ public class PlayerMovement : MonoBehaviour
         if (pushAndPullToIdle)
         {
             AnimationPushAndPullToIdle();
+            StartCoroutine(FixBugSmoothAnimation());
+        }
+
+        if (custsceneToIdle)
+        {
+            AnimationCustsceneToIdle();
             StartCoroutine(FixBugSmoothAnimation());
         }
 
@@ -395,6 +402,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void AnimationCustsceneToIdle()
+    {
+        while (custsceneToIdle)
+        {
+            _animator.SetLayerWeight(_layerCustsceneIndex, Mathf.SmoothDamp(_currentCustsceneLayer, 0, ref _layerWeightVelocity, _animationSmoothTime / 2));
+            break;
+        }
+    }
+
     IEnumerator BugController()
     {
         _controller.enabled = false;
@@ -410,6 +426,7 @@ public class PlayerMovement : MonoBehaviour
         crouchToIdle = false;
         carryingToIdle = false;
         pushAndPullToIdle = false;
+        custsceneToIdle = false;
     }
 
     public void Impact(float force)
