@@ -61,7 +61,6 @@ public class PlayerMovement : MonoBehaviour
     public bool crouchToIdle;
     public bool carryingToIdle;
     public bool pushAndPullToIdle;
-    public bool custsceneToIdle;
 
     public UnityEvent jumpWaterEvent;
     public UnityEvent jumpEvent;
@@ -194,12 +193,6 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(FixBugSmoothAnimation());
         }
 
-        if (custsceneToIdle)
-        {
-            AnimationCustsceneToIdle();
-            StartCoroutine(FixBugSmoothAnimation());
-        }
-
         if (_sprinting && !_crouch.isCrouched && !_isCarrying && !_puObject && !custscene)
         {
             if (_controller.isGrounded)
@@ -241,9 +234,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (custscene)
         {
-            _animator.SetBool("isWalking", true);
             _animator.SetBool("isRunning", false);
-            _animator.SetLayerWeight(_layerCustsceneIndex, 1);
+            _animator.SetLayerWeight(_layerCustsceneIndex, Mathf.SmoothDamp(_currentCustsceneLayer, 1, ref _layerWeightVelocity, _animationSmoothTime / 2));
             _speed = _custsceneSpeed;
         }
 
@@ -403,14 +395,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void AnimationCustsceneToIdle()
-    {
-        while (custsceneToIdle)
-        {
-            _animator.SetLayerWeight(_layerCustsceneIndex, Mathf.SmoothDamp(_currentCustsceneLayer, 0, ref _layerWeightVelocity, _animationSmoothTime));
-        }
-    }
-
     IEnumerator BugController()
     {
         _controller.enabled = false;
@@ -426,7 +410,6 @@ public class PlayerMovement : MonoBehaviour
         crouchToIdle = false;
         carryingToIdle = false;
         pushAndPullToIdle = false;
-        custsceneToIdle = false;
     }
 
     public void Impact(float force)
