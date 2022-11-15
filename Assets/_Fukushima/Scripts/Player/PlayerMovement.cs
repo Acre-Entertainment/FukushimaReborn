@@ -295,9 +295,18 @@ public class PlayerMovement : MonoBehaviour
         movementDirection.x = input.x;
         movementDirection.z = input.y;
 
-        if(movementDirection.magnitude >= 0.1f)
+        if(movementDirection.magnitude >= 0.1f && !custscene)
         {
             float targetAngle = Mathf.Atan2(movementDirection.x, movementDirection.z) * Mathf.Rad2Deg + _camera.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, _turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0, angle, 0);
+            Vector3 direction = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
+
+            _controller.Move(direction.normalized * _speed * Time.deltaTime);
+        }
+        else if(movementDirection.magnitude >= 0.1f && custscene)
+        {
+            float targetAngle = Mathf.Atan2(movementDirection.x, movementDirection.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, _turnSmoothTime);
             transform.rotation = Quaternion.Euler(0, angle, 0);
             Vector3 direction = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
