@@ -11,17 +11,17 @@ public class OnThreeBoolsBeingTrue : MonoBehaviour
     public void changeValue1(bool newValue)
     {
         value1 = newValue;
-        checkValues()
+        checkValues();
     }
     public void changeValue2(bool newValue)
     {
         value2 = newValue;
-        checkValues()
+        checkValues();
     }
     public void changeValue3(bool newValue)
     {
         value3 = newValue;
-        checkValues()
+        checkValues();
     }
 
     void checkValues()
