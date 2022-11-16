@@ -406,13 +406,14 @@ MonoBehaviour:
   waterSplashVolume: 0.4
   _landSFX: {fileID: 8300000, guid: 6b8b36caafae15d4bb5a5085a6cd68ac, type: 3}
   _waterSplashSFX: {fileID: 8300000, guid: 423bc8fc885202d4fbdca45843463ffb, type: 3}
+  _drownSFX: {fileID: 8300000, guid: 1752c4f2d78f5264894572ff26e80771, type: 3}
+  drownVolume: 0.6
   canMove: 0
   _isCarrying: 0
   _puObject: 0
   crouchToIdle: 0
   carryingToIdle: 0
   pushAndPullToIdle: 0
-  custsceneToIdle: 0
   jumpWaterEvent:
     m_PersistentCalls:
       m_Calls:

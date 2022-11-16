@@ -53,6 +53,11 @@ public class PlayerMovement : MonoBehaviour
     private bool wasOnAir;
     [SerializeField]
     private AudioClip _waterSplashSFX;
+    [SerializeField]
+    private AudioClip _drownSFX;
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float drownVolume;
 
     [Header("Others")]
     public bool canMove;
@@ -463,6 +468,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _crouch.isCrouched = false;
             _animator.CrossFade(_drowingAnimation, _animationPlayTransition);
+            _audioSource.PlayOneShot(_drownSFX, drownVolume);
         }
         else if (typeOfDeath == 1)
         {
