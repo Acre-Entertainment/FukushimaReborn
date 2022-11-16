@@ -408,6 +408,8 @@ MonoBehaviour:
   _waterSplashSFX: {fileID: 8300000, guid: 423bc8fc885202d4fbdca45843463ffb, type: 3}
   _drownSFX: {fileID: 8300000, guid: 1752c4f2d78f5264894572ff26e80771, type: 3}
   drownVolume: 0.6
+  _eletrocuteSFX: {fileID: 8300000, guid: 44d4a2d1d2d65a54487596a6005b2a78, type: 3}
+  eletrocuteVolume: 0.6
   canMove: 0
   _isCarrying: 0
   _puObject: 0

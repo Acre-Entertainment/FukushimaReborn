@@ -58,6 +58,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     [Range(0f, 1f)]
     private float drownVolume;
+    [SerializeField]
+    private AudioClip _eletrocuteSFX;
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float eletrocuteVolume;
 
     [Header("Others")]
     public bool canMove;
@@ -479,6 +484,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _crouch.isCrouched = false;
             _animator.CrossFade(_eletrocutedAnimation, _animationPlayTransition);
+            _audioSource.PlayOneShot(_eletrocuteSFX, eletrocuteVolume);
         }
     }
 }
