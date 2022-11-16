@@ -21,6 +21,8 @@ public class PushableBox : MonoBehaviour
     bool hasParent, ignoreFrame, movingX, movingXminor, movingZ, movingZminor;
     float previousX, previousZ;
     private CharacterController cc;
+    private AudioSource dragSFX;
+    private bool playingSFX = false;
 
     PlayerMovement pm;
     float startingJump;
@@ -38,6 +40,7 @@ public class PushableBox : MonoBehaviour
         }
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         startingJump = pm._jump;
+        dragSFX = GameObject.FindGameObjectWithTag("DragSFX").GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -97,6 +100,15 @@ public class PushableBox : MonoBehaviour
                 }
                 cc.enabled = true;
             }
+
+            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+            {
+                if (!playingSFX)
+                {
+                    dragSFX.Play();
+                    playingSFX = true;
+                }
+            }
         }
         if (Input.GetKeyDown(KeyCode.F) && (beingPushedByX == true || beingPushedByZ == true))
         {
@@ -107,6 +119,15 @@ public class PushableBox : MonoBehaviour
         if (PlayerMovement.custscene)
         {
             setOff();
+        }
+
+        if (Input.GetAxis("Horizontal") == 0 && Input.GetAxis("Vertical") == 0)
+        {
+            if (playingSFX)
+            {
+                dragSFX.Stop();
+                playingSFX = false;
+            }
         }
     }
     public void setPush()
@@ -195,6 +216,8 @@ public class PushableBox : MonoBehaviour
             pm.pushAndPullToIdle = true;
             gameObject.layer = LayerMask.NameToLayer("Default");
             gameObject.tag = "Event";
+            dragSFX.Stop();
+            playingSFX = false;
         }
     }
     public bool calculateDistanceFromPlayer(GameObject gopull)

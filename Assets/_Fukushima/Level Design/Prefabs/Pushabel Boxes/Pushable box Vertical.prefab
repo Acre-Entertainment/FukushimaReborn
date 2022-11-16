@@ -351,6 +351,8 @@ MonoBehaviour:
   distanceFromPlayerZ: 1
   XOffset: 0
   ZOffset: -0.5
+  minimunDistanceFromAnchor: 0.75
+  collisionBuffer: 0.1
   noXMovement: 0
   noZmovement: 0
 --- !u!114 &6318369804333384
@@ -380,6 +382,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  hasSound: 1
+  playOneShot: 1
+  oneShotSound: {fileID: 8300000, guid: 1d04a9b2d45102d4faead5fece2506ce, type: 3}
+  volume: 1
 --- !u!64 &2701408196444208026
 MeshCollider:
   m_ObjectHideFlags: 0
