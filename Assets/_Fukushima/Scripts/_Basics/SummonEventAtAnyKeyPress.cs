@@ -5,12 +5,15 @@ using UnityEngine.Events;
 
 public class SummonEventAtAnyKeyPress : MonoBehaviour
 {
-    public UnityEvent unityEvent;
+    public UnityEvent Event;
+
+
     void Update()
     {
         if (Input.anyKeyDown)
         {
-            unityEvent.Invoke();
+            Event.Invoke();
         }
     }
 }
+
