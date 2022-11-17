@@ -1929,7 +1929,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sair
+  m_text: Quit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad6c1a136974df34cb8f0510c36ae0e6, type: 2}
   m_sharedMaterial: {fileID: 7344107351718921869, guid: ad6c1a136974df34cb8f0510c36ae0e6,
@@ -2486,7 +2486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continuar
+  m_text: Resume
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad6c1a136974df34cb8f0510c36ae0e6, type: 2}
   m_sharedMaterial: {fileID: 7344107351718921869, guid: ad6c1a136974df34cb8f0510c36ae0e6,
@@ -2657,7 +2657,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "M\xFAsica\n"
+  m_text: Music
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad6c1a136974df34cb8f0510c36ae0e6, type: 2}
   m_sharedMaterial: {fileID: 7344107351718921869, guid: ad6c1a136974df34cb8f0510c36ae0e6,
@@ -2792,7 +2792,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Efeitos
+  m_text: Effects
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad6c1a136974df34cb8f0510c36ae0e6, type: 2}
   m_sharedMaterial: {fileID: 7344107351718921869, guid: ad6c1a136974df34cb8f0510c36ae0e6,
@@ -2927,7 +2927,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Reiniciar
+  m_text: Reload last checkpoint
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad6c1a136974df34cb8f0510c36ae0e6, type: 2}
   m_sharedMaterial: {fileID: 7344107351718921869, guid: ad6c1a136974df34cb8f0510c36ae0e6,
@@ -3256,7 +3256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Voltar
+  m_text: Back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad6c1a136974df34cb8f0510c36ae0e6, type: 2}
   m_sharedMaterial: {fileID: 7344107351718921869, guid: ad6c1a136974df34cb8f0510c36ae0e6,
@@ -3639,7 +3639,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Menu
+  m_text: Main menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad6c1a136974df34cb8f0510c36ae0e6, type: 2}
   m_sharedMaterial: {fileID: 7344107351718921869, guid: ad6c1a136974df34cb8f0510c36ae0e6,
@@ -3774,7 +3774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Som
+  m_text: Sound
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad6c1a136974df34cb8f0510c36ae0e6, type: 2}
   m_sharedMaterial: {fileID: 7344107351718921869, guid: ad6c1a136974df34cb8f0510c36ae0e6,
