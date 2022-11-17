@@ -11,6 +11,7 @@ public class PushableBox : MonoBehaviour
     public float distanceFromPlayerX, distanceFromPlayerZ, XOffset, ZOffset;
     public float minimunDistanceFromAnchor = 0.75f;
     public float collisionBuffer = 0.1f;
+    public float fallSpeedToDrop = 3;
     float realDistanceFromPlayer;
     bool facingX, facingXMinor, facingZ, facingZMinor;
     public bool noXMovement, noZmovement;
@@ -25,6 +26,7 @@ public class PushableBox : MonoBehaviour
     private bool playingSFX = false;
 
     PlayerMovement pm;
+    CharacterController pcc;
     float startingJump;
 
     void Start()
@@ -39,8 +41,9 @@ public class PushableBox : MonoBehaviour
             hasParent = true;
         }
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        pcc = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
         startingJump = pm._jump;
-        dragSFX = GameObject.FindGameObjectWithTag("DragSFX").GetComponent<AudioSource>();
+        //dragSFX = GameObject.FindGameObjectWithTag("DragSFX").GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -105,7 +108,7 @@ public class PushableBox : MonoBehaviour
             {
                 if (!playingSFX)
                 {
-                    dragSFX.Play();
+                    //dragSFX.Play();
                     playingSFX = true;
                 }
             }
@@ -125,9 +128,13 @@ public class PushableBox : MonoBehaviour
         {
             if (playingSFX)
             {
-                dragSFX.Stop();
-                playingSFX = false;
+                //dragSFX.Stop();
+                //playingSFX = false;
             }
+        }
+        if(-fallSpeedToDrop >= pcc.velocity.y)
+        {
+            setOff();
         }
     }
     public void setPush()
@@ -216,7 +223,7 @@ public class PushableBox : MonoBehaviour
             pm.pushAndPullToIdle = true;
             gameObject.layer = LayerMask.NameToLayer("Default");
             gameObject.tag = "Event";
-            dragSFX.Stop();
+            //dragSFX.Stop();
             playingSFX = false;
         }
     }
@@ -287,7 +294,7 @@ public class PushableBox : MonoBehaviour
     {
         if(other.gameObject.layer != 9 && other.gameObject.tag != "Player" && (beingPushedByX == true || beingPushedByZ == true))
         {
-            Debug.Log(gameObject.name + " was stopped" + other.gameObject.name);
+            Debug.Log(gameObject.name + " was stopped by " + other.gameObject.name);
             setBuffer();
             setOff();
         }
