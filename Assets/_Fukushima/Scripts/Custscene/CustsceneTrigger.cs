@@ -22,6 +22,7 @@ public class CustsceneTrigger : MonoBehaviour
         if (other.CompareTag("Player") && activeCustscene)
         {
             PlayerMovement.custscene = true;
+            PlayerMovement.canChangeInput = true;
         }
     }
 
@@ -31,6 +32,7 @@ public class CustsceneTrigger : MonoBehaviour
         {
             PlayerMovement.custscene = false;
             PlayerMovement.custsceneToIdle = true;
+            PlayerMovement.canChangeInput = false;
         }
     }
 }

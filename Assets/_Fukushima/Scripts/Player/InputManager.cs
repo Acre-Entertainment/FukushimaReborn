@@ -10,6 +10,9 @@ public class InputManager : MonoBehaviour
     private PlayerMovement _movement;
     //private PlayerLook _vision;
 
+    private bool _canCheck;
+    private int _checkValue;
+
     private void Awake()
     {
 
@@ -26,12 +29,22 @@ public class InputManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _canCheck = false;
+        _checkValue = 0;
     }
 
     private void Update()
     {
+        if(_onGround.Movimento.IsPressed() && PlayerMovement.custscene && _canCheck && _checkValue == 0)
+        {
+            _checkValue ++;
+            CheckCameraInput();
+        }
 
+        if (!_onGround.Movimento.IsPressed() && PlayerMovement.custscene)
+        {
+            _canCheck = true;
+        }
     }
 
     // Update is called once per frame
@@ -47,6 +60,12 @@ public class InputManager : MonoBehaviour
     //{
        // _vision.Vision(_onGround.Visão.ReadValue<Vector2>());
     //}
+
+    private void CheckCameraInput()
+    {
+        _canCheck = false;
+        PlayerMovement.canChangeInput = !PlayerMovement.canChangeInput;
+    }
 
     private void OnEnable()
     {

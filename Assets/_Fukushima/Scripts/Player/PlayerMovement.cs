@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
     public bool crouchToIdle;
     public bool carryingToIdle;
     public bool pushAndPullToIdle;
+    public static bool canChangeInput;
 
     public UnityEvent jumpWaterEvent;
     public UnityEvent jumpEvent;
@@ -145,6 +146,7 @@ public class PlayerMovement : MonoBehaviour
         _layerCustsceneIndex = _animator.GetLayerIndex("Custscene");
 
         custscene = false;
+        canChangeInput = false;
     }
 
     // Update is called once per frame
@@ -305,7 +307,7 @@ public class PlayerMovement : MonoBehaviour
         movementDirection.x = input.x;
         movementDirection.z = input.y;
 
-        if(movementDirection.magnitude >= 0.1f && !custscene)
+        if(movementDirection.magnitude >= 0.1f && !canChangeInput)
         {
             float targetAngle = Mathf.Atan2(movementDirection.x, movementDirection.z) * Mathf.Rad2Deg + _camera.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, _turnSmoothTime);
@@ -314,7 +316,7 @@ public class PlayerMovement : MonoBehaviour
 
             _controller.Move(direction.normalized * _speed * Time.deltaTime);
         }
-        else if(movementDirection.magnitude >= 0.1f && custscene)
+        else if(movementDirection.magnitude >= 0.1f && canChangeInput)
         {
             float targetAngle = Mathf.Atan2(movementDirection.x, movementDirection.z) * Mathf.Rad2Deg;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref _turnSmoothVelocity, _turnSmoothTime);
@@ -357,8 +359,6 @@ public class PlayerMovement : MonoBehaviour
             _animator.CrossFade(_jumpAnimation, _animationPlayTransition);
             _velocity.y = Mathf.Sqrt(_jump * -3.0f * _gravity);
             _audioSource.PlayOneShot(_jumpSFX, jumpVolume);
-
-
         }
     }
 
