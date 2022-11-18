@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/_Fukushima/Scenes/Menu.unity
     guid: 35e348160d5f4ec42a0334c097dd7aa5
   - enabled: 1
+    path: Assets/_Fukushima/Scenes/Intro.unity
+    guid: fb5136072271e934992f51121f596db6
+  - enabled: 1
     path: Assets/_Fukushima/Scenes/Level 1.unity
     guid: 8634af0dc20ad794dbcb47c29c97f2fd
   - enabled: 1

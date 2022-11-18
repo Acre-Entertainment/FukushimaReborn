@@ -1598,7 +1598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d396dc2b491155429666f7c95a1fb03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Level 1
+  levelName: 
   loadingText: {fileID: 757645529}
   activateText: 1
 --- !u!114 &647640268
