@@ -5,8 +5,53 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: 885944232402757753
-    second: Armature|Action
-  externalObjects: {}
+    second: SittingPainting
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Bra\xE7os"
+    second: {fileID: 2100000, guid: 6c71c1bc2bf1d034bacbf284b9663b8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brincos
+    second: {fileID: 2100000, guid: 66d0d0fdbff762742b45fa9780f6fceb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cabelo
+    second: {fileID: 2100000, guid: c1296b1fa86369e4eafa0f59ee170544, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "CabeloAcess\xF3rio"
+    second: {fileID: 2100000, guid: 3c90e2f472a48a547b51529b088c799f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Cal\xE7a"
+    second: {fileID: 2100000, guid: 3f9ee40e30d154441b1cbc2e242408a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Camisa
+    second: {fileID: 2100000, guid: e77d6557d33950144a222c79b531b337, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Corpo
+    second: {fileID: 2100000, guid: 46c397f1f84bd634da3f84ba2a6a45f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pernas
+    second: {fileID: 2100000, guid: 05bcea6e4ddae2b4a947ed7ee1b523cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sapato
+    second: {fileID: 2100000, guid: 35cbbbaf718bae442856a5d806af1a54, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -35,7 +80,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Action
+      name: SittingPainting
       takeName: Armature|Action
       internalID: 0
       firstFrame: 0
