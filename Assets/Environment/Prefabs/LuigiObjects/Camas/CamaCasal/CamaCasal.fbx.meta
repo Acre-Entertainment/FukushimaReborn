@@ -3,7 +3,32 @@ guid: ccfd4e1ddf978684fa37e76b23cc429a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CamaCasalDetalhe1
+    second: {fileID: 2100000, guid: a237d51f6021cfe469a51116473eb6ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CamaCasalDetalhe2
+    second: {fileID: 2100000, guid: 122c89fe4f017e445b8e5862cbada056, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CamaCasalDetalhe3
+    second: {fileID: 2100000, guid: f140ae6892290d94598d7617459a2f72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CamaCasalDetalhe4
+    second: {fileID: 2100000, guid: 4daa826d52010854e800bc71b11955b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Travesseiro
+    second: {fileID: 2100000, guid: 7846b32df6d48644285fda6c3f4ab345, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

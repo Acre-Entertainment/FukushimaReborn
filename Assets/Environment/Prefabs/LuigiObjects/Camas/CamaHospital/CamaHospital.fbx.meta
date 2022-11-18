@@ -3,7 +3,32 @@ guid: c764d2f1c722232428256479acfe84fd
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Apoios
+    second: {fileID: 2100000, guid: c2f445201b19c8c47b55e50e1455074a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "Colch\xE3oMaca"
+    second: {fileID: 2100000, guid: f8b4cc8772ff5da4b9c0464599c3331f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Maca
+    second: {fileID: 2100000, guid: 829e64cb0afa14542b229648440edfcf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rodinhas
+    second: {fileID: 2100000, guid: 6d2e58db9eccc5549b2a6ab8daaa2746, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Travesseiro
+    second: {fileID: 2100000, guid: d8fba51b3a36b1643ab3e2fa6d357630, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

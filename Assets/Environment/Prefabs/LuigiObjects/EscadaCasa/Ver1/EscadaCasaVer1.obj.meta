@@ -3,7 +3,17 @@ guid: fd86dc03940f9b640b618904ecd4c64c
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "EscadaCasaVer1_Cubo.013_Corrim\xE3oMat"
+    second: {fileID: 2100000, guid: 98b24c819d399d240a6f52d74ccbdf0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EscadaCasaVer1_Cubo.013_DegrausMat
+    second: {fileID: 2100000, guid: 0fae25ec3af6843449e7f2ce33cc86e8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
