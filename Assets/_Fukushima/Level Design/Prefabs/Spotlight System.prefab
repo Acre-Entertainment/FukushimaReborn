@@ -235,7 +235,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 80
+  m_Intensity: 100
   m_Range: 100
   m_SpotAngle: 22.196049
   m_InnerSpotAngle: 18.161743
@@ -331,8 +331,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   intensityFromLight: 1
   intensityModeAdvanced: 0
-  intensityInside: 80
-  intensityOutside: 80
+  intensityInside: 100
+  intensityOutside: 100
   blendingMode: 0
   spotAngleFromLight: 1
   spotAngle: 22.196049
