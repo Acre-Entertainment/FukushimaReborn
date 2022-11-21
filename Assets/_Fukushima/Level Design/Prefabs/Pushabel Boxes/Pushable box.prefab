@@ -345,6 +345,7 @@ MonoBehaviour:
   ZOffset: -0.5
   minimunDistanceFromAnchor: 0.75
   collisionBuffer: 0.1
+  fallSpeedToDrop: 3
   noXMovement: 0
   noZmovement: 0
 --- !u!114 &2696291644242024692
@@ -377,7 +378,7 @@ MonoBehaviour:
   hasSound: 1
   playOneShot: 1
   oneShotSound: {fileID: 8300000, guid: 1d04a9b2d45102d4faead5fece2506ce, type: 3}
-  volume: 1
+  volume: 0.4
 --- !u!64 &1010553382
 MeshCollider:
   m_ObjectHideFlags: 0
