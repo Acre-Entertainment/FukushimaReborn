@@ -18,7 +18,7 @@ public class CrouchInspector : MonoBehaviour
     {
         if(other.gameObject.tag != "Carried" && other.gameObject.tag != "Player" && other.gameObject.tag != "TriggerCollision" && other.gameObject.tag != "InteractArea" && other.gameObject.tag != "Trigger")
         {
-            Debug.Log("Fricking " + other.gameObject.name);
+            //Debug.Log("Fricking " + other.gameObject.name);
             spaceIsOccupied = true;
         }
     }
