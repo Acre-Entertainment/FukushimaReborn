@@ -43,7 +43,7 @@ public class PushableBox : MonoBehaviour
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         pcc = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
         startingJump = pm._jump;
-        //dragSFX = GameObject.FindGameObjectWithTag("DragSFX").GetComponent<AudioSource>();
+        dragSFX = GameObject.FindGameObjectWithTag("DragSFX").GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -108,7 +108,7 @@ public class PushableBox : MonoBehaviour
             {
                 if (!playingSFX)
                 {
-                    //dragSFX.Play();
+                    dragSFX.Play();
                     playingSFX = true;
                 }
             }
@@ -128,8 +128,8 @@ public class PushableBox : MonoBehaviour
         {
             if (playingSFX)
             {
-                //dragSFX.Stop();
-                //playingSFX = false;
+                dragSFX.Stop();
+                playingSFX = false;
             }
         }
         if(-fallSpeedToDrop >= pcc.velocity.y)
@@ -223,7 +223,7 @@ public class PushableBox : MonoBehaviour
             pm.pushAndPullToIdle = true;
             gameObject.layer = LayerMask.NameToLayer("Default");
             gameObject.tag = "Event";
-            //dragSFX.Stop();
+            dragSFX.Stop();
             playingSFX = false;
         }
     }
