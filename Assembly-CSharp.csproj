@@ -80,8 +80,10 @@
     <Compile Include="Assets\_Fukushima\Scripts\Hiding\Hide_Object.cs" />
     <Compile Include="Assets\_Fukushima\Scripts\_Basics\CallEvenUponCollisionWithTag.cs" />
     <Compile Include="Assets\_ExternalAssets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
+    <Compile Include="Assets\_Fukushima\Scripts\Kimiko\KimikoTrigger.cs" />
     <Compile Include="Assets\_Fukushima\Scripts\UI\Volume.cs" />
     <Compile Include="Assets\_Fukushima\Scripts\_Basics\LoadSceneFunction.cs" />
+    <Compile Include="Assets\_Fukushima\Scripts\Kimiko\Kimiko.cs" />
     <Compile Include="Assets\_Fukushima\Scripts\DutosDeÁgua\AguaDoDuto.cs" />
     <Compile Include="Assets\_Fukushima\Scripts\FloatingText\FloatingText.cs" />
     <Compile Include="Assets\_Fukushima\Scripts\_Basics\CallEventUponTriggerEntry.cs" />

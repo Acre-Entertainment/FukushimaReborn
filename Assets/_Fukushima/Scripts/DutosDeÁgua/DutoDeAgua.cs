@@ -21,6 +21,17 @@ public class DutoDeAgua : MonoBehaviour
     [SerializeField]
     private float _startWaitTime;
 
+    [Header("Sound")]
+    [SerializeField]
+    private bool soundController;
+    [SerializeField]
+    private AudioClip waterJetSound;
+    [SerializeField]
+    [Range(0, 1)]
+    private float volume;
+    [SerializeField]
+    private AudioSource audioSource;
+
     public UnityEvent onStartWater;
     public UnityEvent onEndWater;
     // Start is called before the first frame update
@@ -40,6 +51,7 @@ public class DutoDeAgua : MonoBehaviour
     {
         _water.SetActive(true);
         onStartWater.Invoke();
+        if(soundController) audioSource.PlayOneShot(waterJetSound, volume);
         yield return new WaitForSeconds(_timeSquirt);
         StartCoroutine(Stop());
     }
