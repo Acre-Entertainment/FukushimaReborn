@@ -12,17 +12,19 @@ public class EventUponReachingXPoint : MonoBehaviour
 
     void Update()
     {
-        if(reversed == true)
+        if(reversed == false)
         {
-            if(gameObject.transform.position.x <= XPoint && reversed == false)
+            if(gameObject.transform.position.x >= XPoint)
             {
+                Debug.Log("activated");
                 onActivation.Invoke();
             }
         }
         else
         {
-            if(gameObject.transform.position.x >= XPoint && reversed == false)
+            if(gameObject.transform.position.x <= XPoint)
             {
+                Debug.Log("activated");
                 onActivation.Invoke();
             }
         }

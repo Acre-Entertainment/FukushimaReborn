@@ -12,6 +12,7 @@ public class PushableBox : MonoBehaviour
     public float minimunDistanceFromAnchor = 0.75f;
     public float collisionBuffer = 0.1f;
     public float fallSpeedToDrop = 3;
+    public string setOffTag = "Event";
     float realDistanceFromPlayer;
     bool facingX, facingXMinor, facingZ, facingZMinor;
     public bool noXMovement, noZmovement;
@@ -112,6 +113,10 @@ public class PushableBox : MonoBehaviour
                     playingSFX = true;
                 }
             }
+            if(-fallSpeedToDrop >= pcc.velocity.y)
+            {
+                setOff();
+            }
         }
         if (Input.GetKeyDown(KeyCode.F) && (beingPushedByX == true || beingPushedByZ == true))
         {
@@ -131,10 +136,6 @@ public class PushableBox : MonoBehaviour
                 dragSFX.Stop();
                 playingSFX = false;
             }
-        }
-        if(-fallSpeedToDrop >= pcc.velocity.y)
-        {
-            setOff();
         }
     }
     public void setPush()
@@ -206,7 +207,7 @@ public class PushableBox : MonoBehaviour
     {
         if (ignoreFrame == false)
         {
-            //Debug.Log("setOffTrue");
+            Debug.Log("setOffTrue");
             ignoreFrame = true;
             if (hasParent == true)
             {
@@ -222,7 +223,7 @@ public class PushableBox : MonoBehaviour
             pm._puObject = false;
             pm.pushAndPullToIdle = true;
             gameObject.layer = LayerMask.NameToLayer("Default");
-            gameObject.tag = "Event";
+            gameObject.tag = setOffTag;
             dragSFX.Stop();
             playingSFX = false;
         }
