@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Hide_Opener : MonoBehaviour
 {
     public GameObject HidedPlayer;
+
+    public UnityEvent onAppearing;
 
     public static bool hasPressed;
 
@@ -42,5 +45,6 @@ public class Hide_Opener : MonoBehaviour
         Hide_Character.isHided = false;
         HidedPlayer.SetActive(true);
         gameObject.SetActive(false);
+        onAppearing.Invoke();
     }
 }

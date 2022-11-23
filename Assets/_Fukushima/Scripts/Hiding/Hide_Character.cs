@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Hide_Character : MonoBehaviour
 {
     public GameObject opener;
+
+    public UnityEvent onDisappearing;
 
     PlayerMovement pm;
 
@@ -31,5 +34,6 @@ public class Hide_Character : MonoBehaviour
         isHided = true;
         opener.SetActive(true);
         gameObject.SetActive(false);
+        onDisappearing.Invoke();
     }
 }
