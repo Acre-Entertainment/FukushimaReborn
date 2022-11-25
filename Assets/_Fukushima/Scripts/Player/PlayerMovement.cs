@@ -63,6 +63,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     [Range(0f, 1f)]
     private float eletrocuteVolume;
+    [SerializeField]
+    private AudioClip[] FootstepAudioClips;
+    [SerializeField]
+    [Range(0, 1)] private float FootstepAudioVolume = 0.5f;
 
     [Header("Others")]
     public bool canMove;
@@ -77,6 +81,9 @@ public class PlayerMovement : MonoBehaviour
     public UnityEvent jumpEvent;
     public string WaterTag;
     public bool isOnWater;
+
+    public delegate void Footstep(AnimationEvent animationEvent);
+    public static Footstep footstep;
 
     private CharacterController _controller;
     private Animator _animator;
@@ -120,6 +127,8 @@ public class PlayerMovement : MonoBehaviour
     {
         canMove = true;
 
+        footstep = StepSFX;
+
         _controller = GetComponent<CharacterController>();
         _camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
         _animator = GameObject.Find("Idle").GetComponent<Animator>();
@@ -144,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
         _layerCarryingIndex = _animator.GetLayerIndex("Carrying");
         _layerPuObjectIndex = _animator.GetLayerIndex("Pull/Push");
         _layerCustsceneIndex = _animator.GetLayerIndex("Custscene");
-
+        
         custscene = false;
         canChangeInput = false;
     }
@@ -348,6 +357,15 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             _sprinting = false;
+        }
+    }
+
+    private void StepSFX(AnimationEvent animationEvent)
+    {
+        if(animationEvent.animatorClipInfo.weight > 0.4f)
+        {
+            var index = Random.Range(0, FootstepAudioClips.Length);
+            _audioSource.PlayOneShot(FootstepAudioClips[index], FootstepAudioVolume);
         }
     }
 

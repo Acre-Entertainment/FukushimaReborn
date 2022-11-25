@@ -12,4 +12,9 @@ public class WalkEvent : MonoBehaviour
             Walksound[0].Play();
             walk.Invoke();
     }
+
+    private void Step(AnimationEvent animationEvent)
+    {
+        PlayerMovement.footstep?.Invoke(animationEvent);
+    }
 }
