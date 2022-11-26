@@ -1451,6 +1451,7 @@ GameObject:
   - component: {fileID: 54543856632343933}
   - component: {fileID: 54543856632343932}
   - component: {fileID: 54543856632344192}
+  - component: {fileID: 1766241286126769042}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -1571,6 +1572,18 @@ MonoBehaviour:
   desativar4: {fileID: 54543856522845848}
   desativar5: {fileID: 0}
   desativar6: {fileID: 0}
+--- !u!114 &1766241286126769042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54543856632343935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01468b3e539d59e47834bd756df42806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &54543856651050732
 GameObject:
   m_ObjectHideFlags: 0
@@ -4168,8 +4181,6 @@ GameObject:
   - component: {fileID: 6429728846227468559}
   - component: {fileID: 3033186484509010258}
   - component: {fileID: 935153477250756027}
-  - component: {fileID: 4458562074965619838}
-  - component: {fileID: 3229496175295634850}
   m_Layer: 5
   m_Name: FadeOut
   m_TagString: Untagged
@@ -4234,43 +4245,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4458562074965619838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7656445135890674547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01468b3e539d59e47834bd756df42806, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3229496175295634850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7656445135890674547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41a617b7356eec249b5641c36d44ec62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeUntilEvent: 1
-  eventToBeCalled:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4458562074965619838}
-        m_TargetAssemblyTypeName: LoadSceneFunction, Assembly-CSharp
-        m_MethodName: loadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Menu
-          m_BoolArgument: 0
-        m_CallState: 2
