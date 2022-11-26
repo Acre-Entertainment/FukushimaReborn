@@ -85,6 +85,9 @@ public class PlayerMovement : MonoBehaviour
     public delegate void Footstep(AnimationEvent animationEvent);
     public static Footstep footstep;
 
+    public delegate void ActionFootstep(AnimationEvent animationEvent);
+    public static ActionFootstep actionFootstep;
+
     private CharacterController _controller;
     private Animator _animator;
     private Crouch _crouch;
@@ -128,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
         canMove = true;
 
         footstep = StepSFX;
+        actionFootstep = ActionStepSFX;
 
         _controller = GetComponent<CharacterController>();
         _camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
@@ -362,7 +366,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void StepSFX(AnimationEvent animationEvent)
     {
-        if(animationEvent.animatorClipInfo.weight > 0.4f)
+        if(_currentPuObjectLayer <= 0.1f && _currentCustsceneLayer <= 0.1f && _currentCarryingLayer <= 0.1f && _currentCrouchedLayer <= 0.1f)
+        {
+            if (animationEvent.animatorClipInfo.weight > 0.4f)
+            {
+                var index = Random.Range(0, FootstepAudioClips.Length);
+                _audioSource.PlayOneShot(FootstepAudioClips[index], FootstepAudioVolume);
+            }
+        }
+    }
+
+    private void ActionStepSFX(AnimationEvent animationEvent)
+    {
+        if (animationEvent.animatorClipInfo.weight > 0.4f)
         {
             var index = Random.Range(0, FootstepAudioClips.Length);
             _audioSource.PlayOneShot(FootstepAudioClips[index], FootstepAudioVolume);

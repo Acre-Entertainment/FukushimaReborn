@@ -17,4 +17,9 @@ public class WalkEvent : MonoBehaviour
     {
         PlayerMovement.footstep?.Invoke(animationEvent);
     }
+
+    private void ActionStep(AnimationEvent animationEvent)
+    {
+        PlayerMovement.actionFootstep?.Invoke(animationEvent);
+    }
 }
