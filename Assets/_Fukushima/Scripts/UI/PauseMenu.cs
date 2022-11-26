@@ -62,6 +62,13 @@ public class PauseMenu : MonoBehaviour
         selectorLabel.SetActive(true);
         GameIsPaused = false;
     }
+    public void TimeResume()
+    {
+        Time.timeScale = 1f;
+        cursor.enabled = false;
+        selectorLabel.SetActive(true);
+        GameIsPaused = false;
+    }
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
