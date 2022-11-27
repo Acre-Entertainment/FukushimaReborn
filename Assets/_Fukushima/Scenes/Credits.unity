@@ -2437,7 +2437,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Camila Aparecida Tiemi Kobayashi\r"
+  m_text: 'Camila Aparecida Tiemi Kobayashi
+
+    Gustavo Oliveira de Carvalho'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad6c1a136974df34cb8f0510c36ae0e6, type: 2}
   m_sharedMaterial: {fileID: 7344107351718921869, guid: ad6c1a136974df34cb8f0510c36ae0e6,
