@@ -22,6 +22,7 @@ public class Hide_Object : MonoBehaviour
     public void PlayerPosition()
     {
         _player.position = point.position;
+        _player.rotation = point.rotation;
         _animator.Play("ArmarioOpen");
     }
 
