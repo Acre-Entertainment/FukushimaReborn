@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Fukushima/Scenes/Credits.unity
     guid: 294b13d455dd8cd479ef7077b88146d7
+  - enabled: 1
+    path: Assets/_Fukushima/Scenes/End.unity
+    guid: 93d62b6d59e8d054e87cb4279ef2858d
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}
