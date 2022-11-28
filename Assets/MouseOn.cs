@@ -13,5 +13,6 @@ public class MouseOn : MonoBehaviour
     public void mouseOn()
     {
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }
