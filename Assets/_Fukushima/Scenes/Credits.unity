@@ -3973,7 +3973,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "Andr\xE9 Camargo Martin\nBeatriz Nascimento Martins\nDirlei G. Baccili
+    Filho\nFernando Gutierrez Machado\nFelipe Myung Kim\nGabriel Oliveira Alencar
+    da Silva\nVictoria Motta"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad6c1a136974df34cb8f0510c36ae0e6, type: 2}
   m_sharedMaterial: {fileID: 7344107351718921869, guid: ad6c1a136974df34cb8f0510c36ae0e6,
@@ -4262,7 +4264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &5619683231240187100
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4649,9 +4651,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Thiago Augusto Trevisan Guedes
+  m_text: 'Sergio Nesteriuk Gallo
 
-    Troula'
+    Thiago Augusto Trevisan Guedes
+
+    Ricardo
+    Sinval Troula'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad6c1a136974df34cb8f0510c36ae0e6, type: 2}
   m_sharedMaterial: {fileID: 7344107351718921869, guid: ad6c1a136974df34cb8f0510c36ae0e6,
