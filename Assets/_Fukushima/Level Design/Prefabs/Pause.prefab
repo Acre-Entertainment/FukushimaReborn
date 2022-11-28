@@ -2028,7 +2028,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Quit
+  m_text: Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad6c1a136974df34cb8f0510c36ae0e6, type: 2}
   m_sharedMaterial: {fileID: 7344107351718921869, guid: ad6c1a136974df34cb8f0510c36ae0e6,
@@ -2344,7 +2344,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Do you really want to exit?
+  m_text: Do you really want to go to menu?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0907a1fba20b82343ab53ff2171960d4, type: 2}
   m_sharedMaterial: {fileID: -5615962844942006708, guid: 0907a1fba20b82343ab53ff2171960d4,
